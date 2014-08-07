@@ -1,5 +1,6 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
+$config['index_page'] = "index.php";
 /*
 |--------------------------------------------------------------------------
 | ExpressionEngine Config Items
@@ -12,11 +13,11 @@
 */
 
 $config['app_version'] = '281';
-$config['license_number'] = '5343-3237-2705-9088';
+$config['license_number'] = "5343-3237-2705-9088";
 $config['debug'] = '1';
 $config['cp_url'] = 'http://54.191.233.133/admin.php';
-$config['doc_url'] = 'http://ellislab.com/expressionengine/user-guide/';
-$config['is_system_on'] = 'y';
+$config['doc_url'] = "http://ellislab.com/expressionengine/user-guide/";
+$config['is_system_on'] = "y";
 $config['allow_extensions'] = 'y';
 $config['cookie_prefix'] = '';
 $config['cookie_httponly'] = 'y';
