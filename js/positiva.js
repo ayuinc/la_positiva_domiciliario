@@ -384,19 +384,19 @@ $( "#provincia" )
     evt.preventDefault();
     $.ajax({
            type: "POST",
-           url: "/?/content/ciudadess/",
+           url: "/?/content/ciudades/",
            data: str, // serializes the form's elements.
-           // beforeSend : function (){
-           //     $('#loading').css('visibility', 'visible');
-           //  },
+           beforeSend : function (){
+               // $('#loading').css('visibility', 'visible');
+            },
            success: function(response)
            { // show response from the php script.
              $('#ciudad').html(response);
              $('#ciudad').prop('disabled', false);
            },
-           // complete : function (){
-           //      $('#loading').css('visibility', 'hidden');
-           //  }
+           complete : function (){
+                // $('#loading').css('visibility', 'hidden');
+            }
          });
     }
   });
