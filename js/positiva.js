@@ -384,7 +384,7 @@ $( "#provincia" )
     evt.preventDefault();
     $.ajax({
            type: "POST",
-           url: "/?/index.php/content/ciudades/",
+           url: "/?/content/ciudades/",
            data: str, // serializes the form's elements.
            // beforeSend : function (){
            //     $('#loading').css('visibility', 'visible');

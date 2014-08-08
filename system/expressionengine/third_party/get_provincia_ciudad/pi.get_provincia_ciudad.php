@@ -65,7 +65,7 @@ class Get_provincia_ciudad
     // END
 
     public function provincia(){
-        $form = '<select name="provincia" id="provincia" > <option value="PROVINCIA" selected>PROVINCIA</option>';
+        $form = '<select name="provincia" id="provincia" > <option value="0" selected>PROVINCIA</option>';
         // ee()->db->distinct('name');
         // ee()->db->select('provincia');
         $query = ee()->db->get('exp_provincia');
