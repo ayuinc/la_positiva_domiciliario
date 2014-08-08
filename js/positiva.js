@@ -3,7 +3,7 @@ $( "#provincia" )
 .change(function (evt) {
   var str = "";
   $('#ciudad option:eq(0)').prop('selected', true);
-  $('#ciudad').prop('disabled', true);
+  // $('#ciudad').prop('disabled', true);
   $( "#provincia option:selected" ).each(function() {
     str = $( this ).val();
     console.log(str);
