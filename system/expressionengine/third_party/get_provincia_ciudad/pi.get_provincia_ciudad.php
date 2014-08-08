@@ -80,21 +80,22 @@ class Get_provincia_ciudad
         return $form;
     }
 
-    // public function model(){
-    //     $form = '<option value="MODELO" selected>MODELO</option>';
-    //     $marca = ee()->TMPL->fetch_param('provincia');
-    //     $marca = str_replace("-", " ",$marca);
-    //     ee()->db->distinct('modelo');
-    //     ee()->db->select('modelo');
-    //     ee()->db->where('marca',$marca);
-    //     $query = ee()->db->get('exp_valor_autos');
-    //     foreach($query->result() as $row){
-    //         $aux=$row->modelo;
-    //         $aux= str_replace(" ", "-",$aux);
-    //         $form .= '<option value='.$aux.'>'.$row->modelo.'</option>';
-    //     }
-    //     return $form;
-    // }
+    public function ciudad(){
+        $form = '<option value="CIUDAD" selected>CIUDAD</option>';
+        $provincia_id = ee()->TMPL->fetch_param('provincia');
+        // $marca = str_replace("-", " ",$marca);
+        // ee()->db->distinct('modelo');
+        // ee()->db->select('id');
+        // ee()->db->select('name');
+        ee()->db->where('provincia_id',$provincia_id);
+        $query = ee()->db->get('exp_ciudad');
+        foreach($query->result() as $row){
+            $ciudad_id=$row->id;
+            $ciudad_name= $row->name;
+            $form .= '<option value='.$ciudad_id.'>'.$ciudad_name.'</option>';
+        }
+        return $form;
+    }
 
     // public function version(){
     //     $form = '<option value="VERSION" selected>VERSIÓN</option>';
