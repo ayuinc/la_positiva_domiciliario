@@ -379,7 +379,7 @@ $( "#provincia" )
     else{
     console.log('en else... '+str)
     // str = str.replace(/-/gi," ");
-    // $("#form_marca").val(str);
+    $("#form_provincia").val(str);
     str = "provincia="+str;
     evt.preventDefault();
     $.ajax({
