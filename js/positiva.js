@@ -370,6 +370,7 @@ $( "#provincia" )
   // $("#cotizar").attr("action","/#");
   $( "#provincia option:selected" ).each(function() {
     str = $( this ).val();
+    console.log(str);
     if(str=='PROVINCIA'){
       $('#ciudad option:eq(0)').prop('selected', true);
       $('#ciudad').prop('disabled', true);
