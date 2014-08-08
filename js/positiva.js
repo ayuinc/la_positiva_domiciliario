@@ -371,12 +371,13 @@ $( "#provincia" )
   $( "#provincia option:selected" ).each(function() {
     str = $( this ).val();
     console.log(str);
-    if(str== 1){
+    if(str== 0){
       $('#ciudad option:eq(0)').prop('selected', true);
       $('#ciudad').prop('disabled', true);
       // $("#cotizar").attr("action","/#");
     }
     else{
+    console.log('en else... '+str)
     // str = str.replace(/-/gi," ");
     // $("#form_marca").val(str);
     // str = "marca="+str;
