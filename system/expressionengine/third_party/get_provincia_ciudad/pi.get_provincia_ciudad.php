@@ -16,7 +16,7 @@ $plugin_info = array(
     'pi_author'       => 'Fred',
     'pi_author_url'   => 'http://www.ayuinc.com/',
     'pi_description'  => 'Allows states qualify Friends',
-    'pi_usage'        => Filtros::usage()
+    'pi_usage'        => Get_provincia_ciudad::usage()
 );
             
 class Get_provincia_ciudad 
