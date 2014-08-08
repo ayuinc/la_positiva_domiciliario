@@ -371,7 +371,7 @@ $( "#provincia" )
   $( "#provincia option:selected" ).each(function() {
     str = $( this ).val();
     console.log(str);
-    if(str=='PROVINCIA'){
+    if(str== 1){
       $('#ciudad option:eq(0)').prop('selected', true);
       $('#ciudad').prop('disabled', true);
       // $("#cotizar").attr("action","/#");
@@ -383,7 +383,7 @@ $( "#provincia" )
     evt.preventDefault();
     $.ajax({
            type: "POST",
-           url: "/?/content/ciudades/",
+           url: "/?/index.php/content/ciudades/",
            data: str, // serializes the form's elements.
            // beforeSend : function (){
            //     $('#loading').css('visibility', 'visible');
