@@ -19,7 +19,7 @@ $plugin_info = array(
     'pi_usage'        => Filtros::usage()
 );
             
-class Filtros 
+class Get_provincia_ciudad 
 {
 
     var $return_data = "";
