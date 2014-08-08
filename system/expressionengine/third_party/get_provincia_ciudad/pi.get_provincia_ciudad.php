@@ -72,8 +72,8 @@ class Get_provincia_ciudad
         foreach($query->result() as $row){
             // $aux=$row->marca;
             // $aux= str_replace(" ", "-",$aux);
-            $provincia_id=$row->marca;
-            $provincia_name= str_replace(" ", "-",$aux);
+            $provincia_id=$row->id;
+            $provincia_name= $row->name;
             $form .= '<option value='.$provincia_id.'>'.$provincia_name.'</option>';
         }
         $form = $form.'</select>';
