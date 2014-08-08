@@ -12,7 +12,7 @@ $( "#provincia" )
       $('#ciudad').prop('disabled', true);
     }
     else{
-    console.log('en else... '+str)
+    // console.log('en else... '+str)
     $("#form_provincia").val(str);
     str = "provincia="+str;
     evt.preventDefault();
