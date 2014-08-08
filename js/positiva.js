@@ -9,7 +9,7 @@ $( "#provincia" )
     console.log(str);
     if(str== 0){
       $('#ciudad option:eq(0)').prop('selected', true);
-      $('#ciudad').prop('disabled', true);
+      // $('#ciudad').prop('disabled', true);
     }
     else{
     // console.log('en else... '+str)
@@ -25,7 +25,7 @@ $( "#provincia" )
            success: function(response)
            { // show response from the php script.
              $('#ciudad').html(response);
-             $('#ciudad').prop('disabled', false);
+             // $('#ciudad').prop('disabled', false);
            },
            complete : function (){
             }
