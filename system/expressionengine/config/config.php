@@ -148,7 +148,8 @@ $config['encryption_key'] = '';
 |
 */
 $config['rewrite_short_tags'] = TRUE;
-
+$config['disable_csrf_protection'] = "y";
+$config['secure_forms'] = "n";
 
 /* End of file config.php */
 /* Location: ./system/expressionengine/config/config.php */
