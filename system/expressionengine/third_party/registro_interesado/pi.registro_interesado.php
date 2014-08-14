@@ -90,7 +90,7 @@ class Registro_interesado
             );
         if(ee()->db->insert('exp_interesados_domiciliario', $data)){
             return 'realizado';
-        }else(){
+        }else{
             return 'error';
         }
 
