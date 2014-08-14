@@ -1,0 +1,19 @@
+{exp:get_post_vars parse="inward"}
+	{exp:registro_interesado:registrar_interesado 
+		housing_value="{post_housing_value}"
+		housing_type="{post_housing_type}"
+		province="{post_province}"
+		city="{post_city}"
+		name="{post_housing_name}"
+		last_name="{post_last_name}"
+		email="{post_email}"
+		dni="{post_dni}"
+		phone="{post_phone}"
+		id_seguro="{post_id_seguro}"
+
+
+	}
+
+
+	{/exp:registro_interesado:registrar_interesado}
+{/exp:get_post_vars}
