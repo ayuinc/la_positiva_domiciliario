@@ -82,7 +82,7 @@ class Registro_interesado
             'province'=>$province,
             'city'=>$city,
             'name'=>$name,
-            'last_name'=>$last_name,
+            'surname'=>$last_name,
             'email'=>$email,
             'dni'=>$dni,
             'phone'=>$phone,
