@@ -3,13 +3,17 @@
 <form action="#">
   <input type="hidden" name="XID" value="{XID_HASH}" /> 
   <div class="large-6 columns">
-   	{exp:filtros:region}
+   	{exp:get_puntos_de_venta:region}
   </div>
   <div class="large-6 columns">
     <select name="distrito" id="distrito">
-     {exp:filtros:district region="@@@"}
+     {exp:get_puntos_de_venta:district region="@@@"}
     </select>
   </div>
 </form>
 
+<div class="row">
+    <div id="result" class="large-12 columns">
+    </div>
+</div>
 {embed="includes/footer"}   
