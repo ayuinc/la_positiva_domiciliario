@@ -11,7 +11,7 @@
  */
 
 $plugin_info = array(
-    'pi_name'         => 'Get Puntos de Venta',
+    'pi_name'         => 'Get puntos de venta',
     'pi_version'      => '1.0',
     'pi_author'       => 'Gianfranco Montoya',
     'pi_author_url'   => 'http://www.ayuinc.com/',
@@ -78,8 +78,36 @@ class Get_puntos_de_venta
             $div .= '</div>';
         }
         return $div;
+    }
 
+    public function region(){
+        $form = '<select name="region" id="region"> <option value="REGION" selected>DEPARTAMENTO</option>';
+        ee()->db->distinct('departamento');
+        ee()->db->select('departamento');
+        $query = ee()->db->get('exp_agencias');
+        foreach($query->result() as $row){
+            $aux=$row->departamento;
+            $aux= str_replace(" ", "-",$aux);
+            $form .= '<option value='.$aux.'>'.$row->departamento.'</option>';
+        }
+        $form = $form.'</select>';
+        return $form;
 
+    }
+
+    public function district(){
+        $form = '<option value="DISTRITO" selected>CIUDAD/DISTRITO</option>';
+        $region = ee()->TMPL->fetch_param('region');
+        ee()->db->distinct('distrito');
+        ee()->db->select('distrito');
+        ee()->db->where('departamento',$region);
+        $query = ee()->db->get('exp_agencias');
+        foreach($query->result() as $row){
+            $aux=$row->distrito;
+            $aux= str_replace(" ", "-",$aux);
+            $form .= '<option value='.$aux.'>'.$row->distrito.'</option>';
+        }
+        return $form;
     }
 } 
 /* End of file pi.rating.php */
