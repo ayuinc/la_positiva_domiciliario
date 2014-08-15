@@ -45,21 +45,10 @@ class Mandrillapp {
 	$subject= "Cotización Seguro Domiciliario.";
 	$from= "lapositiva.domiciliario@gmail.com";
 	//$text = $TMPL->tagdata;
-	$text = 'Estimado(a) Administrador Viva,<p>
-	La siguiente solicitud de documento ha sido procesada a través del portal de posventa<p>.
+	$text = 'Estimado(a) '.$name.',<p>
+	Cotización Seguro Domiciliario - La Positiva.<p>.
 	<br>
-	Documento solicitado:<p>
-	'.$documento.'<p>
-	Datos del propietario<p>
-	Nombre: '.$nombre_propietario.'<p>
-	Apellido: '.$apellido_propietario.'<p>
-	e-mail: '.$email_propietario.'<p>
-	Teléfono: '.$telefono_propietario.'<p>
-	Complejo: '.$complejo_propietario.'<p>
-	Torre: '.$torre_propietario.'<p>
-	Departamento: '.$departamento_propietario.'<p>
-	<br>
-	**No responder. Correo automático enviado desde el Portal de posventa Viva GyM**<br>';
+	**No responder. Correo automático enviado desde el Portal La Positiva*<br>';
 	
 	/*'html' => '<p>FELICIDADES!!!</p><p>Ganaste el tema'.$topic.' ve a nuestro menú de temas y sigue participando</p>',*/
 	$message = array(
