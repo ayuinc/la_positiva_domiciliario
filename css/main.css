@@ -5761,14 +5761,14 @@ body {
   min-height: 100%; }
 
 body.landing {
-  background: url(../assets/images/background-index.png) no-repeat;
+  background: url(../../images/img/background-index.png) no-repeat;
   background-size: 100% 100%;
   color: #fff; }
 
 @font-face {
   font-family: 'icomoon';
-  src: url("fonts/icomoon.eot?-ks64xf");
-  src: url("fonts/icomoon.eot?#iefix-ks64xf") format("embedded-opentype"), url("fonts/icomoon.woff?-ks64xf") format("woff"), url("fonts/icomoon.ttf?-ks64xf") format("truetype"), url("fonts/icomoon.svg?-ks64xf#icomoon") format("svg");
+  src: url("../fonts/icomoon.eot?-ks64xf");
+  src: url("../fonts/icomoon.eot?#iefix-ks64xf") format("embedded-opentype"), url("../fonts/icomoon.woff?-ks64xf") format("woff"), url("../fonts/icomoon.ttf?-ks64xf") format("truetype"), url("../fonts/icomoon.svg?-ks64xf#icomoon") format("svg");
   font-weight: normal;
   font-style: normal; }
 [class^="icon-"], [class*=" icon-"] {
