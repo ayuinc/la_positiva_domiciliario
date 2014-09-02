@@ -1,4 +1,70 @@
-    <span class="selector-big">
+  <body class="landing">
+    <div class="container">
+      <div class="col-md-8 center-block form-landing">
+        <div class="row"><h1 class="text-center main-title">asegurar tu casa nunca fue tan fácil</h1></div>
+        <div class="row">
+          <form role="form">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label" for="vivienda">Valor de tu vivienda</label>
+                <select id="vivienda" name="vivienda" class="form-control">
+                  <option value="1">Option one</option>
+                  <option value="2">Option two</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label" for="vivienda">Tipo de vivienda</label>
+                <select id="vivienda" name="vivienda" class="form-control">
+                  <option value="1">Option one</option>
+                  <option value="2">Option two</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label" for="vivienda">Provincia</label>
+                {exp:get_provincia_ciudad:provincia}
+                <!-- <select id="vivienda" name="vivienda" class="form-control">
+                  <option value="1">Option one</option>
+                  <option value="2">Option two</option>
+                </select> -->
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label" for="vivienda">Ciudad</label>
+                <select id="ciudad" name="ciudad" class="form-control">
+                  <option value="CIUDAD" selected>CIUDAD</option>
+                  <!-- <option value="1">Option one</option>
+                  <option value="2">Option two</option> -->
+                </select>
+              </div>
+            </div>  
+          </form>
+        </div>
+      </div>  
+    </div>
+
+    <div class="container-fluid">
+      <div class="row social-networks">
+        <div class="col-md-12">
+          <ul class="nav nav-pills">
+            <li><a href="#" class="icon-facebook"></a></li>
+            <li><a href="#" class="icon-twitter"></a></li>
+            <li><a href="#">Términos y condiciones</a></li>
+            <li><a href="#">Contáctanos</a></li>
+            <li class="pull-right"><a href="#"><img class="right" src="assets/images/logo_blanco.png"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>  
+
+
+
+<!--     <span class="selector-big">
         {exp:get_provincia_ciudad:provincia}
     </span>
     <br>
@@ -6,6 +72,6 @@
       <select name="ciudad" id="ciudad">
         <option value="CIUDAD" selected>CIUDAD</option>
       </select>
-	  </span>
+	  </span> -->
 
 	  {embed="includes/footer"}   
