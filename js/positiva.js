@@ -29,6 +29,7 @@ $( "#provincia" ).change(function (evt) {
              complete : function (){
               }
       });
+      $('#ciudad').prop('disabled', false);
     }
   });
 });
