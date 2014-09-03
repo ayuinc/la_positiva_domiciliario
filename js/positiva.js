@@ -50,7 +50,7 @@ $( "#ciudad" ).change(function (evt) {
       url = "/?/content/taza";
     }else if ( (option >= 55000) || (option <= 600000) ) {
       url = "/?/content/hogar_positivo";
-      };
+      }
     else{
       url = "/?/content/taza";
     }
