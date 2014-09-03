@@ -34,6 +34,30 @@ $( "#provincia" ).change(function (evt) {
   });
 });
 
+$( "#ciudad" ).change(function (evt) {
+  var str = "";
+  var url = "";
+  // $('#ciudad option:eq(0)').prop('selected', true);
+  // $('#ciudad').prop('disabled', true);
+  $( "#ciudad option:selected" ).each(function() {
+    // str = $( this ).text();
+    // $("#form_ano").val(str);
+    // option = $( this ).val();
+    // option = option.replace(/,/gi,"");
+    option = $('#valor_vivienda').val();
+    console.log(option);
+    if(option < 55000){
+      url = "/?/content/taza";
+    }else if ( (option >= 55000) || (option <= 600000) ) {
+      url = "/?/content/hogar_positivo";
+      };
+    else{
+      url = "/?/content/taza";
+    }
+    $('#cotizar').attr('action', url); //this fails silently
+  });
+});
+
 
 $( "#distrito" ).change(function (evt) {
 var str = "";
