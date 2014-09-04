@@ -63,171 +63,176 @@
 </form> -->
 
 {embed="includes/header"}   
-
-  <body>
-    <header class="pb-7-100 pt-7-100">
-      <div class="container text-center">
-        <div class="row">
-          <div class="col-md-8 center-block">
-            <div class="header-text">
-              <p class="text-medium">Tu inmueble esta avaluado</p>
-              <p class="text-xlarge">s/. 120,000</p>
-              <p class="text-small">Aplicas para</p>
-              <p class="text-xlarge uppercase">hogar positivo</p>
-            </div>
-          </div>
-        </div>  
-      </div>
-    </header>
-    <section class='content pb-7-100 pt-7-100'>
-      <div class='container text-center'>
-        <div class="row">
-          <div class="col-md-8 center-block">
-            <h2 class="text-large uppercase">que te cubre</h2>
-            <p class='text-small gray-color'>Todo riesgo de incendio y explosión, terremoto y riesgos de la naturaleza, terrorismo y riesgos políticos.</p>
-            <p class='text-medium uppercase'>Es opcional para robo o intento de robo</p>
-            <p class='text-small gray-color'>Hasta S/. 15,000</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 center-block">
+  {exp:get_post_vars parse="inward"}
+      <body>
+        <header class="pb-7-100 pt-7-100">
+          <div class="container text-center">
             <div class="row">
-              <div class="col-md-5">
-                <div class="price-block">
-                  <div class="row">
-                    <div class="col-md-10">
-                      <p class='text-small uppercase'>sin robo</p>
-                    </div>
-                    <div class="col-md-2">
-                      <img src="" alt="">
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-12">
-                      <p class='text-large uppercase'>s/. 35</p>
-                      <p class='text-small uppercase'>prima mensual</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-5 col-md-offset-2">
-                <div class="price-block">
-                  <div class="row">
-                    <div class="col-md-10">
-                      <p class='text-small uppercase'>sin robo</p>
-                    </div>
-                    <div class="col-md-2">
-                      <img src="" alt="">
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-12">
-                      <p class='text-large uppercase'>s/. 35</p>
-                      <p class='text-small uppercase'>prima mensual</p>
-                    </div>
-                  </div>
-                </div>
-              </div>  
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-8 center-block">
-            <div class="row">
-              <div class="form-group">
-                <div class="col-md-6"> 
-                  <label class="radio-inline" for="radios-0">
-                    <input type="radio" name="radios" id="radios-0" value="1" checked="checked">
-                    descarga tu cotizacion
-                  </label> 
-                </div>
-                <div class="col-md-6"> 
-                  <label class="radio-inline" for="radios-1">
-                    <input type="radio" name="radios" id="radios-1" value="2">
-                    contactanos por telefono
-                  </label>
+              <div class="col-md-8 center-block">
+                <div class="header-text">
+                  <p class="text-medium">Tu inmueble esta avaluado</p>
+                  <p class="text-xlarge">{post_valor_vivienda}</p>
+                  <p class="text-small">Aplicas para</p>
+                  <p class="text-xlarge uppercase">hogar positivo</p>
                 </div>
               </div>
             </div>  
           </div>
-        </div>
-      </div>
-    </section>
-    <footer class="pb-7-100 pt-7-100">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-10 center-block">
+        </header>
+        <section class='content pb-7-100 pt-7-100'>
+          <div class='container text-center'>
             <div class="row">
-              <div class="col-md-5">
-                <form class="form-horizontal">
-                  <legend>completa tus datos</legend>
-                  <div class="row">
-                    <!-- Text input-->
-                    <div class="form-group">
-                      <div class="col-md-6">
-                        <input id="textinput" name="textinput" type="text" placeholder="Nombre" class="form-control input-md"> 
+              <div class="col-md-8 center-block">
+                <h2 class="text-large uppercase">que te cubre</h2>
+                <p class='text-small gray-color'>Todo riesgo de incendio y explosión, terremoto y riesgos de la naturaleza, terrorismo y riesgos políticos.</p>
+                <p class='text-medium uppercase'>Es opcional para robo o intento de robo</p>
+                <p class='text-small gray-color'>Hasta S/. 15,000</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 center-block">
+                <div class="row">
+                  <div class="col-md-5">
+                    <div class="price-block">
+                      <div class="row">
+                        <div class="col-md-10">
+                          <p class='text-small uppercase'>sin robo</p>
+                        </div>
+                        <div class="col-md-2">
+                          <img src="" alt="">
+                        </div>
                       </div>
-                      <div class="col-md-6">
-                        <input id="textinput" name="textinput" type="text" placeholder="Apellido" class="form-control input-md">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <p class='text-large uppercase'>s/. 35</p>
+                          <p class='text-small uppercase'>prima mensual</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-5 col-md-offset-2">
+                    <div class="price-block">
+                      <div class="row">
+                        <div class="col-md-10">
+                          <p class='text-small uppercase'>sin robo</p>
+                        </div>
+                        <div class="col-md-2">
+                          <img src="" alt="">
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <p class='text-large uppercase'>s/. 35</p>
+                          <p class='text-small uppercase'>prima mensual</p>
+                        </div>
                       </div>
                     </div>
                   </div>  
-
-                  <!-- Text input-->
-                  <div class="form-group">
-                    <input id="textinput" name="textinput" type="text" placeholder="Correo electrínico" class="form-control input-md">
-                  </div>
-
-                  <!-- Text input-->
-                  <div class="form-group">
-                    <input id="textinput" name="textinput" type="text" placeholder="DNI" class="form-control input-md">
-                  </div>
-
-                  <!-- Text input-->
-                  <div class="form-group">
-                    <input id="textinput" name="textinput" type="text" placeholder="Telefono" class="form-control input-md">
-                  </div>
-
-                  <!-- Button -->
-                  <div class="row">
-                    <div class="form-group">
-                      <div class="col-md-6 col-md-offset-6">
-                        <input type="submit" value="ENVIAR  " id="singlebutton" name="singlebutton" class="btn btn-primary col-md-12">
-                      </div>
-                    </div>  
-                  </div>
-                </form>
+                </div>
               </div>
-              <div class="col-md-5 col-md-offset-1">
-                <form class="form-horizontal">
-                  <legend>completa tus datos</legend>
-                  <div class="row">
-                    <!-- Text input-->
-                    <div class="form-group">
-                      <div class="col-md-6">
-                        <input id="textinput" name="textinput" type="text" placeholder="Departamento" class="form-control input-md"> 
-                      </div>
-                      <div class="col-md-6">
-                        <input id="textinput" name="textinput" type="text" placeholder="Ciudad/Distrito" class="form-control input-md">
-                      </div>
+            </div>
+            <div class="row">
+              {exp:get_planes:get_planes_por_monto monto="{post_valor_vivienda}"}
+                
+              {/exp:get_planes:get_planes_por_monto}
+            </div>
+            <div class="row">
+              <div class="col-md-8 center-block">
+                <div class="row">
+                  <div class="form-group">
+                    <div class="col-md-6"> 
+                      <label class="radio-inline" for="radios-0">
+                        <input type="radio" name="radios" id="radios-0" value="1" checked="checked">
+                        descarga tu cotizacion
+                      </label> 
+                    </div>
+                    <div class="col-md-6"> 
+                      <label class="radio-inline" for="radios-1">
+                        <input type="radio" name="radios" id="radios-1" value="2">
+                        contactanos por telefono
+                      </label>
                     </div>
                   </div>
-
-                  <!-- Button -->
-                  <div class="row">
-                    <div class="form-group">
-                      <div class="col-md-6 col-md-offset-6">
-                        <input type="submit" value="BUSCAR  " id="singlebutton" name="singlebutton" class="btn btn-primary col-md-12">
-                      </div>
-                    </div>  
-                  </div>
-                </form>
-              </div>   
+                </div>  
+              </div>
             </div>
           </div>
-        </div>      
-      </div>
-    </footer>
-  </body>
+        </section>
+        <footer class="pb-7-100 pt-7-100">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-10 center-block">
+                <div class="row">
+                  <div class="col-md-5">
+                    <form class="form-horizontal">
+                      <legend>completa tus datos</legend>
+                      <div class="row">
+                        <!-- Text input-->
+                        <div class="form-group">
+                          <div class="col-md-6">
+                            <input id="textinput" name="textinput" type="text" placeholder="Nombre" class="form-control input-md"> 
+                          </div>
+                          <div class="col-md-6">
+                            <input id="textinput" name="textinput" type="text" placeholder="Apellido" class="form-control input-md">
+                          </div>
+                        </div>
+                      </div>  
 
+                      <!-- Text input-->
+                      <div class="form-group">
+                        <input id="textinput" name="textinput" type="text" placeholder="Correo electrínico" class="form-control input-md">
+                      </div>
+
+                      <!-- Text input-->
+                      <div class="form-group">
+                        <input id="textinput" name="textinput" type="text" placeholder="DNI" class="form-control input-md">
+                      </div>
+
+                      <!-- Text input-->
+                      <div class="form-group">
+                        <input id="textinput" name="textinput" type="text" placeholder="Telefono" class="form-control input-md">
+                      </div>
+
+                      <!-- Button -->
+                      <div class="row">
+                        <div class="form-group">
+                          <div class="col-md-6 col-md-offset-6">
+                            <input type="submit" value="ENVIAR  " id="singlebutton" name="singlebutton" class="btn btn-primary col-md-12">
+                          </div>
+                        </div>  
+                      </div>
+                    </form>
+                  </div>
+                  <div class="col-md-5 col-md-offset-1">
+                    <form class="form-horizontal">
+                      <legend>completa tus datos</legend>
+                      <div class="row">
+                        <!-- Text input-->
+                        <div class="form-group">
+                          <div class="col-md-6">
+                            <input id="textinput" name="textinput" type="text" placeholder="Departamento" class="form-control input-md"> 
+                          </div>
+                          <div class="col-md-6">
+                            <input id="textinput" name="textinput" type="text" placeholder="Ciudad/Distrito" class="form-control input-md">
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Button -->
+                      <div class="row">
+                        <div class="form-group">
+                          <div class="col-md-6 col-md-offset-6">
+                            <input type="submit" value="BUSCAR  " id="singlebutton" name="singlebutton" class="btn btn-primary col-md-12">
+                          </div>
+                        </div>  
+                      </div>
+                    </form>
+                  </div>   
+                </div>
+              </div>
+            </div>      
+          </div>
+        </footer>
+      </body>
+  {/exp:get_post_vars}
 {embed="includes/footer"}   
