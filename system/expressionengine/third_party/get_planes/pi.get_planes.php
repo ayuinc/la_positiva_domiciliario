@@ -99,19 +99,15 @@ class Get_planes
         }elseif (($monto > 55000) && ($monto <= 115000)) {
             $id_1 = 3;
             $id_2 = 4;            
-        }
         }elseif (($monto > 115000) && ($monto <= 150000)) {
             $id_1 = 5;
             $id_2 = 6;
-        }
         }elseif (($monto > 150000) && ($monto <= 300000)) {
             $id_1 = 7;
             $id_2 = 8;
-        }
         }elseif (($monto > 300000) && ($monto <= 450000)) {
             $id_1 = 9;
             $id_2 = 10;
-        }
         }elseif (($monto > 450000) && ($monto <= 600000)) {
             $id_1 = 11;
             $id_2 = 12;
