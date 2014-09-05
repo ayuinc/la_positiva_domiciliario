@@ -123,6 +123,12 @@ class Get_planes
         $hasta = $resultado[0]->coverage_5;
         $sin_robo = $resultado[0]->price;
         $con_robo = $resultado[1]->price;
+
+        $variables[] = array(
+          'hasta' => $hasta,
+          'sin_robo' => $sin_robo,
+          'con_robo' => $con_robo
+        );
         // foreach($query->result() as $row){
         //     $robo = '';
         //     if ($row->theft == 1) {
@@ -137,7 +143,8 @@ class Get_planes
         //     $form .= '<li>Precio : '.$row->price.'</li>';
         //     $form .= '</ul>';
         // }
-        return array($hasta,$sin_robo,$con_robo);
+        // return array($hasta,$sin_robo,$con_robo);
+        return ee()->TMPL->parse_variables(ee()->TMPL->tagdata, $variables);
     }    
   
 } 
