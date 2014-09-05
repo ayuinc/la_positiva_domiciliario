@@ -145,7 +145,6 @@ class Get_planes
 
     public function get_rango_planes(){
         $rango_id = ee()->TMPL->fetch_param('rango_id');
-        $rango = '';
         switch ($rango_id) {
             case 1:
                 $rango = 'S/.10,000 - S/.55,000';
