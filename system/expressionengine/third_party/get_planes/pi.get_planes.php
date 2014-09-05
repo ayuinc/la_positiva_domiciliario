@@ -93,25 +93,33 @@ class Get_planes
     public function get_planes_por_monto(){
         $monto = ee()->TMPL->fetch_param('monto');
 
-        if (($monto > 0) && ($monto <= 55000)) {
-            $id_1 = 1;
-            $id_2 = 2;
-        }elseif (($monto > 55000) && ($monto <= 115000)) {
-            $id_1 = 3;
-            $id_2 = 4;            
-        }elseif (($monto > 115000) && ($monto <= 150000)) {
-            $id_1 = 5;
-            $id_2 = 6;
-        }elseif (($monto > 150000) && ($monto <= 300000)) {
-            $id_1 = 7;
-            $id_2 = 8;
-        }elseif (($monto > 300000) && ($monto <= 450000)) {
-            $id_1 = 9;
-            $id_2 = 10;
-        }elseif (($monto > 450000) && ($monto <= 600000)) {
-            $id_1 = 11;
-            $id_2 = 12;
+        switch ($monto) {
+            case 1:
+                $id_1 = 1;
+                $id_2 = 2;
+                break;            
+            case 2:
+                $id_1 = 3;
+                $id_2 = 4;    
+                break;
+            case 3:
+                $id_1 = 5;
+                $id_2 = 6;
+                break;
+            case 4:
+                $id_1 = 7;
+                $id_2 = 8;
+                break;
+            case 5:
+                $id_1 = 9;
+                $id_2 = 10;
+                break;
+            case 6:
+                $id_1 = 11;
+                $id_2 = 12;
+                break;
         }
+
 
         $hasta = '';
         $sin_robo = '';
@@ -129,21 +137,39 @@ class Get_planes
           'sin_robo' => $sin_robo,
           'con_robo' => $con_robo
         );
-        // foreach($query->result() as $row){
-        //     $robo = '';
-        //     if ($row->theft == 1) {
-        //         $robo = 'Sí';
-        //     }else{
-        //         $robo = 'No';
-        //     };
 
-        //     $form .= '<ul>';
-        //     $form .= '<li>Plan : '.$row->name.'</li>';
-        //     $form .= '<li>Con robo : '.$robo.'</li>';
-        //     $form .= '<li>Precio : '.$row->price.'</li>';
-        //     $form .= '</ul>';
-        // }
-        // return array($hasta,$sin_robo,$con_robo);
+        return ee()->TMPL->parse_variables(ee()->TMPL->tagdata, $variables);
+    }    
+  
+
+    public function get_rango_planes(){
+        $rango_id = ee()->TMPL->fetch_param('rango_id');
+        switch ($rango_id) {
+            case 1:
+                $rango = 'S/.10,000 - S/.55,000';
+                break;            
+            case 2:
+                $rango = 'S/.55,000 - S/.115.000';
+                break;
+            case 3:
+                $rango = 'S/.115.000 - S/.150.000';
+                break;
+            case 4:
+                $rango = 'S/.150.000 - S/.300.000';
+                break;
+            case 5:
+                $rango = 'S/.300.000 - S/.450.000';
+                break;
+            case 6:
+                $rango = 'S/.450.000 - S/.600.000';
+                break;
+        }
+
+
+        $variables[] = array(
+          'rango' => $rango,
+        );
+
         return ee()->TMPL->parse_variables(ee()->TMPL->tagdata, $variables);
     }    
   

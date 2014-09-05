@@ -71,7 +71,9 @@
               <div class="col-md-8 center-block">
                 <div class="header-text">
                   <p class="text-medium">Tu inmueble esta avaluado</p>
-                  <p class="text-xlarge">{post_valor_vivienda}</p>
+                {exp:get_planes:get_rango_planes rango_id="{post_valor_vivienda}"}
+                  <p class="text-xlarge">{rango}</p>
+                {/exp:get_planes:get_rango_planes}
                   <p class="text-small">Aplicas para</p>
                   <p class="text-xlarge uppercase">hogar positivo</p>
                 </div>
@@ -79,6 +81,7 @@
             </div>  
           </div>
         </header>
+    {exp:get_planes:get_planes_por_monto monto="{post_valor_vivienda}"}
         <section class='content pb-7-100 pt-7-100'>
           <div class='container text-center'>
             <div class="row">
@@ -86,7 +89,7 @@
                 <h2 class="text-large uppercase">que te cubre</h2>
                 <p class='text-small gray-color'>Todo riesgo de incendio y explosión, terremoto y riesgos de la naturaleza, terrorismo y riesgos políticos.</p>
                 <p class='text-medium uppercase'>Es opcional para robo o intento de robo</p>
-                <p class='text-small gray-color'>Hasta S/. 15,000</p>
+                <p class='text-small gray-color'>Hasta S/. {hasta}</p>
               </div>
             </div>
             <div class="row">
@@ -104,7 +107,7 @@
                       </div>
                       <div class="row">
                         <div class="col-md-12">
-                          <p class='text-large uppercase'>s/. 35</p>
+                          <p class='text-large uppercase'>s/. {sin_robo}</p>
                           <p class='text-small uppercase'>prima mensual</p>
                         </div>
                       </div>
@@ -114,7 +117,7 @@
                     <div class="price-block">
                       <div class="row">
                         <div class="col-md-10">
-                          <p class='text-small uppercase'>sin robo</p>
+                          <p class='text-small uppercase'>con robo</p>
                         </div>
                         <div class="col-md-2">
                           <img src="" alt="">
@@ -122,7 +125,7 @@
                       </div>
                       <div class="row">
                         <div class="col-md-12">
-                          <p class='text-large uppercase'>s/. 35</p>
+                          <p class='text-large uppercase'>s/. {con_robo}</p>
                           <p class='text-small uppercase'>prima mensual</p>
                         </div>
                       </div>
@@ -130,15 +133,8 @@
                   </div>  
                 </div>
               </div>
-            </div>
-            <div class="row">
-              {exp:get_planes:get_planes_por_monto monto="{post_valor_vivienda}"}
-              {hasta} <br>
-              {sin_robo} <br>
-              {con_robo} <br>
-                
-              {/exp:get_planes:get_planes_por_monto}
-            </div>
+      {/exp:get_planes:get_planes_por_monto}
+            </div>              
             <div class="row">
               <div class="col-md-8 center-block">
                 <div class="row">
