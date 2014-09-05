@@ -141,7 +141,6 @@ class Get_planes
         return ee()->TMPL->parse_variables(ee()->TMPL->tagdata, $variables);
     }    
   
-} 
 
     public function get_rango_planes(){
         $rango_id = ee()->TMPL->fetch_param('rango_id');
