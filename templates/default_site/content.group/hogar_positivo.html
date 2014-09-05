@@ -204,15 +204,27 @@
                   </div>
                   <div class="col-md-5 col-md-offset-1">
                     <form class="form-horizontal">
-                      <legend>completa tus datos</legend>
+                      <legend>UBICA EL PUNTO MÁS CERCANO</legend>
                       <div class="row">
                         <!-- Text input-->
                         <div class="form-group">
                           <div class="col-md-6">
-                            <input id="textinput" name="textinput" type="text" placeholder="Departamento" class="form-control input-md"> 
+
+                            <!-- <input id="textinput" name="textinput" type="text" placeholder="Departamento" class="form-control input-md">  -->
+                            <span class="selector">
+                                   {exp:filtros:region}
+                            </span>                            
+
                           </div>
                           <div class="col-md-6">
-                            <input id="textinput" name="textinput" type="text" placeholder="Ciudad/Distrito" class="form-control input-md">
+
+                            <!-- <input id="textinput" name="textinput" type="text" placeholder="Ciudad/Distrito" class="form-control input-md"> -->
+                            <span class="selector">
+                                <select name="distrito" id="distrito">
+                                   {exp:filtros:district region="@@@"}
+                                </select>
+                            </span>
+                                                        
                           </div>
                         </div>
                       </div>

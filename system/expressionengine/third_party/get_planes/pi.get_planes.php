@@ -172,6 +172,7 @@ class Get_planes
 
         return ee()->TMPL->parse_variables(ee()->TMPL->tagdata, $variables);
     }    
+
   
 } 
 /* End of file pi.rating.php */
