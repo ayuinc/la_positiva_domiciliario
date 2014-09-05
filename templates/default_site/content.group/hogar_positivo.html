@@ -64,7 +64,6 @@
 
 {embed="includes/header"}   
   {exp:get_post_vars parse="inward"}
-    {exp:get_planes:get_planes_por_monto monto="{post_valor_vivienda}"}
       <body>
         <header class="pb-7-100 pt-7-100">
           <div class="container text-center">
@@ -72,7 +71,9 @@
               <div class="col-md-8 center-block">
                 <div class="header-text">
                   <p class="text-medium">Tu inmueble esta avaluado</p>
-                  <p class="text-xlarge">{post_valor_vivienda}</p>
+                {exp:get_planes:get_rango_planes rango_id="{post_valor_vivienda}"}
+                  <p class="text-xlarge">{rango}</p>
+                {/exp:get_planes:get_rango_planes"}
                   <p class="text-small">Aplicas para</p>
                   <p class="text-xlarge uppercase">hogar positivo</p>
                 </div>
@@ -80,6 +81,7 @@
             </div>  
           </div>
         </header>
+    {exp:get_planes:get_planes_por_monto monto="{post_valor_vivienda}"}
         <section class='content pb-7-100 pt-7-100'>
           <div class='container text-center'>
             <div class="row">

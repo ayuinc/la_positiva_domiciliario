@@ -142,5 +142,39 @@ class Get_planes
     }    
   
 } 
+
+    public function get_rango_planes(){
+        $rango_id = ee()->TMPL->fetch_param('rango_id');
+        $rango = '';
+        switch ($rango_id) {
+            case 1:
+                $rango = 'S/.10,000 - S/.55,000';
+                break;            
+            case 2:
+                $rango = 'S/.55,000 - S/.115.000';
+                break;
+            case 3:
+                $rango = 'S/.115.000 - S/.150.000';
+                break;
+            case 4:
+                $rango = 'S/.150.000 - S/.300.000';
+                break;
+            case 5:
+                $rango = 'S/.300.000 - S/.450.000';
+                break;
+            case 6:
+                $rango = 'S/.450.000 - S/.600.000';
+                break;
+        }
+
+
+        $variables[] = array(
+          'rango' => $rango,
+        );
+
+        return ee()->TMPL->parse_variables(ee()->TMPL->tagdata, $variables);
+    }    
+  
+} 
 /* End of file pi.rating.php */
 /* Location: ./system/expressionengine/third_party/rating/pi.rating.php */
