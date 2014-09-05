@@ -53,13 +53,13 @@ $( "#ciudad" ).change(function (evt) {
     // option = option.replace(/,/gi,"");
     option = $('#valor_vivienda').val();
     console.log(option);
-    if(option < 55000){
+    if(option == 1){
       url = "/?/content/taza";
-    }else if ( (option >= 55000) || (option <= 600000) ) {
-      url = "/?/content/hogar_positivo";
+    }else if ( option == 7 ) {
+      url = "/?/content/taza";
       }
     else{
-      url = "/?/content/taza";
+      url = "/?/content/hogar_positivo";
     }
     $('#cotizar').attr('action', url); //this fails silently
   });
