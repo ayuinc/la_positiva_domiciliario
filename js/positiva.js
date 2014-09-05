@@ -53,12 +53,9 @@ $( "#ciudad" ).change(function (evt) {
     // option = option.replace(/,/gi,"");
     option = $('#valor_vivienda').val();
     console.log(option);
-    if(option == 1){
+    if(option == 7){
       url = "/?/content/taza";
-    }else if ( option == 7 ) {
-      url = "/?/content/taza";
-      }
-    else{
+    }else{
       url = "/?/content/hogar_positivo";
     }
     $('#cotizar').attr('action', url); //this fails silently
