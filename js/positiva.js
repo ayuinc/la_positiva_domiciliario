@@ -1,4 +1,11 @@
 
+$(function(){
+  $('#ciudad').prop('disabled', true);
+  // $('#version').prop('disabled', true);
+  // $('#ano').prop('disabled', true);
+  // $( "#distrito" ).prop('disabled', true);
+});
+
 $( "#provincia" ).change(function (evt) {
   var str = "";
   $('#ciudad option:eq(0)').prop('selected', true);

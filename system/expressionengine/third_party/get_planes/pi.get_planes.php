@@ -113,24 +113,27 @@ class Get_planes
             $id_2 = 12;
         }
 
-
+        $hasta = '';
         $form = '';
         ee()->db->where('id',$id_1);
         ee()->db->or_where('id',$id_2);
         $query = ee()->db->get('exp_planes_domiciliario');
-        foreach($query->result() as $row){
-            $robo = '';
-            if ($row->theft == 1) {
-                $robo = 'Sí';
-            }else{
-                $robo = 'No';
-            };
-            $form .= '<ul>';
-            $form .= '<li>Plan : '.$row->name.'</li>';
-            $form .= '<li>Con robo : '.$robo.'</li>';
-            $form .= '<li>Precio : '.$row->price.'</li>';
-            $form .= '</ul>';
-        }
+        $resultado = $query->result();
+        $form = $resultado[1];
+        // foreach($query->result() as $row){
+        //     $robo = '';
+        //     if ($row->theft == 1) {
+        //         $robo = 'Sí';
+        //     }else{
+        //         $robo = 'No';
+        //     };
+
+        //     $form .= '<ul>';
+        //     $form .= '<li>Plan : '.$row->name.'</li>';
+        //     $form .= '<li>Con robo : '.$robo.'</li>';
+        //     $form .= '<li>Precio : '.$row->price.'</li>';
+        //     $form .= '</ul>';
+        // }
         return $form;
     }    
   
