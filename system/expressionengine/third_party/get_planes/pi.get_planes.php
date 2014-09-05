@@ -119,7 +119,7 @@ class Get_planes
         ee()->db->or_where('id',$id_2);
         $query = ee()->db->get('exp_planes_domiciliario');
         $resultado = $query->result();
-        $form = $resultado(1);
+        $form = $resultado[1];
         // foreach($query->result() as $row){
         //     $robo = '';
         //     if ($row->theft == 1) {
