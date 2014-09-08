@@ -2,7 +2,7 @@
 $(function(){
   $('#ciudad').prop('disabled', true);
   $( "#distrito" ).prop('disabled', true);
-  $( "#result" ).hide();
+  $( ".result" ).hide();
   // $('#version').prop('disabled', true);
   // $('#ano').prop('disabled', true);
 });
@@ -81,8 +81,8 @@ $.ajax({
        data: str, // serializes the form's elements.
        success: function(response)
        { // show response from the php script.
-        $('#result').show();
-        $('#result').html(response);
+        $('.result').show();
+        $('.result').html(response);
        }
      });
 }
