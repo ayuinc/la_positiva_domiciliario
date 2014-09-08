@@ -5862,7 +5862,7 @@ footer {
   .price-block .row .col-md-12 {
     background: #ffe1cc; }
 
-.result {
+#result {
   border: 1px solid #ff6a00;
   background-color: #FFE1CC;
   padding: 1rem;
