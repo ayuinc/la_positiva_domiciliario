@@ -1,9 +1,10 @@
 
 $(function(){
   $('#ciudad').prop('disabled', true);
+  $( "#distrito" ).prop('disabled', true);
+  $( "#result" ).hide();
   // $('#version').prop('disabled', true);
   // $('#ano').prop('disabled', true);
-  // $( "#distrito" ).prop('disabled', true);
 });
 
 $( "#provincia" ).change(function (evt) {
@@ -30,13 +31,12 @@ $( "#provincia" ).change(function (evt) {
               },
              success: function(response)
              { // show response from the php script.
-               $('#ciudad').html(response);
-               // $('#ciudad').prop('disabled', false);
+              $('#ciudad').html(response);
+              $('#ciudad').prop('disabled', false);
              },
              complete : function (){
               }
       });
-      $('#ciudad').prop('disabled', false);
     }
   });
 });
@@ -81,7 +81,8 @@ $.ajax({
        data: str, // serializes the form's elements.
        success: function(response)
        { // show response from the php script.
-         $('#result').html(response);
+        $('#result').show();
+        $('#result').html(response);
        }
      });
 }

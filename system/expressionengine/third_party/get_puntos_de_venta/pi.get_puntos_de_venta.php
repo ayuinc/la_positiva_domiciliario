@@ -71,8 +71,8 @@ class Get_puntos_de_venta
         ee()->db->where('distrito',$district);
         $query = ee()->db->get('exp_agencias');
         foreach($query->result() as $row){
-            $div .='<div>';
-            $div .= '<p>'.$row->oficina.'</p>';
+            $div .='<div class="local">';
+            $div .= '<p class="title">'.$row->oficina.'</p>';
             $div .= '<p>'.$row->direccion.'</p>';
             $div .= '<p>'.$row->ubicacion.'</p>';
             $div .= '</div>';
