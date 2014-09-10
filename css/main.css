@@ -5870,7 +5870,7 @@ body.landing {
   font-size: 4rem; }
 
 header {
-  background: url(../../images/main-bg.png) no-repeat;
+  background: url(../../images/img/main-bg.png) no-repeat;
   background-size: 100% 100%;
   color: #fff; }
 
@@ -5922,7 +5922,7 @@ header {
   line-height: 19px; }
 
 footer {
-  background: url(../../images/footer-bg.png) no-repeat;
+  background: url(../../images/img/footer-bg.png) no-repeat;
   background-size: 100% 100%;
   color: #ff6a00; }
 
