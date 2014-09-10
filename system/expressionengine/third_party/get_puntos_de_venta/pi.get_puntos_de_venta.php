@@ -71,8 +71,8 @@ class Get_puntos_de_venta
         ee()->db->where('distrito',$district);
         $query = ee()->db->get('exp_agencias');
         foreach($query->result() as $row){
-            $div .='<div class="result">';
-            $div .= '<p>'.$row->oficina.'</p>';
+            $div .='<div class="local">';
+            $div .= '<p class="title">'.$row->oficina.'</p>';
             $div .= '<p>'.$row->direccion.'</p>';
             $div .= '<p>'.$row->ubicacion.'</p>';
             $div .= '</div>';
@@ -81,7 +81,7 @@ class Get_puntos_de_venta
     }
 
     public function region(){
-        $form = '<select name="region" id="region"> <option value="REGION" selected>DEPARTAMENTO</option>';
+        $form = '<select name="region" id="region" class="form-control input-md"> <option value="REGION" selected>DEPARTAMENTO</option>';
         ee()->db->distinct('departamento');
         ee()->db->select('departamento');
         $query = ee()->db->get('exp_agencias');

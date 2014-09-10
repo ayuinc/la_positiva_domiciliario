@@ -1,67 +1,3 @@
-<!-- <form id="contact-form" method="POST" action="/?/content/gracias" data-abide>
-    <input type="hidden" name="XID" value="{XID_HASH}" /> 
-    <div class="row">
-        <div class="large-6 columns">
-            <input type="text" name="name" placeholder="Nombre" required pattern="[a-zA-Z]+">
-            <small class="error">Debe ingresar su nombre.</small>
-        </div>
-        <div class="large-6 columns">
-            <input type="text" name="surname" placeholder="Apellido" required pattern="[a-zA-Z]+">
-            <small class="error">Debe ingresar su apellido.</small>
-        </div>
-    </div>
-    <div class="row">
-        <div class="large-12 columns">
-            <input type="email" name="email" placeholder="Correo Electrónico" required>
-            <small class="error">Debe ingresar su correo electrónico.</small>
-        </div>
-    </div>
-    <div class="row">
-        <div class="large-12 columns">
-            <input type="text" name="dni" placeholder="DNI" pattern="dni" required min="8" max="8" >
-            <small class="error">Debe ingresar su DNI (numérico).</small>
-        </div>
-    </div>
-    <div class="row">
-        <div class="large-12 columns">
-            <input type="text" name="phone" placeholder="Teléfono" pattern="telef" required min="7" max="9">
-            <small class="error">Debe ingresar su teléfono (numérico).</small>
-        </div>
-        {exp:get_post_vars parse="inward"}
-            <input type="hidden" name="brand" value="{post_marca}">
-            <input type="hidden" name="model" value="{post_modelo}">
-            <input type="hidden" name="ano" value="{post_ano}">
-            <input type="hidden" name="version" value="{post_version}">
-            <input type="hidden" name="precio" value="{post_precio}">
-            <input id="tipo_respci" type="hidden" name="tipo_respci">
-            <input id="respci" type="hidden" name="respci">
-            <input id="ptr" type="hidden" name="ptr">
-            <input id="c3_form" type="hidden" name="ptch">
-            <input id="c4_form" type="hidden" name="dpch">
-            <input id="suma_form" type="hidden" name="total_prima">
-        {/exp:get_post_vars}
-    </div>
-    <div class="row">
-        <div class="large-8 medium-8 small-12 small-centered columns">
-            <button id="form_button" class="button-orange" type="submit">DESCARGAR COTIZACIÓN EN PDF</button>
-        </div>
-    </div>
-</form> -->
-
-<!-- <form id="registro-form" method="POST" action="/?/content/registro">
-  Valor de la vivienda: <input type="text" name="housing_value"><br>
-  Tipo de la vivienda: <input type="text" name="housing_type"><br>
-  Provincia: <input type="text" name="province"><br>
-  Ciudad: <input type="text" name="city"><br>
-  Nombre: <input type="text" name="name"><br>
-  Apellido: <input type="text" name="last_name"><br>
-  email: <input type="text" name="email"><br>
-  dni: <input type="text" name="dni"><br>
-  Telefono: <input type="text" name="phone"><br>
-  id seguro: <input type="text" name="id_seguro"><br>
-  <input type="submit" value="enviar">
-</form> -->
-
 {embed="includes/header"}   
   {exp:get_post_vars parse="inward"}
       <body>
@@ -72,7 +8,7 @@
                 <div class="header-text">
                   <p class="text-medium">Tu inmueble esta avaluado</p>
                 {exp:get_planes:get_rango_planes rango_id="{post_valor_vivienda}"}
-                  <p class="text-xlarge">{rango}</p>
+                  <p class="text-xlarge bold">{rango}</p>
                 {/exp:get_planes:get_rango_planes}
                   <p class="text-small">Aplicas para</p>
                   <p class="text-xlarge uppercase">hogar positivo</p>
@@ -81,75 +17,86 @@
             </div>  
           </div>
         </header>
-    {exp:get_planes:get_planes_por_monto monto="{post_valor_vivienda}"}
+      {exp:get_planes:get_planes_por_monto monto="{post_valor_vivienda}"}
         <section class='content pb-7-100 pt-7-100'>
           <div class='container text-center'>
             <div class="row">
               <div class="col-md-8 center-block">
-                <h2 class="text-large uppercase">que te cubre</h2>
+                <h2 class="text-large uppercase bold pb-7-100">que te cubre</h2>
                 <p class='text-small gray-color'>Todo riesgo de incendio y explosión, terremoto y riesgos de la naturaleza, terrorismo y riesgos políticos.</p>
-                <p class='text-medium uppercase'>Es opcional para robo o intento de robo</p>
+                <a href="#" class='link text-small blue'>Más información</a>
+                <p class='text-small uppercase blue bold pb-7-100 pt-7-100'>Es opcional para robo o intento de robo</p>
                 <p class='text-small gray-color'>Hasta S/. {hasta}</p>
               </div>
             </div>
             <div class="row">
-              <div class="col-md-6 center-block">
+              <div class="col-xs-8 col-sm-10 col-md-6 center-block pt-7-100">
                 <div class="row">
-                  <div class="col-md-5">
+  
+                  <div class="col-md-5 col-sm-5 mb-14-100">
                     <div class="price-block">
-                      <div class="row">
-                        <div class="col-md-10">
-                          <p class='text-small uppercase'>sin robo</p>
+                      <div class="row">                  
+                        <div class="col-xs-10 col-md-10 col-sm-10">
+                          <label class="radio-inline uppercase text-small" for="conrobo">
+                            con robo
+                          </label>
                         </div>
-                        <div class="col-md-2">
-                          <img src="" alt="">
-                        </div>
+                        <div class="col-xs-2 col-md-2 col-sm-2">
+                          <input type="radio" name="robo" id="conrobo" value="1">
+                        </div>   
                       </div>
                       <div class="row">
-                        <div class="col-md-12">
-                          <p class='text-large uppercase'>s/. {sin_robo}</p>
-                          <p class='text-small uppercase'>prima mensual</p>
+                        <div class="col-md-12 col-sm-12">
+                          <p class='text-large uppercase bold'>s/. {con_robo}</p>
+                          <p class='text-xsmall uppercase'>prima mensual</p>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div class="col-md-5 col-md-offset-2">
+                  <div class="col-md-5 col-sm-5 col-md-offset-2 col-sm-offset-2 mb-14-100">
                     <div class="price-block">
                       <div class="row">
-                        <div class="col-md-10">
-                          <p class='text-small uppercase'>con robo</p>
+                        <div class="col-xs-10 col-md-10 col-sm-10">
+                          <label class="radio-inline uppercase text-small" for="sinrobo">
+                            sin robo
+                          </label>
                         </div>
-                        <div class="col-md-2">
-                          <img src="" alt="">
-                        </div>
+                        <div class="col-xs-2 col-md-2 col-sm-2">  
+                          <input type="radio" name="robo" id="sinrobo" value="2">
+                        </div>   
                       </div>
                       <div class="row">
-                        <div class="col-md-12">
-                          <p class='text-large uppercase'>s/. {con_robo}</p>
-                          <p class='text-small uppercase'>prima mensual</p>
+                        <div class="col-md-12 col-sm-12">
+                          <p class='text-large uppercase bold'>s/. {sin_robo}</p>
+                          <p class='text-xsmall uppercase'>prima mensual</p>
                         </div>
                       </div>
                     </div>
-                  </div>  
+                  </div> 
+
                 </div>
+            {/exp:get_planes:get_planes_por_monto}
               </div>
-      {/exp:get_planes:get_planes_por_monto}
-            </div>              
+            </div>
             <div class="row">
               <div class="col-md-8 center-block">
                 <div class="row">
-                  <div class="form-group">
-                    <div class="col-md-6"> 
-                      <label class="radio-inline" for="radios-0">
-                        <input type="radio" name="radios" id="radios-0" value="1" checked="checked">
-                        descarga tu cotizacion
-                      </label> 
+                  <div class="form-group download-phone">
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+                      <div class="row mb-7-100"> 
+                        <input type="radio" name="radios" id="radios-0" value="1">
+                        <label class="radio-inline col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 pt-7-100 pb-7-100" for="radios-0">
+                          descarga tu cotizacion
+                        </label> 
+                      </div>
                     </div>
-                    <div class="col-md-6"> 
-                      <label class="radio-inline" for="radios-1">
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+                      <div class="row mb-7-100"> 
                         <input type="radio" name="radios" id="radios-1" value="2">
-                        contactanos por telefono
-                      </label>
+                        <label class="radio-inline col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-11 col-md-offset-1 pt-7-100 pb-7-100" for="radios-1">
+                          contactanos por telefono
+                        </label>
+                      </div>
                     </div>
                   </div>
                 </div>  
@@ -157,71 +104,89 @@
             </div>
           </div>
         </section>
-        <footer class="pb-7-100 pt-7-100">
-          <div class="container">
+        <footer class="pb-49 pt-7-100">
+          <div class="container pb-49">
             <div class="row">
               <div class="col-md-10 center-block">
                 <div class="row">
-                  <div class="col-md-5">
-                    <form class="form-horizontal">
-                      <legend>completa tus datos</legend>
+                  <div class="col-xs-10 col-xs-offset-1 col-sm-5 col-md-5">
+                    <form class="form-horizontal" method="post" action="/?/content/registro">
+                      <h2 class="white uppercase bold">completa tus datos</h2>
                       <div class="row">
                         <!-- Text input-->
-                        <div class="form-group">
-                          <div class="col-md-6">
-                            <input id="textinput" name="textinput" type="text" placeholder="Nombre" class="form-control input-md"> 
-                          </div>
-                          <div class="col-md-6">
-                            <input id="textinput" name="textinput" type="text" placeholder="Apellido" class="form-control input-md">
+                        <div class="col-sm-6 col-md-6">
+                          <div class="form-group pr-7">
+                            <input id="textinput" name="name" type="text" placeholder="Nombre" class="form-control input-md"> 
                           </div>
                         </div>
-                      </div>  
+                        <div class="col-sm-6 col-md-6">
+                          <div class="form-group pl-7">
+                            <input id="textinput" name="last_name" type="text" placeholder="Apellido" class="form-control input-md">
+                          </div>
+                        </div>
+                      </div>
+
 
                       <!-- Text input-->
                       <div class="form-group">
-                        <input id="textinput" name="textinput" type="text" placeholder="Correo electrínico" class="form-control input-md">
+                        <input id="textinput" name="email" type="text" placeholder="Correo electrínico" class="form-control input-md">
                       </div>
 
                       <!-- Text input-->
                       <div class="form-group">
-                        <input id="textinput" name="textinput" type="text" placeholder="DNI" class="form-control input-md">
+                        <input id="textinput" name="dni" type="text" placeholder="DNI" class="form-control input-md">
                       </div>
 
                       <!-- Text input-->
                       <div class="form-group">
-                        <input id="textinput" name="textinput" type="text" placeholder="Telefono" class="form-control input-md">
+                        <input id="textinput" name="phone" type="text" placeholder="Telefono" class="form-control input-md">
                       </div>
 
                       <!-- Button -->
                       <div class="row">
                         <div class="form-group">
-                          <div class="col-md-6 col-md-offset-6">
-                            <input type="submit" value="ENVIAR  " id="singlebutton" name="singlebutton" class="btn btn-primary col-md-12">
+                          <div class="col-sm-offset-6 col-md-6 col-md-offset-6">
+                            <input type="submit" value="ENVIAR  " id="singlebutton" name="singlebutton" class="btn btn-primary col-xs-12 col-sm-12 col-md-12">
                           </div>
                         </div>  
                       </div>
                     </form>
                   </div>
-                  <div class="col-md-5 col-md-offset-1">
+                  <div class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-1 col-md-5 col-md-offset-1">
                     <form class="form-horizontal">
-                      <legend>completa tus datos</legend>
+                      <h2 class="white uppercase bold">busca el punto de venta más cercano</h2>
                       <div class="row">
                         <!-- Text input-->
-                        <div class="form-group">
-                          <div class="col-md-6">
-                            <input id="textinput" name="textinput" type="text" placeholder="Departamento" class="form-control input-md"> 
+                        <div class="col-sm-6 col-md-6">
+                          <div class="form-group pr-7">
+                            <!-- <input id="textinput" name="textinput" type="text" placeholder="Departamento" class="form-control input-md"> --> 
+                            <span class="selector">
+                                   {exp:get_puntos_de_venta:region}
+                            </span> 
                           </div>
-                          <div class="col-md-6">
-                            <input id="textinput" name="textinput" type="text" placeholder="Ciudad/Distrito" class="form-control input-md">
+                        </div>
+                        <div class="col-sm-6 col-md-6">
+                          <div class="form-group pl-7">
+                            <!-- <input id="textinput" name="textinput" type="text" placeholder="Ciudad/Distrito" class="form-control input-md"> -->
+                            <span class="selector">
+                              <select name="distrito" id="distrito" class="form-control">
+                                 {exp:get_puntos_de_venta:district region="@@@"}
+                              </select>
+                            </span>
+
                           </div>
                         </div>
                       </div>
+                      <div class="row">
+                          <div class="col-md-12 result">
+                          </div>
+                      </div>                      
 
                       <!-- Button -->
                       <div class="row">
                         <div class="form-group">
-                          <div class="col-md-6 col-md-offset-6">
-                            <input type="submit" value="BUSCAR  " id="singlebutton" name="singlebutton" class="btn btn-primary col-md-12">
+                          <div class="col-sm-offset-6 col-md-6 col-md-offset-6">
+                            <input type="submit" value="BUSCAR  " id="singlebutton" name="singlebutton" class="btn btn-primary col-xs-12 col-sm-12 col-md-12">
                           </div>
                         </div>  
                       </div>
@@ -231,7 +196,20 @@
               </div>
             </div>      
           </div>
+          <div class="container-fluid">
+            <div class="row social-networks">
+              <div class="col-md-12">
+                <ul class="nav nav-pills">
+                  <li><a href="#" class="icon-facebook"></a></li>
+                  <li><a href="#" class="icon-twitter"></a></li>
+                  <li><a href="#">Términos y condiciones</a></li>
+                  <li><a href="#">Contáctanos</a></li>
+                  <li class="pull-right"><a href="#"><img class="right" src="{site_url}/images/img/logo_blanco.png"></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </footer>
       </body>
   {/exp:get_post_vars}
-{embed="includes/footer"}   
+{embed="includes/footer"} 

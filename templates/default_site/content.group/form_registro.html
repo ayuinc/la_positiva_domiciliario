@@ -1,0 +1,63 @@
+<!-- <form id="contact-form" method="POST" action="/?/content/gracias" data-abide>
+    <input type="hidden" name="XID" value="{XID_HASH}" /> 
+    <div class="row">
+        <div class="large-6 columns">
+            <input type="text" name="name" placeholder="Nombre" required pattern="[a-zA-Z]+">
+            <small class="error">Debe ingresar su nombre.</small>
+        </div>
+        <div class="large-6 columns">
+            <input type="text" name="surname" placeholder="Apellido" required pattern="[a-zA-Z]+">
+            <small class="error">Debe ingresar su apellido.</small>
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-12 columns">
+            <input type="email" name="email" placeholder="Correo Electrónico" required>
+            <small class="error">Debe ingresar su correo electrónico.</small>
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-12 columns">
+            <input type="text" name="dni" placeholder="DNI" pattern="dni" required min="8" max="8" >
+            <small class="error">Debe ingresar su DNI (numérico).</small>
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-12 columns">
+            <input type="text" name="phone" placeholder="Teléfono" pattern="telef" required min="7" max="9">
+            <small class="error">Debe ingresar su teléfono (numérico).</small>
+        </div>
+        {exp:get_post_vars parse="inward"}
+            <input type="hidden" name="brand" value="{post_marca}">
+            <input type="hidden" name="model" value="{post_modelo}">
+            <input type="hidden" name="ano" value="{post_ano}">
+            <input type="hidden" name="version" value="{post_version}">
+            <input type="hidden" name="precio" value="{post_precio}">
+            <input id="tipo_respci" type="hidden" name="tipo_respci">
+            <input id="respci" type="hidden" name="respci">
+            <input id="ptr" type="hidden" name="ptr">
+            <input id="c3_form" type="hidden" name="ptch">
+            <input id="c4_form" type="hidden" name="dpch">
+            <input id="suma_form" type="hidden" name="total_prima">
+        {/exp:get_post_vars}
+    </div>
+    <div class="row">
+        <div class="large-8 medium-8 small-12 small-centered columns">
+            <button id="form_button" class="button-orange" type="submit">DESCARGAR COTIZACIÓN EN PDF</button>
+        </div>
+    </div>
+</form> -->
+
+<form id="registro-form" method="POST" action="/?/content/registro">
+  Valor de la vivienda: <input type="text" name="housing_value"><br>
+  Tipo de la vivienda: <input type="text" name="housing_type"><br>
+  Provincia: <input type="text" name="province"><br>
+  Ciudad: <input type="text" name="city"><br>
+  Nombre: <input type="text" name="name"><br>
+  Apellido: <input type="text" name="last_name"><br>
+  email: <input type="text" name="email"><br>
+  dni: <input type="text" name="dni"><br>
+  Telefono: <input type="text" name="phone"><br>
+  id seguro: <input type="text" name="id_seguro"><br>
+  <input type="submit" value="enviar">
+</form>
