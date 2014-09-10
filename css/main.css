@@ -5924,6 +5924,23 @@ header {
   text-align: center;
   line-height: 19px; }
 
+.price-block label {
+  border: none;
+  font-size: 2rem;
+  width: 100%; }
+  .price-block label.checked:before {
+    background: url(../../images/img/check-icon.png) no-repeat;
+    -webkit-background-size: 100%;
+    background-size: 100%; }
+  .price-block label:before {
+    left: 110%;
+    top: 10%;
+    border: none;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    height: 35px;
+    width: 35px; }
 .price-block .row {
   border: 1px solid #ff6a00;
   margin-top: 7px;

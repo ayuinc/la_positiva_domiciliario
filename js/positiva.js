@@ -5,6 +5,10 @@ $(function(){
   $( ".result" ).hide();
   // $('#version').prop('disabled', true);
   // $('#ano').prop('disabled', true);
+  $('.price-block label').click(function(){
+    $('.price-block label').removeClass('checked');
+    $(this).addClass('checked');
+  });
 });
 
 $( "#provincia" ).change(function (evt) {
@@ -66,27 +70,27 @@ $( "#ciudad" ).change(function (evt) {
 
 
 $( "#distrito" ).change(function (evt) {
-var str = "";
-$( "#distrito option:selected" ).each(function() {
-str = $( this ).val();
-if(str=='DISTRITO'){
-}
-else{
-str = str.replace(/-/gi," ");
-str = "distrito="+str;
-evt.preventDefault();
-$.ajax({
-       type: "POST",
-       url: "/?/content/agencia/",
-       data: str, // serializes the form's elements.
-       success: function(response)
-       { // show response from the php script.
-        $('.result').show();
-        $('.result').html(response);
-       }
-     });
-}
-});
+  var str = "";
+  $( "#distrito option:selected" ).each(function() {
+  str = $( this ).val();
+  if(str=='DISTRITO'){
+  }
+  else{
+  str = str.replace(/-/gi," ");
+  str = "distrito="+str;
+  evt.preventDefault();
+  $.ajax({
+         type: "POST",
+         url: "/?/content/agencia/",
+         data: str, // serializes the form's elements.
+         success: function(response)
+         { // show response from the php script.
+          $('.result').show();
+          $('.result').html(response);
+         }
+       });
+  }
+  });
 });
 
 $( "#region" ).change(function (evt) {
