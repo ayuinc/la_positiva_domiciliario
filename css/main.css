@@ -5603,6 +5603,11 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   font-weight: 700;
   font-style: normal; }
 
+.black {
+  font-family: "museo-sans", Helvetica, Arial, sans-serif !important;
+  font-weight: 900;
+  font-style: normal; }
+
 .alt-medium {
   font-family: "nimbus-sans", "museo-sans", Helvetica, Arial, sans-serif !important;
   font-weight: 700;
@@ -5788,6 +5793,15 @@ body.landing {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
+.label {
+  font-weight: normal; }
+
+.btn {
+  font-family: "nimbus-sans", "museo-sans", Helvetica, Arial, sans-serif;
+  border-radius: 0;
+  border-color: #fff;
+  text-transform: uppercase; }
+
 .icon-checkmark:before {
   content: "\e600";
   font-size: 1.5rem;
@@ -5815,7 +5829,8 @@ body.landing {
 .landing .main-title {
   font-size: 3rem;
   text-transform: uppercase;
-  text-shadow: 1px 1px 3px rgba(58, 30, 12, 0.71); }
+  text-shadow: 1px 1px 3px rgba(58, 30, 12, 0.71);
+  font-family: "nimbus-sans", "museo-sans", Helvetica, Arial, sans-serif; }
 
 .social-networks {
   padding-left: 3rem;
@@ -5882,27 +5897,15 @@ header {
   border-right: 17px solid rgba(255, 106, 0, 0.45);
   border-left: 17px solid rgba(255, 106, 0, 0.45); }
 
-.price-block .row {
-  border: 1px solid #ff6a00;
-  margin-top: 7px;
-  background: #ffe1cc; }
-  .price-block .row .col-md-2 {
-    background: #ffe1cc; }
-  .price-block .row .col-md-10 {
-    color: #fff;
-    background: #ff6a00; }
-  .price-block .row .check-icon:before {
-    content: "\e600"; }
-
-.download-phone label {
+.download-phone label, .price-block label {
   border: 1px solid;
   display: inline-block;
   cursor: pointer;
   position: relative;
   font-size: 13px; }
-.download-phone input[type=radio] {
+.download-phone input[type=radio], .price-block input[type=radio] {
   display: none; }
-.download-phone label:before {
+.download-phone label:before, .price-block label:before {
   content: "";
   display: inline-block;
   width: 20px;
@@ -5914,12 +5917,24 @@ header {
   top: 37%;
   border-radius: 50%;
   border: 1px solid; }
-.download-phone input[type=radio]:checked + label:before {
+.download-phone input[type=radio]:checked + label:before, .price-block input[type=radio]:checked + label:before {
   content: "\2022";
   color: #ff6a00;
   font-size: 50px;
   text-align: center;
   line-height: 19px; }
+
+.price-block .row {
+  border: 1px solid #ff6a00;
+  margin-top: 7px;
+  background: #ffe1cc; }
+  .price-block .row .col-md-2 {
+    background: #ffe1cc; }
+  .price-block .row .col-md-10 {
+    color: #fff;
+    background: #ff6a00; }
+  .price-block .row .check-icon:before {
+    content: "\e600"; }
 
 footer {
   background: url(../../images/img/footer-bg.png) no-repeat;
