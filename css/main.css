@@ -5928,8 +5928,9 @@ header {
   border: none;
   font-size: 2rem;
   width: 100%; }
+  .price-block label.checked {
+    background: url(../../images/img/check-icon.png) no-repeat; }
   .price-block label:before {
-    background: url(../../images/img/check-icon.png) no-repeat;
     left: 110%;
     top: 10%;
     border: none;

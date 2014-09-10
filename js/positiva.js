@@ -5,6 +5,10 @@ $(function(){
   $( ".result" ).hide();
   // $('#version').prop('disabled', true);
   // $('#ano').prop('disabled', true);
+  $('.price-block label').click(function(){
+    $('.price-block label').removeClass('checked');
+    $(this).addClass('checked');
+  });
 });
 
 $( "#provincia" ).change(function (evt) {
