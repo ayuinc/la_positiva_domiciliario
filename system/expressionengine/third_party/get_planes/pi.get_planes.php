@@ -129,13 +129,17 @@ class Get_planes
         $query = ee()->db->get('exp_planes_domiciliario');
         $resultado = $query->result();
         $hasta = $resultado[0]->coverage_5;
-        $sin_robo = $resultado[0]->price;
-        $con_robo = $resultado[1]->price;
+        $price_sin_robo = $resultado[0]->price;
+        $price_con_robo = $resultado[1]->price;
+        $id_sin_robo = $resultado[0]->id;
+        $id_con_robo = $resultado[1]->id;
 
         $variables[] = array(
           'hasta' => $hasta,
-          'sin_robo' => $sin_robo,
-          'con_robo' => $con_robo
+          'price_sin_robo' => $price_sin_robo,
+          'price_con_robo' => $price_con_robo,
+          'id_sin_robo' => $id_sin_robo,
+          'id_con_robo' => $id_con_robo
         );
 
         return ee()->TMPL->parse_variables(ee()->TMPL->tagdata, $variables);

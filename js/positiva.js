@@ -119,3 +119,8 @@ $( "#region" ).change(function (evt) {
     }
   });
 });
+
+$('#singlebutton').click(function (evt) {
+    var val_robo = $('input:radio[name=robo]:checked').val();
+    $('#id_seguro').prop('value' , val_robo)
+});
