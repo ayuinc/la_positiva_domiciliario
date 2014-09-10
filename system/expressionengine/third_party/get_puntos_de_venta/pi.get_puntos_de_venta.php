@@ -81,7 +81,7 @@ class Get_puntos_de_venta
     }
 
     public function region(){
-        $form = '<select name="region" id="region" class="form-control"> <option value="REGION" selected>DEPARTAMENTO</option>';
+        $form = '<select name="region" id="region" class="form-control input-md"> <option value="REGION" selected>DEPARTAMENTO</option>';
         ee()->db->distinct('departamento');
         ee()->db->select('departamento');
         $query = ee()->db->get('exp_agencias');
