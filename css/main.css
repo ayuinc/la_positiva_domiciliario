@@ -5924,6 +5924,18 @@ header {
   text-align: center;
   line-height: 19px; }
 
+.price-block label {
+  border: none;
+  font-size: inherit;
+  width: 100%; }
+  .price-block label:before {
+    background: url(../../images/img/check-icon.png) no-repeat;
+    right: -30%;
+    top: 24%;
+    border: none;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0; }
 .price-block .row {
   border: 1px solid #ff6a00;
   margin-top: 7px;
