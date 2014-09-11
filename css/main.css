@@ -5827,7 +5827,7 @@ body.landing {
     top: 20%; }
 
 .landing .main-title {
-  font-size: 3rem;
+  font-size: 3.5rem;
   text-transform: uppercase;
   text-shadow: 1px 1px 3px rgba(58, 30, 12, 0.71);
   font-family: "nimbus-sans", "museo-sans", Helvetica, Arial, sans-serif; }
@@ -5972,8 +5972,8 @@ footer {
     padding-left: 0 !important; } }
 @media (max-width: 480px) {
   .content {
-    border-right: 10px solid rgba(255, 106, 0, 0.45);
-    border-left: 10px solid rgba(255, 106, 0, 0.45); }
+    border-right: 6px solid rgba(255, 106, 0, 0.45);
+    border-left: 6px solid rgba(255, 106, 0, 0.45); }
 
   footer .form-group.pr-7 {
     padding-right: 0 !important; }
