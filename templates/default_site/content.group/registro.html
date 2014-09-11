@@ -10,10 +10,41 @@
 		dni="{post_dni}"
 		phone="{post_phone}"
 		id_seguro="{post_id_seguro}"
-
-
 	}
-
-
 	{/exp:registro_interesado:registrar_interesado}
+
+	{exp:mandrillapp:send_email email_to="freddy01288@gmail.com" name="{post_name} {post_last_name}" from="{post_email}"} 
+	{/exp:mandrillapp:send_email}
+
 {/exp:get_post_vars}
+
+  <body class="confirmacion">
+    <div class="container">
+      <div class="col-md-8 center-block form-landing">
+        <div class="row">
+            <h1 class="text-center cotizador">{post_name} {post_last_name}</h1>
+            <p class="text-center ">Tu cotización ha sido enviada a:</p>
+            <p class="text-center correo">{post_email}</p>
+            <p class="text-center ">Acércate a nuestro punto de venta más cercano y contrata</p>
+            <p class="text-center ">tu seguro de inmediato.</p>
+            <div class="text-center">
+                <button type="button" class="btn btn-success">VOLVER A COTIZAR</button>
+            </div>
+        </div>
+      </div>  
+    </div>
+
+    <div class="container-fluid">
+      <div class="row social-networks">
+        <div class="col-md-12">
+          <ul class="nav nav-pills">
+            <li><a href="#" class="icon-facebook"></a></li>
+            <li><a href="#" class="icon-twitter"></a></li>
+            <li><a href="#">Términos y condiciones</a></li>
+            <li><a href="#">Contáctanos</a></li>
+            <li class="pull-right"><a href="#"><img class="right" src="{site_url}/images/img/logo_blanco.png"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
