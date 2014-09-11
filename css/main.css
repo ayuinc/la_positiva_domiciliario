@@ -5920,9 +5920,9 @@ header {
 .download-phone input[type=radio]:checked + label:before, .price-block input[type=radio]:checked + label:before {
   content: "\2022";
   color: #ff6a00;
-  font-size: 50px;
+  font-size: 42px;
   text-align: center;
-  line-height: 19px; }
+  line-height: 14px; }
 
 .price-block .price {
   font-size: 4.5rem;
@@ -5994,7 +5994,7 @@ footer {
     border-right: 5px solid rgba(255, 106, 0, 0.45);
     border-left: 5px solid rgba(255, 106, 0, 0.45); } }
 body.confirmacion {
-  background: url(../../assets/images/background-confirm.png) no-repeat;
+  background: url(../../images/img/background-confirm.png) no-repeat;
   background-size: 100% 100%;
   color: #fff; }
 
