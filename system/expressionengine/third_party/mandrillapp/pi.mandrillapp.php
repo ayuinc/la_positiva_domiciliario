@@ -83,7 +83,7 @@ class Mandrillapp {
 
 	);
 	$mandrill->messages->sendTemplate($template_name, $template_content, $message);
-	return '<p>Correo Enviado</p>';
+	// return '<p>Correo Enviado</p>';
 	}
 
 }
