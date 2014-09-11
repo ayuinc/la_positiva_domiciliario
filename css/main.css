@@ -5925,7 +5925,6 @@ header {
 
 .price-block label {
   border: none;
-  font-size: 2rem;
   width: 100%; }
   .price-block label.checked:before {
     background: url(../../images/img/check-icon.png) no-repeat;
