@@ -5876,7 +5876,7 @@ body.landing {
   font-size: 2rem; }
 
 .text-medium {
-  font-size: 2.7rem; }
+  font-size: 3rem; }
 
 .text-large {
   font-size: 3rem; }
@@ -5901,8 +5901,7 @@ header {
   border: 1px solid;
   display: inline-block;
   cursor: pointer;
-  position: relative;
-  font-size: 13px; }
+  position: relative; }
 .download-phone input[type=radio], .price-block input[type=radio] {
   display: none; }
 .download-phone label:before, .price-block label:before {
