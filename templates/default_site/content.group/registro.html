@@ -14,7 +14,12 @@
 		}
 		{/exp:registro_interesado:registrar_interesado}
 
-		{exp:mandrillapp:send_email email_to="freddy01288@gmail.com" name="{post_name} {post_last_name}" from="{post_email}"} 
+		{exp:mandrillapp:send_email 
+			email_to="freddy01288@gmail.com" 
+			name="{post_name} {post_last_name}" 
+			from="{post_email}"
+			plan_id="{post_id_seguro}"
+		} 
 		{/exp:mandrillapp:send_email}
 
 
