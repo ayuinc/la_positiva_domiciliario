@@ -5901,7 +5901,8 @@ header {
   border: 1px solid;
   display: inline-block;
   cursor: pointer;
-  position: relative; }
+  position: relative;
+  font-size: 1.6rem; }
 .download-phone input[type=radio], .price-block input[type=radio] {
   display: none; }
 .download-phone label:before, .price-block label:before {
@@ -5923,6 +5924,9 @@ header {
   text-align: center;
   line-height: 19px; }
 
+.price-block .price {
+  font-size: 4.5rem;
+  margin-bottom: 0; }
 .price-block label {
   border: none;
   width: 100%;
@@ -5932,8 +5936,8 @@ header {
     -webkit-background-size: 100%;
     background-size: 100%; }
   .price-block label:before {
-    left: 110%;
-    top: 10%;
+    left: 118%;
+    top: 30%;
     border: none;
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
@@ -5946,7 +5950,7 @@ header {
   background: #ffe1cc; }
   .price-block .row .col-md-2 {
     background: #ffe1cc; }
-  .price-block .row .col-md-10 {
+  .price-block .row .col-md-9 {
     color: #fff;
     background: #ff6a00; }
   .price-block .row .check-icon:before {
