@@ -13,57 +13,79 @@ $(function(){
   $('#cotizar').bootstrapValidator({
       message: 'Este valor no es válido',
       feedbackIcons: {
+        valid: 'glyphicon glyphicon-ok',
+        invalid: 'glyphicon glyphicon-remove',
+        validating: 'glyphicon glyphicon-refresh'
+      },
+      fields: {
+        tipo_vivienda: {
+            message: '',
+            validators: {
+                notEmpty: {
+                    message: 'Este campo es requerido'
+                },
+            }
+        }
+      }
+  });
+
+  $('.registro').bootstrapValidator({
+      message: 'Este valor no es válido',
+      feedbackIcons: {
+        valid: 'glyphicon glyphicon-ok',
+        invalid: 'glyphicon glyphicon-remove',
+        validating: 'glyphicon glyphicon-refresh'
+      },
+      fields: {
+        name: {
+            validators: {
+                notEmpty: {
+                    message: 'Este campo es requerido'
+                }
+            }
+        }
+        last_name: {
+            validators: {
+                notEmpty: {
+                    message: 'Este campo es requerido'
+                }
+            }
+        }
+        email: {
+            validators: {
+                notEmpty: {
+                    message: 'Este campo es requerido'
+                },
+                emailAddress: {
+                    message: 'Ingrese un email valido'
+                }
+            }
+        }
+        dni: {
+            validators: {
+                notEmpty: {
+                    message: 'Este campo es requerido'
+                }
+            }
+        }
+        phone: {
+            validators: {
+                notEmpty: {
+                    message: 'Este campo es requerido'
+                }
+            }
+        }
+      }
+  });
+
+  $('.buscar').bootstrapValidator({
+      message: 'Este valor no es válido',
+      feedbackIcons: {
           valid: 'glyphicon glyphicon-ok',
           invalid: 'glyphicon glyphicon-remove',
           validating: 'glyphicon glyphicon-refresh'
       },
       fields: {
-          tipo_vivienda: {
-              message: '',
-              validators: {
-                  notEmpty: {
-                      message: 'Este campo es requerido'
-                  },
-              }
-          },
-          name: {
-              validators: {
-                  notEmpty: {
-                      message: 'Este campo es requerido'
-                  }
-              }
-          }
-          last_name: {
-              validators: {
-                  notEmpty: {
-                      message: 'Este campo es requerido'
-                  }
-              }
-          }
-          email: {
-              validators: {
-                  notEmpty: {
-                      message: 'Este campo es requerido'
-                  },
-                  emailAddress: {
-                      message: 'Ingrese un email valido'
-                  }
-              }
-          }
-          dni: {
-              validators: {
-                  notEmpty: {
-                      message: 'Este campo es requerido'
-                  }
-              }
-          }
-          phone: {
-              validators: {
-                  notEmpty: {
-                      message: 'Este campo es requerido'
-                  }
-              }
-          }
           region: {
               validators: {
                   notEmpty: {
