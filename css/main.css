@@ -5985,8 +5985,9 @@ footer {
   footer .nav-pills li:last-child {
     text-align: center;
     width: 100%;
-    float: none !important img;
-      float-position: static; } }
+    float: none !important; }
+  footer .nav-pills img {
+    position: static; } }
 @media (max-width: 480px) {
   html {
     font-size: 8px; }
