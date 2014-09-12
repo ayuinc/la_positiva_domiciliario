@@ -5920,9 +5920,9 @@ header {
 .download-phone input[type=radio]:checked + label:before, .price-block input[type=radio]:checked + label:before {
   content: "\2022";
   color: #ff6a00;
-  font-size: 50px;
+  font-size: 42px;
   text-align: center;
-  line-height: 19px; }
+  line-height: 14px; }
 
 .price-block .price {
   font-size: 4.5rem;
