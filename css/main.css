@@ -5801,7 +5801,8 @@ body.landing {
 label {
   font-weight: normal; }
 
-.has-error label {
+.has-error label,
+.has-success label {
   color: inherit !important; }
 
 .btn {
