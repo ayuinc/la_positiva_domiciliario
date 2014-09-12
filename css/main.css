@@ -5799,8 +5799,9 @@ body.landing {
   padding: 0 10px; }
 
 label {
-  font-weight: normal;
-  color: inherit; }
+  font-weight: normal; }
+  label.has-error {
+    color: inherit; }
 
 .btn {
   font-family: "nimbus-sans", "museo-sans", Helvetica, Arial, sans-serif;
