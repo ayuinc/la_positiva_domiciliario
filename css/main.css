@@ -5970,6 +5970,9 @@ footer {
   background-size: 100% 100%;
   color: #ff6a00; }
 
+@media (max-width: 1224px) {
+  .download-phone label, .price-block label {
+    font-size: 1.2rem; } }
 @media (max-width: 767px) {
   .content {
     border-right: 10px solid rgba(255, 106, 0, 0.45);
@@ -5980,6 +5983,9 @@ footer {
   footer .form-group.pl-7 {
     padding-left: 0 !important; } }
 @media (max-width: 480px) {
+  html {
+    font-size: 8px; }
+
   .content {
     border-right: 6px solid rgba(255, 106, 0, 0.45);
     border-left: 6px solid rgba(255, 106, 0, 0.45); }
