@@ -5793,7 +5793,7 @@ body.landing {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
-.help-block {
+.has-error .help-block {
   color: #fff;
   background: #ff6a00;
   padding: 0 10px; }
