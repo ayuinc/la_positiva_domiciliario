@@ -10,7 +10,7 @@ $(function(){
     $(this).addClass('checked');
   });
 
-  $('.registerForm').bootstrapValidator({
+  $('#cotizar').bootstrapValidator({
       message: 'Este valor no es válido',
       feedbackIcons: {
           valid: 'glyphicon glyphicon-ok',
