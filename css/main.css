@@ -5903,7 +5903,9 @@ header {
     position: absolute;
     top: 0;
     border: 17px solid rgba(255, 106, 0, 0.45);
-    border-bottom: none; }
+    border-bottom: none;
+    width: 100%;
+    height: 100%; }
 
 .header-text {
   text-shadow: 1px 1px 3px rgba(58, 30, 12, 0.71); }
@@ -5981,6 +5983,10 @@ footer {
   .download-phone label, .price-block label {
     font-size: 1.2rem; } }
 @media (max-width: 767px) {
+  header:after {
+    border: 10px solid rgba(255, 106, 0, 0.45);
+    border-bottom: none; }
+
   .content {
     border-right: 10px solid rgba(255, 106, 0, 0.45);
     border-left: 10px solid rgba(255, 106, 0, 0.45); }
@@ -5998,6 +6004,10 @@ footer {
 @media (max-width: 480px) {
   html {
     font-size: 8px; }
+
+  header:after {
+    border: 6px solid rgba(255, 106, 0, 0.45);
+    border-bottom: none; }
 
   .content {
     border-right: 6px solid rgba(255, 106, 0, 0.45);
