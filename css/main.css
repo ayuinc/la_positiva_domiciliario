@@ -5800,8 +5800,9 @@ body.landing {
 
 label {
   font-weight: normal; }
-  label.has-error {
-    color: inherit; }
+
+.has-error label {
+  color: inherit; }
 
 .btn {
   font-family: "nimbus-sans", "museo-sans", Helvetica, Arial, sans-serif;
