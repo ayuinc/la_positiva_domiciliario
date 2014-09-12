@@ -1,5 +1,8 @@
 
 $(function(){
+  $('#cotizar').bootstrapValidator();
+  $('.registro').bootstrapValidator();
+  $('.buscar').bootstrapValidator();
   $('#ciudad').prop('disabled', true);
   $( "#distrito" ).prop('disabled', true);
   $( ".result" ).hide();
