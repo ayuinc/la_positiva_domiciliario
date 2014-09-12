@@ -5793,8 +5793,14 @@ body.landing {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
+.help-block {
+  color: #fff;
+  background: #ff6a00;
+  padding: 0 10px; }
+
 label {
-  font-weight: normal; }
+  font-weight: normal;
+  color: inherit; }
 
 .btn {
   font-family: "nimbus-sans", "museo-sans", Helvetica, Arial, sans-serif;
@@ -5994,7 +6000,7 @@ footer {
     border-right: 5px solid rgba(255, 106, 0, 0.45);
     border-left: 5px solid rgba(255, 106, 0, 0.45); } }
 body.confirmacion {
-  background: url(../../images/img/background-confirm.png) no-repeat;
+  background: url(../../assets/images/background-confirm.png) no-repeat;
   background-size: 100% 100%;
   color: #fff; }
 

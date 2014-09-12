@@ -26,13 +26,55 @@ $(function(){
                   },
               }
           },
+          name: {
+              validators: {
+                  notEmpty: {
+                      message: 'Este campo es requerido'
+                  }
+              }
+          }
+          last_name: {
+              validators: {
+                  notEmpty: {
+                      message: 'Este campo es requerido'
+                  }
+              }
+          }
           email: {
               validators: {
                   notEmpty: {
-                      message: 'The email is required and cannot be empty'
+                      message: 'Este campo es requerido'
                   },
                   emailAddress: {
-                      message: 'The input is not a valid email address'
+                      message: 'Ingrese un email valido'
+                  }
+              }
+          }
+          dni: {
+              validators: {
+                  notEmpty: {
+                      message: 'Este campo es requerido'
+                  }
+              }
+          }
+          phone: {
+              validators: {
+                  notEmpty: {
+                      message: 'Este campo es requerido'
+                  }
+              }
+          }
+          region: {
+              validators: {
+                  notEmpty: {
+                      message: 'Este campo es requerido'
+                  }
+              }
+          }
+          distrito: {
+              validators: {
+                  notEmpty: {
+                      message: 'Este campo es requerido'
                   }
               }
           }
