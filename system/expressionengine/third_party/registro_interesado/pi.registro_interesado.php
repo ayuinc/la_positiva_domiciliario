@@ -89,7 +89,7 @@ class Registro_interesado
             'id_seguro'=>$id_seguro
             );
         if(ee()->db->insert('exp_interesados_domiciliario', $data)){
-            return 'realizado';
+            // return 'realizado';
         }else{
             return 'error';
         }
