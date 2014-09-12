@@ -9,6 +9,35 @@ $(function(){
     $('.price-block label').removeClass('checked');
     $(this).addClass('checked');
   });
+
+  $('.registerForm').bootstrapValidator({
+      message: 'Este valor no es válido',
+      feedbackIcons: {
+          valid: 'glyphicon glyphicon-ok',
+          invalid: 'glyphicon glyphicon-remove',
+          validating: 'glyphicon glyphicon-refresh'
+      },
+      fields: {
+          tipo_vivienda: {
+              message: '',
+              validators: {
+                  notEmpty: {
+                      message: 'Este campo es requerido'
+                  },
+              }
+          },
+          email: {
+              validators: {
+                  notEmpty: {
+                      message: 'The email is required and cannot be empty'
+                  },
+                  emailAddress: {
+                      message: 'The input is not a valid email address'
+                  }
+              }
+          }
+      }
+  });
 });
 
 $( "#provincia" ).change(function (evt) {
