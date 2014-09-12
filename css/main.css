@@ -5802,7 +5802,7 @@ label {
   font-weight: normal; }
 
 .has-error label {
-  color: inherit; }
+  color: inherit !important; }
 
 .btn {
   font-family: "nimbus-sans", "museo-sans", Helvetica, Arial, sans-serif;
