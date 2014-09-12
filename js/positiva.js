@@ -23,7 +23,7 @@ $(function(){
             validators: {
                 notEmpty: {
                     message: 'Este campo es requerido'
-                },
+                }
             }
         }
       }
