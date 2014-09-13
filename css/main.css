@@ -5981,7 +5981,7 @@ footer {
 
 @media (max-width: 1224px) {
   .container .form-landing {
-    top: 10%; }
+    top: 0%; }
 
   .download-phone label, .price-block label {
     font-size: 1.2rem; } }
