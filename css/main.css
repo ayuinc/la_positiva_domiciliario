@@ -6009,6 +6009,9 @@ footer {
     border: 6px solid rgba(255, 106, 0, 0.45);
     border-bottom: none; }
 
+  body.landing {
+    background-size: cover; }
+
   .content {
     border-right: 6px solid rgba(255, 106, 0, 0.45);
     border-left: 6px solid rgba(255, 106, 0, 0.45); }
