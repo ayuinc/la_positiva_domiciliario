@@ -5987,6 +5987,9 @@ footer {
     border: 10px solid rgba(255, 106, 0, 0.45);
     border-bottom: none; }
 
+  .container .form-landing {
+    top: 0; }
+
   .content {
     border-right: 10px solid rgba(255, 106, 0, 0.45);
     border-left: 10px solid rgba(255, 106, 0, 0.45); }
