@@ -5770,6 +5770,9 @@ body {
   height: 100%;
   min-height: 100%; }
 
+.gray-base {
+  color: #313233; }
+
 body.landing {
   background: url(../../images/img/landing-bg.png) no-repeat;
   background-size: 100% 100%;
@@ -5809,7 +5812,8 @@ label {
   font-family: "nimbus-sans", "museo-sans", Helvetica, Arial, sans-serif;
   border-radius: 0;
   border-color: #fff;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  font-size: 1.5rem; }
 
 .icon-checkmark:before {
   content: "\e600";
@@ -5856,6 +5860,9 @@ label {
     background: none; }
 
 @media (max-width: 480px) {
+  body.landing {
+    background: url(../../images/img/pattern.png) repeat; }
+
   .container {
     min-height: 0 !important; }
     .container .form-landing {
@@ -5943,7 +5950,7 @@ header {
   line-height: 14px; }
 
 .price-block .price {
-  font-size: 4.5rem;
+  font-size: 4.2rem;
   margin-bottom: 0; }
 .price-block label {
   border: none;
@@ -6015,9 +6022,16 @@ footer {
     border: 6px solid rgba(255, 106, 0, 0.45);
     border-bottom: none; }
 
-  body.landing {
-    background: none;
-    border: 10px solid rgba(255, 106, 0, 0.45); }
+  .rango {
+    font-size: 3.5rem; }
+
+  .landing {
+    border: 17px solid rgba(255, 106, 0, 0.45); }
+    .landing .main-title,
+    .landing label {
+      color: #4a4c4d; }
+    .landing .social-networks a {
+      color: #ff7816; }
 
   .content {
     border-right: 6px solid rgba(255, 106, 0, 0.45);
@@ -6042,7 +6056,7 @@ footer {
     border-right: 5px solid rgba(255, 106, 0, 0.45);
     border-left: 5px solid rgba(255, 106, 0, 0.45); } }
 body.confirmacion {
-  background: url(../../assets/images/background-confirm.png) no-repeat;
+  background: url(../../images/img/background-confirm.png) no-repeat;
   background-size: 100% 100%;
   color: #fff; }
 

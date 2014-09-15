@@ -6,11 +6,11 @@
             <div class="row">
               <div class="col-md-9 center-block">
                 <div class="header-text">
-                  <p class="text-medium">Tu inmueble esta avaluado</p>
+                  <p class="text-medium" style="margin-bottom: -1rem;">Tu inmueble esta avaluado</p>
                 {exp:get_planes:get_rango_planes rango_id="{post_valor_vivienda}"}
-                  <p class="text-xlarge alt-bold">{rango}</p>
+                  <p class="text-xlarge alt-bold rango">{rango}</p>
                 {/exp:get_planes:get_rango_planes}
-                  <p class="text-small">Aplicas para</p>
+                  <p class="text-small" style="margin-bottom: -1rem;">Aplicas para</p>
                   <p class="text-xlarge uppercase">hogar positivo</p>
                 </div>
               </div>
@@ -23,9 +23,10 @@
             <div class="row">
               <div class="col-md-8 center-block">
                 <h2 class="text-large uppercase alt-bold pb-21">que te cubre</h2>
-                <p class='text-small gray-color'>Todo riesgo de incendio y explosión, terremoto y riesgos de la naturaleza, terrorismo y riesgos políticos.</p>
-                <a href="#" class='link text-small blue'>Más información</a>
-                <p class='text-small uppercase blue alt-bold pb-21 pt-21'>Es opcional para robo o intento de robo</p>
+                <p class='text-small gray-color' style="font-size:1.5rem">Todo riesgo de incendio y explosión, terremoto y riesgos de la naturaleza, terrorismo y riesgos políticos.</p>
+                <!-- <a href="#" class='link text-small blue'>Más información</a> -->
+                <!-- <p class='text-small uppercase text-gray-lighter alt-bold pb-21 pt-21'>Es opcional para robo o intento de robo</p> -->
+                <p class='text-small gray-color' style="font-size:1.4rem"><em><span class="text-primary">*</span>Es opcional para robo o intento de robo</em></p>
                 <p class='text-small gray-color'>Hasta S/. {hasta}</p>
               </div>
             </div>
@@ -48,7 +49,7 @@
                       <div class="row">
                         <div class="col-md-12 col-sm-12">
                           <p class='price text-large uppercase'>s/. {price_con_robo}</p>
-                          <p class='text-xsmall uppercase'>prima mensual</p>
+                          <p class='uppercase' style="font-size: 1rem;">prima mensual</p>
                         </div>
                       </div>
                     </div>
@@ -57,18 +58,18 @@
                     <div class="price-block">
                       <div class="row">
                         <div class="col-xs-9 col-md-9 col-sm-9">
-                          <label class="uppercase text-xsmall pt-14 pb-14" for="sinrobo">
+                          <label class="uppercase text-xsmall pt-14 pb-14 checked" for="sinrobo">
                             sin robo
                           </label>
                         </div>
                         <div class="col-xs-2 col-md-2 col-sm-2">  
-                          <input type="radio" name="robo" id="sinrobo" value="{id_sin_robo}">
+                          <input type="radio" name="robo" id="sinrobo" value="{id_sin_robo}" checked="checked">
                         </div>   
                       </div>
                       <div class="row">
                         <div class="col-md-12 col-sm-12">
                           <p class='price text-large uppercase'>s/. {price_sin_robo}</p>
-                          <p class='text-xsmall uppercase'>prima mensual</p>
+                          <p class='uppercase' style="font-size: 1rem;">prima mensual</p>
                         </div>
                       </div>
                     </div>
@@ -84,8 +85,8 @@
                   <div class="form-group download-phone">
                     <div class="col-xs-12 col-sm-6 col-md-6">
                       <div class="row mb-7-100"> 
-                        <input type="radio" name="radios" id="radios-0" value="1">
-                        <label class="radio-inline col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 pt-7-100 pb-7-100" for="radios-0">
+                        <input type="radio" name="radios" id="radios-0" value="1" checked="checked">
+                        <label id="download" class="radio-inline col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 pt-7-100 pb-7-100" for="radios-0">
                           descarga tu cotizacion
                         </label> 
                       </div>
@@ -93,7 +94,7 @@
                     <div class="col-xs-12 col-sm-6 col-md-6">
                       <div class="row mb-7-100"> 
                         <input type="radio" name="radios" id="radios-1" value="2">
-                        <label class="radio-inline col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-11 col-md-offset-1 pt-7-100 pb-7-100" for="radios-1">
+                        <label id="phone" class="radio-inline col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-11 col-md-offset-1 pt-7-100 pb-7-100" for="radios-1">
                           contactanos por telefono
                         </label>
                       </div>
@@ -205,11 +206,11 @@
             <div class="row social-networks">
               <div class="col-md-12">
                 <ul class="nav nav-pills">
-                  <li><a href="#" class="icon-facebook"></a></li>
-                  <li><a href="#" class="icon-twitter"></a></li>
-                  <li><a href="#">Términos y condiciones</a></li>
-                  <li><a href="#">Contáctanos</a></li>
-                  <li class="pull-right"><a href="#"><img class="right" src="{site_url}/images/img/logo_blanco.png"></a></li>
+                  <li><a href="http://www.facebook.com/LaPositivaSeguros" target"_blank" class="icon-facebook"></a></li>
+                  <li><a href="http://twitter.com/LaPositiva_Peru" target"_blank" class="icon-twitter" target"_blank"></a></li>
+                  <li><a data-toggle="modal" href="#terms">Términos y condiciones</a></li>
+                  <li><a data-toggle="modal" href="#contact">Contáctanos</a></li>
+                  <li class="pull-right" style="display:inline-block"><a href="#" display:inline-block><img class="right" src="{site_url}/images/img/logo_blanco.png"></a></li>
                 </ul>
               </div>
             </div>
