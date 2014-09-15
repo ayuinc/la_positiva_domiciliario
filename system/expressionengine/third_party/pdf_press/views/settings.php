@@ -14,7 +14,8 @@
 	    $this->table->set_heading(
 			lang('id'),
 	        lang('key'),
-			lang('data')
+			lang('data'),
+			lang('delete')
 		);
 
 	    foreach($settings as $setting)
@@ -22,7 +23,8 @@
 	        $this->table->add_row(
 	            $setting['id'],
 				'<a href='.$setting['setting_link'].'>'.$setting['key'].'</a>',
-				$setting['data']
+				$setting['data'],
+				anchor($setting['delete_link'], 'Delete', array('onClick' => "return confirm('Are you sure you want to delete this setting?')"))
 	        );
 	    }
 

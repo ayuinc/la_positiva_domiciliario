@@ -24,77 +24,48 @@ require_once("dompdf/dompdf_config.inc.php");
 
 if (! defined('BASEPATH')) exit('No direct script access allowed');
 
+require PATH_THIRD."pdf_press/config.php";
+
 class Pdf_press {
 	var $site_id = 1;
 	
-	function __construct() {
-		
-		$this->EE =& get_instance();
-		
-		$this->site_id = $this->EE->config->item('site_id');
-		$this->EE->lang->loadfile('pdf_press');
+	function __construct() {		
+		$this->site_id = ee()->config->item('site_id');
+		ee()->lang->loadfile('pdf_press');
 		
 		if(! class_exists('EE_Template'))
 		{
-			$this->EE->TMPL =& load_class('Template', 'libraries', 'EE_');
+			ee()->TMPL =& load_class('Template', 'libraries', 'EE_');
 		}
 	}
 	
 	public function save_to_pdf_form() {
 		/* this method is deprecated, please use save_to_pdf or parse_pdf instead */
-		$this->EE->output->show_user_error('general', $errors); 
-		
-		/*
-		$tagdata = $this->EE->TMPL->tagdata;
-		
-		$path = $this->EE->TMPL->fetch_param('path', $this->EE->uri->uri_string());
-		$attachment = $this->EE->TMPL->fetch_param('attachment', '1');
-		$size = $this->EE->TMPL->fetch_param('size', DOMPDF_DEFAULT_PAPER_SIZE);
-		$orientation = $this->EE->TMPL->fetch_param('orientation', 'portrait');
-		$filename = $this->EE->TMPL->fetch_param('filename', '');
-		
-		// Load the form helper
-		$this->EE->load->helper('form');
-		
-		$form_details = array('action'     => '',
-	                  'name'           => 'save_to_pdf',
-	                  'id'             => $this->EE->TMPL->form_id,
-	                  'class'          => $this->EE->TMPL->form_class,
-	                  'hidden_fields'  => array(
-						'ACT'			=> $this->EE->functions->fetch_action_id('Pdf_press', 'create_pdf'),
-						'path'			=> $path,
-						'attachment'	=> $attachment,
-						'size'			=> $size,
-						'orientation'	=> $orientation,
-						'filename'		=> $filename,
-					  ),
-	    );
-
-		$output = $this->EE->functions->form_declaration($form_details);
-		$output .= stripslashes($tagdata);
-		$output .= "</form>";
-		return $output;
-		*/
+		ee()->output->show_user_error('general', $errors); 
 	}
 	
 	public function save_to_pdf() {
-		$path = $this->EE->TMPL->fetch_param('path', $this->EE->uri->uri_string());
-		$attachment = $this->EE->TMPL->fetch_param('attachment', '1');
-		$size = $this->EE->TMPL->fetch_param('size', DOMPDF_DEFAULT_PAPER_SIZE);
-		$orientation = $this->EE->TMPL->fetch_param('orientation', 'portrait');
-		$filename = $this->EE->TMPL->fetch_param('filename', '');
+		$path = ee()->TMPL->fetch_param('path', ee()->uri->uri_string());
+		$attachment = ee()->TMPL->fetch_param('attachment', '1');
+		$size = ee()->TMPL->fetch_param('size', DOMPDF_DEFAULT_PAPER_SIZE);
+		$orientation = ee()->TMPL->fetch_param('orientation', 'portrait');
+		$filename = ee()->TMPL->fetch_param('filename', '');
+		$key = ee()->TMPL->fetch_param('key', '');
 		
-		$action_id = $this->EE->functions->fetch_action_id('Pdf_press', 'create_pdf');
+		$action_id = ee()->functions->fetch_action_id('Pdf_press', 'create_pdf');
 		
-		return $this->EE->functions->create_url("")."ACT=$action_id&path=".urlencode($path)."&size=".urlencode($size)."&orientation=$orientation&attachment=$attachment&filename=".urlencode($filename);
+		$add_query = "?";
+		if(ee()->config->item('force_query_string') == 'y') $add_query = "";
+		
+		return ee()->functions->create_url("").$add_query."ACT=$action_id&path=".urlencode($path)."&size=".urlencode($size)."&orientation=$orientation&key=$key&attachment=$attachment&filename=".urlencode($filename);
 	}
 	
 	public function parse_pdf() {
 		$settings = array(
-			'attachment' 	=> $this->EE->TMPL->fetch_param('attachment', '1'),
-			'orientation' 	=> $this->EE->TMPL->fetch_param('orientation', 'portrait'),
-			'size'			=> $this->EE->TMPL->fetch_param('size', DOMPDF_DEFAULT_PAPER_SIZE),
-			'filename'		=> $this->EE->TMPL->fetch_param('filename', ''),
+			'attachment' 	=> ee()->TMPL->fetch_param('attachment', '1'),
+			'orientation' 	=> ee()->TMPL->fetch_param('orientation', 'portrait'),
+			'size'			=> ee()->TMPL->fetch_param('size', DOMPDF_DEFAULT_PAPER_SIZE),
+			'filename'		=> ee()->TMPL->fetch_param('filename', ''),
 			'encrypt'		=> false,
 			'userpass'		=> '',
 			'ownerpass'		=> '',
@@ -105,7 +76,7 @@ class Pdf_press {
 		);
 		
 		//get the key
-		$key = $this->EE->TMPL->fetch_param('key', '');
+		$key = ee()->TMPL->fetch_param('key', '');
 		
 		try {
 		
@@ -119,29 +90,30 @@ class Pdf_press {
 				}
 			}
 		
-			$html = $this->_render($this->EE->TMPL->tagdata);
+			$html = $this->_render(ee()->TMPL->tagdata);
 		
 			require_once("dompdf/dompdf_config.inc.php");
 		
 			$this->_generate_pdf($html, $settings);
+			exit;
 			
 		} catch (Exception $e) {
-			$check_markup = $this->EE->lang->line('error_check_markup');
-			$dompdf_error =  $this->EE->lang->line('dompdf_error');
+			$check_markup = ee()->lang->line('error_check_markup');
+			$dompdf_error =  ee()->lang->line('dompdf_error');
 			
 			$errors = array($check_markup, 
 					$dompdf_error.$e->getMessage());
-			$this->EE->output->show_user_error('general', $errors); 
+			ee()->output->show_user_error('general', $errors); 
 		}
 	}
 	
 	public function create_pdf() {
 		
 		$settings = array(
-			'attachment' 	=> $this->EE->input->get_post('attachment'),
-			'orientation' 	=> $this->EE->input->get_post('orientation'),
-			'size'			=> urldecode($this->EE->input->get_post('size')),
-			'filename'		=> urldecode($this->EE->input->get_post('filename')),
+			'attachment' 	=> ee()->input->get_post('attachment'),
+			'orientation' 	=> ee()->input->get_post('orientation'),
+			'size'			=> urldecode(ee()->input->get_post('size')),
+			'filename'		=> urldecode(ee()->input->get_post('filename')),
 			'encrypt'		=> false,
 			'userpass'		=> '',
 			'ownerpass'		=> '',
@@ -152,8 +124,8 @@ class Pdf_press {
 		);
 		
 		//get the key
-		$key = $this->EE->input->get_post('key', '');		
-		$path = urldecode($this->EE->input->get_post('path'));
+		$key = ee()->input->get_post('key', '');		
+		$path = urldecode(ee()->input->get_post('path'));
 		$filename = $settings['filename'];
 		
 		if($filename == "") {
@@ -161,14 +133,12 @@ class Pdf_press {
 			$settings['filename'] = $filename;
 		}
 		
-		$full_url = $this->EE->functions->create_url($path);
+		$full_url = ee()->functions->create_url($path);
 		
 		$html = $this->get_url_contents($full_url);
 		
 		require_once("dompdf/dompdf_config.inc.php");
 		
-		
-			
 		if($key != "") {
 			//lookup the key & pull settings, if key not found then throw user error
 			$data_settings = $this->_lookup_settings($key);
@@ -181,21 +151,22 @@ class Pdf_press {
 			
 		try {
 			$this->_generate_pdf($html, $settings);
+			exit;
 			
 		} catch (Exception $e) {
-			$check_markup = $this->EE->lang->line('error_check_markup');
-			$dompdf_error =  $this->EE->lang->line('dompdf_error');
+			$check_markup = ee()->lang->line('error_check_markup');
+			$dompdf_error =  ee()->lang->line('dompdf_error');
 			
 			$errors = array($check_markup, 
 					$dompdf_error.$e->getMessage());
-			$this->EE->output->show_user_error('general', $errors); 
+			ee()->output->show_user_error('general', $errors); 
 		}
 	}
 	
 	private function _lookup_settings($key) {
-		$this->EE->db->select('id, key, data');
-		$this->EE->db->where("key = '$key'");
-		$query = $this->EE->db->get("pdf_press_configs");
+		ee()->db->select('id, key, data');
+		ee()->db->where("key = '$key'");
+		$query = ee()->db->get("pdf_press_configs");
 		
 		if($query->num_rows() > 0) {
 			$row = $query->row();
@@ -218,7 +189,7 @@ class Pdf_press {
 		} else {
 			
 			$errors = array(lang('no_setting_found'), "missing setting preset: '$key'");
-			$this->EE->output->show_user_error('general', $errors);
+			ee()->output->show_user_error('general', $errors);
 			
 			//throw new Exception(lang('no_setting_found'));
 		}
@@ -276,7 +247,7 @@ class Pdf_press {
 			curl_close($ch);
 			return $data;
 		} else {
-			$this->EE->output->show_user_error('general', $this->EE->lang->line('error_curl_fopen')); 
+			ee()->output->show_user_error('general', ee()->lang->line('error_curl_fopen')); 
 		}
 
 	}
@@ -285,24 +256,24 @@ class Pdf_press {
 	//http://venodesigns.net/tag/expressionengine/
 	private function _render($text, $opts = array()) {
         /* Create a new EE Template Instance */
-        $this->EE->TMPL = new EE_Template();
+        ee()->TMPL = new EE_Template();
 
         /* Run through the initial parsing phase, set output type */
-        $this->EE->TMPL->parse($text, FALSE);
-		$this->EE->TMPL->final_template = $this->EE->TMPL->parse_globals($this->EE->TMPL->final_template);
-        $this->EE->output->out_type = $this->EE->TMPL->template_type;
+        ee()->TMPL->parse($text, FALSE);
+		ee()->TMPL->final_template = ee()->TMPL->parse_globals(ee()->TMPL->final_template);
+        ee()->output->out_type = ee()->TMPL->template_type;
 
         /* Return source. If we were given opts to do template replacement, parse them in */
         if(count($opts) > 0) {
-            $this->EE->output->set_output(
-                $this->EE->TMPL->parse_variables(
-                    $this->EE->TMPL->final_template, array($opts)
+            ee()->output->set_output(
+                ee()->TMPL->parse_variables(
+                    ee()->TMPL->final_template, array($opts)
                 )
             );
         } else {
-            $this->EE->output->set_output($this->EE->TMPL->final_template);
+            ee()->output->set_output(ee()->TMPL->final_template);
         }
-		return $this->EE->output->final_output;
+		return ee()->output->final_output;
     }
 
 	private function curl_installed(){

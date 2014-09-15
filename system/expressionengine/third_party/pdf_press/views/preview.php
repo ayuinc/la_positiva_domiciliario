@@ -29,14 +29,9 @@
 				<td class="odd">
 					<label for="size">Size:</label><br/>
 					<select id="size">
-						<? 
-						foreach($paper_sizes as $key => $paper) {
-						?>
-
-							<option value="<?=$key?>" <?= ($key == DOMPDF_DEFAULT_PAPER_SIZE ? 'selected' : '')?> ><?=$key?></option>
-						<?
-						}
-						?>		
+						<?php foreach($paper_sizes as $paper) : ?>
+								<option value="<?=$paper?>" <?= ($paper == DOMPDF_DEFAULT_PAPER_SIZE ? 'selected' : '')?> ><?=$paper?></option>
+						<?php endforeach; ?>	
 					</select>
 				</td>
 				<td class="even">

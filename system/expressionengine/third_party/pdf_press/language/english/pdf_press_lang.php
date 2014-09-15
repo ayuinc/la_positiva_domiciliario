@@ -74,6 +74,9 @@ $lang = array(
 "fonts"							=> "Fonts / Unicode",
 
 "font_install_help"				=> "In order to use Unicode, you must upload a Unicode font before you set the font-family in the CSS. You can also upload other fonts to use in your PDF document.",
+
+"setting_delete_success"		=> "Setting deleted!",
+
 /* END */
 ''=>''
 );
