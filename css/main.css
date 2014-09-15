@@ -6045,6 +6045,9 @@ footer {
   footer .nav-pills img {
     position: static; } }
 @media (max-width: 480px) {
+  #chat {
+    display: none; }
+
   html {
     font-size: 8px; }
 
