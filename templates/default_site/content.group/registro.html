@@ -14,17 +14,27 @@
 		}
 		{/exp:registro_interesado:registrar_interesado}
 
-		{exp:mandrillapp:send_email 
+		{exp:mandrillapp:send_email_positiva 
 			email_to="freddy01288@gmail.com" 
 			name="{post_name} {post_last_name}" 
-			from="{post_email}"
+			email_from="freddy01288@gmail.com"
+			plan_id="{post_id_seguro}"
+			phone="{post_phone}"
+			email_client ="{post_email}"
+		} 
+		{/exp:mandrillapp:send_email_positiva}
+
+		{exp:mandrillapp:send_email_client 
+			email_to="freddy01288@gmail.com" 
+			name="{post_name} {post_last_name}" 
+			email_from="{post_email}"
 			plan_id="{post_id_seguro}"
 		} 
-		{/exp:mandrillapp:send_email}
+		{/exp:mandrillapp:send_email_client}		
 
 
 	  <body class="confirmacion">
-	    <div class="container">
+DemographiTest Scorescs	    <div class="container">
 	      <div class="col-md-8 center-block form-landing">
 	        <div class="row">
 	            <h1 class="text-center cotizador">{post_name} {post_last_name}</h1>
