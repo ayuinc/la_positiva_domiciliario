@@ -1,5 +1,8 @@
 
 $(function(){
+  $('#cotizar').bootstrapValidator();
+  $('.registro').bootstrapValidator();
+  $('.buscar').bootstrapValidator();
   $('#ciudad').prop('disabled', true);
   $( "#distrito" ).prop('disabled', true);
   $( ".result" ).hide();
@@ -9,6 +12,7 @@ $(function(){
     $('.price-block label').removeClass('checked');
     $(this).addClass('checked');
   });
+
 });
 
 $( "#provincia" ).change(function (evt) {
