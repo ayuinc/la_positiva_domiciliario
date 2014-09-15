@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
 
   Ayu Consulting Frontend Boilerplate
@@ -5985,6 +5986,36 @@ footer {
   background: url(../../images/img/footer-bg.png) no-repeat;
   background-size: 100% 100%;
   color: #ff6a00; }
+
+#chat {
+  position: fixed;
+  right: 0px;
+  top: 53%;
+  display: none;
+  background: #ebecee;
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodΓÇªBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
+  background: -moz-linear-gradient(left, #ebecee 64%, #c5c7c9 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(64%, #ebecee), color-stop(100%, #c5c7c9));
+  background: -webkit-linear-gradient(left, #ebecee 64%, #c5c7c9 100%);
+  background: -o-linear-gradient(left, #ebecee 64%, #c5c7c9 100%);
+  background: -ms-linear-gradient(left, #ebecee 64%, #c5c7c9 100%);
+  background: linear-gradient(to right, #ebecee 64%, #c5c7c9 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ebecee', endColorstr='#c5c7c9',GradientType=1 );
+  box-shadow: 0px 0px 12px -4px #000000;
+  -webkit-border-radius: 5px 0px 0px 5px;
+  -moz-border-radius: 5px 0px 0px 5px;
+  border-radius: 5px 0px 0px 5px;
+  border: 1px solid #e3e3e3; }
+  #chat a {
+    width: 60px;
+    height: 140px;
+    z-index: 100;
+    text-overflow: inherit;
+    padding: 26px 11px 25px 11px;
+    display: block;
+    background-image: url(../img/chat-icon.png);
+    background-repeat: no-repeat;
+    background-position: 12px 20px; }
 
 @media (max-width: 1224px) {
   .container .form-landing {
