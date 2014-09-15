@@ -13,6 +13,10 @@ $(function(){
     $(this).addClass('checked');
   });
 
+  $('#phone').click(function(){
+    $('.buscar').toggle();
+  });
+
 });
 
 $( "#provincia" ).change(function (evt) {

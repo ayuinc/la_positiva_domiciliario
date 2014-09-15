@@ -6021,6 +6021,9 @@ footer {
     border: 6px solid rgba(255, 106, 0, 0.45);
     border-bottom: none; }
 
+  .rango {
+    font-size: 3.5rem; }
+
   .landing {
     border: 17px solid rgba(255, 106, 0, 0.45); }
     .landing .main-title,
