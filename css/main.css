@@ -5770,6 +5770,9 @@ body {
   height: 100%;
   min-height: 100%; }
 
+.gray-base {
+  color: #313233; }
+
 body.landing {
   background: url(../../images/img/landing-bg.png) no-repeat;
   background-size: 100% 100%;
