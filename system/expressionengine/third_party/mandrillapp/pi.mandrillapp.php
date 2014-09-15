@@ -43,11 +43,8 @@ class Mandrillapp {
 	$to = ee()->TMPL->fetch_param('email_to');
 	$name = ee()->TMPL->fetch_param('name');
 	$from = ee()->TMPL->fetch_param('from');
-	// $to= "gms122@gmail.com";
-	// $name= "Gianfranco Montoya";
 	$subject= "Cotización Seguro Domiciliario.";
-	// $from= "lapositiva.domiciliario@gmail.com";
-	//$text = $TMPL->tagdata;
+
 	$text = 'Estimado(a) '.$name.',<p>
 	Cotización Seguro Domiciliario - La Positiva.<p>.
 	<br>';
