@@ -14,7 +14,10 @@ $(function(){
   });
 
   $('#phone').click(function(){
-    $('.buscar').toggle();
+    $('.buscar').show();
+  });
+  $('#download').click(function(){
+    $('.buscar').hide();
   });
 
 });
