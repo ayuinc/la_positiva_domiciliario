@@ -26,6 +26,8 @@ if ( ! defined('EXT'))
     exit('Invalid file request');
 }
 
+require PATH_THIRD."pdf_press/config.php";
+
 class Pdf_press_mcp {
 	
 	var $site_id = 1;
@@ -34,47 +36,48 @@ class Pdf_press_mcp {
 	
 	function __construct() { 
 		// Make a local reference to the ExpressionEngine super object 
-		$this->EE =& get_instance(); 
-		$this->site_id = $this->EE->config->item('site_id');
+		$this->site_id = ee()->config->item('site_id');
 		$this->base_url = BASE.AMP.'C=addons_modules'.AMP.'M=show_module_cp'.AMP.'module=pdf_press';
+		if(APP_VER >= '2.6') {
+			ee()->view->cp_page_title = ee()->lang->line('pdf_press_module_name');
+		} else {
+			ee()->cp->set_variable('cp_page_title', ee()->lang->line('pdf_press_module_name'));
+		}	
 	}
 	
 	function index() {
-		$this->EE->load->helper('form');
-		$this->EE->load->library('table');	
-		$this->EE->load->library('javascript');
-		
-		$this->EE->cp->set_variable('cp_page_title', $this->EE->lang->line('pdf_press_module_name'));
+		ee()->load->helper('form');
+		ee()->load->library('table');	
+		ee()->load->library('javascript');
 		
 		$vars['server_configs'] = $this->_test_server();
 		$vars['dompdf_configs'] = $this->_test_dompdf();
 		
-		return $this->EE->load->view('index', $vars, TRUE);
+		return ee()->load->view('index', $vars, TRUE);
 	}
 	
 	function preview() {
-		$this->EE->load->helper('form');
-		$this->EE->load->library('table');	
-		$this->EE->load->library('javascript');
-
-		$this->EE->cp->set_variable('cp_page_title', $this->EE->lang->line('pdf_press_module_name'));
+		ee()->load->helper('form');
+		ee()->load->library('table');	
+		ee()->load->library('javascript');
 		
-		$action_id = $this->EE->cp->fetch_action_id('Pdf_press', 'create_pdf');
+		$action_id = ee()->cp->fetch_action_id('Pdf_press', 'create_pdf');
 		
-		$url = $this->EE->functions->create_url("")."?ACT=$action_id&attachment=0&path=";
+		$add_query = "?";
+		if(ee()->config->item('force_query_string') == 'y') $add_query = "";
+		
+		$url = ee()->functions->create_url("").$add_query."ACT=$action_id&attachment=0&path=";
 
 		$vars['dom_path'] = $url;
-		$vars['paper_sizes'] = $this->_get_paper_sizes();
+		$vars['paper_sizes'] = array_keys($this->_get_paper_sizes());
 
-		return $this->EE->load->view('preview', $vars, TRUE);
+		return ee()->load->view('preview', $vars, TRUE);
 	}
 	
 	function settings() {
-		$this->EE->load->helper('form');
-		$this->EE->load->library('table');	
-		$this->EE->load->library('javascript');
-
-		$this->EE->cp->set_variable('cp_page_title', $this->EE->lang->line('pdf_press_module_name'));
+		ee()->load->helper('form');
+		ee()->load->library('table');	
+		ee()->load->library('javascript');
 		
 		$query = $this->_get_settings($this->perpage, 0);
 		
@@ -96,60 +99,69 @@ class Pdf_press_mcp {
 				'key'			=> $row->key,
 				'data'			=> $setting_label,
 				'setting_link'	=> BASE.AMP.'C=addons_modules'.AMP.'M=show_module_cp'.AMP.'module=pdf_press'.AMP.'method=edit_setting'.AMP.'id='.$row->id,
+				'delete_link'	=> BASE.AMP.'C=addons_modules'.AMP.'M=show_module_cp'.AMP.'module=pdf_press'.AMP.'method=delete_setting'.AMP.'id='.$row->id,
 			);
 		}
 		
-		$total = $this->EE->db->count_all('pdf_press_configs');
+		$total = ee()->db->count_all('pdf_press_configs');
 
-		$this->EE->load->library('pagination');
+		ee()->load->library('pagination');
 		$p_config = $this->pagination_config('settings', $total);
 
-		$this->EE->pagination->initialize($p_config);
+		ee()->pagination->initialize($p_config);
 
-		$vars['pagination'] = $this->EE->pagination->create_links();
+		$vars['pagination'] = ee()->pagination->create_links();
 		
-		return $this->EE->load->view('settings', $vars, TRUE);
+		return ee()->load->view('settings', $vars, TRUE);
 	}
 	
 	function edit_setting() {
-		$this->EE->load->helper('form');
-		$this->EE->load->library('table');	
-		$this->EE->load->library('javascript');
-		
-		$this->EE->cp->set_variable('cp_page_title', lang('pdf_press_module_name'));
-		
+		ee()->load->helper('form');
+		ee()->load->library('table');	
+		ee()->load->library('javascript');
+				
 		$vars['form_hidden'] = null;
 		$vars['action_url'] = BASE.AMP.'C=addons_modules'.AMP.'M=show_module_cp'.AMP.'module=pdf_press'.AMP.'method=save_setting';
 		
-		$id = $this->EE->input->get("id");
-		$query = $this->EE->db->get('pdf_press_configs', $id);
+		$id = ee()->input->get("id");
+		ee()->db->where("id = '$id'");
+		$query = ee()->db->get('pdf_press_configs');
 		$row = $query->row();
 		
 		$vars['data'] = $this->_edit_setting_form($row);
 		$vars['preset_page_title'] = lang('Edit Preset: '.$row->key);
 		
-		return $this->EE->load->view('setting-form', $vars, TRUE);
+		return ee()->load->view('setting-form', $vars, TRUE);
+	}
+	
+	function delete_setting() {		
+		$id = ee()->input->get("id");
+		//ee()->db->where("id = '$id'");
+		ee()->db->delete('pdf_press_configs', array("id" => $id));
+		//$row = $query->row();
+		
+		ee()->session->set_flashdata('message_success',lang('setting_delete_success')); 
+		
+		ee()->functions->redirect(BASE.AMP.'C=addons_modules'.AMP.'M=show_module_cp'.AMP.'module=pdf_press'.AMP.'method=settings');
 	}
 	
 	function new_setting() {
-		$this->EE->load->helper('form');
-		$this->EE->load->library('table');	
-		$this->EE->load->library('javascript');
-		
-		$this->EE->cp->set_variable('cp_page_title', lang('pdf_press_module_name'));
-		
+		ee()->load->helper('form');
+		ee()->load->library('table');	
+		ee()->load->library('javascript');
+				
 		$vars['form_hidden'] = null;
 		$vars['action_url'] = BASE.AMP.'C=addons_modules'.AMP.'M=show_module_cp'.AMP.'module=pdf_press'.AMP.'method=save_setting';
 		$vars['data'] = $this->_new_setting_form();
 		$vars['preset_page_title'] = lang('New Preset:');
 		
-		return $this->EE->load->view('setting-form', $vars, TRUE);
+		return ee()->load->view('setting-form', $vars, TRUE);
 	}
 	
 	function fonts() {
 		session_start();
 		$_SESSION["authenticated"] = true;
-		return $this->EE->load->view('fonts', null, TRUE); 
+		return ee()->load->view('fonts', null, TRUE); 
 	}
 	
 	function font_controller() {
@@ -158,72 +170,71 @@ class Pdf_press_mcp {
 		$font_message = $_SESSION['font-message'];
 
 		if($font_error) {
-			$this->EE->session->set_flashdata('message_failure',$font_message); 
+			ee()->session->set_flashdata('message_failure',$font_message); 
 		} else {
-			$this->EE->session->set_flashdata('message_success',$font_message); 
+			ee()->session->set_flashdata('message_success',$font_message); 
 		}
-		$this->EE->functions->redirect(BASE.AMP.'C=addons_modules'.AMP.'M=show_module_cp'.AMP.'module=pdf_press'.AMP.'method=fonts');
+		ee()->functions->redirect(BASE.AMP.'C=addons_modules'.AMP.'M=show_module_cp'.AMP.'module=pdf_press'.AMP.'method=fonts');
 	}
 	
 	function save_setting() {
 		
 		//validation?
-		$this->EE->load->helper(array('form', 'url'));
-		$this->EE->load->library('form_validation');
-		$this->EE->form_validation->set_rules('key', lang('key'), 'required');
+		ee()->load->helper(array('form', 'url'));
+		ee()->load->library('form_validation');
+		ee()->form_validation->set_rules('key', lang('key'), 'required');
 		
 		$config_data = array(
-			'key'			=> $this->EE->input->post('key'),
-			'attachment'	=> $this->EE->input->post('attachment'),
-			'orientation'	=> $this->EE->input->post('orientation'),
-			'size'			=> $this->EE->input->post('size'),
-			'filename'		=> $this->EE->input->post('filename'),
-			'encrypt'		=> $this->EE->input->post('encrypt'),
-			'userpass'		=> $this->EE->input->post('userpass'),
-			'ownerpass'		=> $this->EE->input->post('ownerpass'),
-			'can_print'		=> $this->EE->input->post('can_print'),
-			'can_modify'	=> $this->EE->input->post('can_modify'),
-			'can_copy'		=> $this->EE->input->post('can_copy'),
-			'can_add'		=> $this->EE->input->post('can_add'),
+			'key'			=> ee()->input->post('key'),
+			'attachment'	=> ee()->input->post('attachment'),
+			'orientation'	=> ee()->input->post('orientation'),
+			'size'			=> ee()->input->post('size'),
+			'filename'		=> ee()->input->post('filename'),
+			'encrypt'		=> ee()->input->post('encrypt'),
+			'userpass'		=> ee()->input->post('userpass'),
+			'ownerpass'		=> ee()->input->post('ownerpass'),
+			'can_print'		=> ee()->input->post('can_print'),
+			'can_modify'	=> ee()->input->post('can_modify'),
+			'can_copy'		=> ee()->input->post('can_copy'),
+			'can_add'		=> ee()->input->post('can_add'),
 		);
 
-		$id = $this->EE->input->post('id');
+		$id = ee()->input->post('id');
 
 		$data = array(
-			'id'	=> $id,
-			'key'	=>  $this->EE->input->post('key'),
+			'key'	=>  ee()->input->post('key'),
 			'data'	=> json_encode($config_data)
 		);
 		
-		if ($this->EE->form_validation->run() == FALSE)
+		if (ee()->form_validation->run() == FALSE)
 		{	
-			$this->EE->load->library('table');	
-			$this->EE->load->library('javascript');
+			ee()->load->library('table');	
+			ee()->load->library('javascript');
 			
 			$vars['form_hidden'] = null;
 			$vars['action_url'] = BASE.AMP.'C=addons_modules'.AMP.'M=show_module_cp'.AMP.'module=pdf_press'.AMP.'method=save_setting';
 			
-			$row = (object) array('id' => $id, 'key' => $this->EE->input->post('key'), 'data' => json_encode($config_data));
+			$row = (object) array('id' => $id, 'key' => ee()->input->post('key'), 'data' => json_encode($config_data));
 			$vars['data'] = $this->_edit_setting_form($row);
 			$vars['preset_page_title'] = lang('Edit Preset: '.$row->key);
 			
-			$this->EE->session->set_flashdata('message_failure',lang('setting_form_error')); 
+			ee()->session->set_flashdata('message_failure',lang('setting_form_error')); 
 			
-			return $this->EE->load->view('setting-form', $vars, TRUE);
+			return ee()->load->view('setting-form', $vars, TRUE);
 		}
 		else
 		{
 			//$this->load->view('formsuccess');
 
 			if($id == "") {
-				$this->EE->db->insert('pdf_press_configs', $data);
+				ee()->db->insert('pdf_press_configs', $data);
 			}
 			else {
-				$this->EE->db->where('id', $id);
-				$this->EE->db->update('pdf_press_configs', $data);
+				ee()->db->where('id', $id);
+				ee()->db->update('pdf_press_configs', $data);
 			}
 
-			$this->EE->functions->redirect(BASE.AMP.'C=addons_modules'.AMP.'M=show_module_cp'.AMP.'module=pdf_press'.AMP.'method=settings');
+			ee()->functions->redirect(BASE.AMP.'C=addons_modules'.AMP.'M=show_module_cp'.AMP.'module=pdf_press'.AMP.'method=settings');
 		}
 				
 		
@@ -585,12 +596,12 @@ class Pdf_press_mcp {
 	}
 
 	function _get_settings($perpage, $rownum) {
-		$this->EE->db->select('id, key, data');
+		ee()->db->select('id, key, data');
 		
 		if($perpage > 0)
-			$query = $this->EE->db->get('pdf_press_configs', $perpage, $rownum);
+			$query = ee()->db->get('pdf_press_configs', $perpage, $rownum);
 		else
-			$query = $this->EE->db->get('pdf_press_configs');
+			$query = ee()->db->get('pdf_press_configs');
 			
 		return $query;
 	}
@@ -605,10 +616,10 @@ class Pdf_press_mcp {
 		$config['query_string_segment'] = 'rownum';
 		$config['full_tag_open'] = '<p id="paginationLinks">';
 		$config['full_tag_close'] = '</p>';
-		$config['prev_link'] = '<img src="'.$this->EE->cp->cp_theme_url.'images/pagination_prev_button.gif" width="13" height="13" alt="<" />';
-		$config['next_link'] = '<img src="'.$this->EE->cp->cp_theme_url.'images/pagination_next_button.gif" width="13" height="13" alt=">" />';
-		$config['first_link'] = '<img src="'.$this->EE->cp->cp_theme_url.'images/pagination_first_button.gif" width="13" height="13" alt="< <" />';
-		$config['last_link'] = '<img src="'.$this->EE->cp->cp_theme_url.'images/pagination_last_button.gif" width="13" height="13" alt="> >" />';
+		$config['prev_link'] = '<img src="'.ee()->cp->cp_theme_url.'images/pagination_prev_button.gif" width="13" height="13" alt="<" />';
+		$config['next_link'] = '<img src="'.ee()->cp->cp_theme_url.'images/pagination_next_button.gif" width="13" height="13" alt=">" />';
+		$config['first_link'] = '<img src="'.ee()->cp->cp_theme_url.'images/pagination_first_button.gif" width="13" height="13" alt="< <" />';
+		$config['last_link'] = '<img src="'.ee()->cp->cp_theme_url.'images/pagination_last_button.gif" width="13" height="13" alt="> >" />';
 		
 		return $config;
 	}

@@ -9,7 +9,7 @@
 	<?php 
 	//include PATH_THIRD."pdf_press/dompdf/www/head.inc"; 
 	include PATH_THIRD."pdf_press/dompdf/www/functions.inc.php";
-	require_once PATH_THIRD."pdf_press/dompdf/dompdf_config.inc.php"; 
+	//require_once PATH_THIRD."pdf_press/dompdf/dompdf_config.inc.php"; 
 
 	function to_bytes($string) {
 	  $string = strtolower(trim($string));

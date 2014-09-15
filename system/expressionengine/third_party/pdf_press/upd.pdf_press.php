@@ -26,26 +26,27 @@ if ( ! defined('EXT'))
     exit('Invalid file request');
 }
 
+require PATH_THIRD."pdf_press/config.php";
+
 class Pdf_press_upd {
 
-    var $version = '1.5';
+    var $version = PDF_PRESS_VERSION;
     
     function __construct() { 
         // Make a local reference to the ExpressionEngine super object 
-        $this->EE =& get_instance(); 
     }
 
 	function install() {
-		$this->EE->load->dbforge();
+		ee()->load->dbforge();
 		
 		$data = array(
-			'module_name' => 'Pdf_press',
-			'module_version' => $this->version,
+			'module_name' => PDF_PRESS_NAME,
+			'module_version' => PDF_PRESS_VERSION,
 			'has_cp_backend' => 'y',
 			'has_publish_fields' => 'n'
 		);
 		
-		$this->EE->db->insert('modules', $data);
+		ee()->db->insert('modules', $data);
 		
 		$this->install_actions();
 		
@@ -55,18 +56,18 @@ class Pdf_press_upd {
 	}
 	
 	function uninstall() {
-		$this->EE->load->dbforge();
-		$this->EE->db->select('module_id');
+		ee()->load->dbforge();
+		ee()->db->select('module_id');
 		
-		$query = $this->EE->db->get_where('modules', array('module_name' => 'Pdf_press'));
+		$query = ee()->db->get_where('modules', array('module_name' => PDF_PRESS_NAME));
 		
-	    $this->EE->db->where('module_id', $query->row('module_id'));
-	    $this->EE->db->delete('modules');
+	    ee()->db->where('module_id', $query->row('module_id'));
+	    ee()->db->delete('modules');
 
-	    $this->EE->db->where('class', 'Pdf_press');
-	    $this->EE->db->delete('actions');
+	    ee()->db->where('class', PDF_PRESS_NAME);
+	    ee()->db->delete('actions');
 	
-		$this->EE->dbforge->drop_table('pdf_press_configs');
+		ee()->dbforge->drop_table('pdf_press_configs');
 		
 		return TRUE;
 	}
@@ -74,32 +75,31 @@ class Pdf_press_upd {
 	function install_actions() {
 		$actions = array(
 			array(
-				'class'		=> 'Pdf_press',
+				'class'		=> PDF_PRESS_NAME,
 				'method'	=> 'create_pdf'
 			),
 		);
 		
-		$this->EE->db->insert_batch('actions', $actions);
+		ee()->db->insert_batch('actions', $actions);
 	}
 	
 	function install_configs() {
 		$fields = array(
 			'id'		=> array('type' => 'int', 'constraint' => '10', 'unsigned' => TRUE, 'auto_increment' => TRUE),
 			'key'		=> array('type' => 'varchar', 'constraint' => '500'),
-			'data' 		=> array('type' => 'text', 'null' => true, 'default' => null)
+			'data' 		=> array('type' => 'text', 'null' => true)
 		);
 
-		$this->EE->dbforge->add_field($fields);
-		$this->EE->dbforge->add_key('id', TRUE);
+		ee()->dbforge->add_field($fields);
+		ee()->dbforge->add_key('id', TRUE);
 
-		$this->EE->dbforge->create_table('pdf_press_configs');
+		ee()->dbforge->create_table('pdf_press_configs');
 	}
 	
 	
 	function update($current = '')
 	{
-		$this->EE->load->dbforge();
-		
+		ee()->load->dbforge();
 		
 		if ($current == '' OR $current == $this->version)
 		{
@@ -111,7 +111,7 @@ class Pdf_press_upd {
 			return TRUE;
 		}
 
-	    return FALSE;
+	    return TRUE;
 	}
 }
 ?>

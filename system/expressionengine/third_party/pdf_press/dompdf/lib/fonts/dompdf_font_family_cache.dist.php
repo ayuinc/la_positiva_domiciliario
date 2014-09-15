@@ -108,8 +108,4 @@
     'italic' => DOMPDF_FONT_DIR . 'DejaVuSerifCondensed-Italic',
     'normal' => DOMPDF_FONT_DIR . 'DejaVuSerifCondensed',
   ),
-  'vimsim' => 
-  array (
-    'normal' => DOMPDF_FONT_DIR . 'f6b60c288245628c1c3eaf0807c5c69e',
-  ),
 ) ?>
