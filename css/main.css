@@ -6021,6 +6021,10 @@ footer {
     border: 6px solid rgba(255, 106, 0, 0.45);
     border-bottom: none; }
 
+  .landing .main-title,
+  .landing label {
+    color: #4a4c4d; }
+
   .content {
     border-right: 6px solid rgba(255, 106, 0, 0.45);
     border-left: 6px solid rgba(255, 106, 0, 0.45); }
