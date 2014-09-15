@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
 
   Ayu Consulting Frontend Boilerplate
@@ -5986,6 +5987,35 @@ footer {
   background-size: 100% 100%;
   color: #ff6a00; }
 
+#chat {
+  position: fixed;
+  right: 10%;
+  bottom: 0%;
+  background: #ebecee;
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodΓÇªBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
+  background: -moz-linear-gradient(left, #ebecee 64%, #c5c7c9 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(64%, #ebecee), color-stop(100%, #c5c7c9));
+  background: -webkit-linear-gradient(left, #ebecee 64%, #c5c7c9 100%);
+  background: -o-linear-gradient(left, #ebecee 64%, #c5c7c9 100%);
+  background: -ms-linear-gradient(left, #ebecee 64%, #c5c7c9 100%);
+  background: linear-gradient(to right, #ebecee 64%, #c5c7c9 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ebecee', endColorstr='#c5c7c9',GradientType=1 );
+  box-shadow: 0px 0px 12px -4px #000000;
+  -webkit-border-radius: 5px 5px 0px 0px;
+  -moz-border-radius: 5px 5px 0px 0px;
+  border-radius: 5px 5px 0px 0px;
+  border: 1px solid #e3e3e3; }
+  #chat a {
+    background-image: url(../../images/img/chat-icon.png);
+    width: 133px;
+    height: 65px;
+    z-index: 100;
+    text-overflow: inherit;
+    padding: 26px 11px 25px 11px;
+    display: block;
+    background-repeat: no-repeat;
+    background-position: 13px 10px; }
+
 @media (max-width: 1224px) {
   .container .form-landing {
     top: 0%; }
@@ -6015,6 +6045,9 @@ footer {
   footer .nav-pills img {
     position: static; } }
 @media (max-width: 480px) {
+  #chat {
+    display: none; }
+
   html {
     font-size: 8px; }
 
