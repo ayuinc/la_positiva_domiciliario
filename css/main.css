@@ -6026,13 +6026,12 @@ footer {
     .landing .main-title,
     .landing label {
       color: #4a4c4d; }
+    .landing .social-networks a {
+      color: #ff7816; }
 
   .content {
     border-right: 6px solid rgba(255, 106, 0, 0.45);
     border-left: 6px solid rgba(255, 106, 0, 0.45); }
-
-  .social-network a {
-    color: #ff7816; }
 
   footer .form-group.pr-7 {
     padding-right: 0 !important; }
