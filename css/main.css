@@ -5859,6 +5859,9 @@ label {
     background: none; }
 
 @media (max-width: 480px) {
+  body.landing {
+    background: url(../../images/img/pattern.png) repeat; }
+
   .container {
     min-height: 0 !important; }
     .container .form-landing {
