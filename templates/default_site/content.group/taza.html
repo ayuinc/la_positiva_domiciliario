@@ -153,81 +153,117 @@
         </div>-->
       </div>
     </section>
-    <footer class="pb-7-100 pt-7-100">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-10 center-block">
+        <footer class="pb-49 pt-7-100">
+          <div class="container pb-49">
             <div class="row">
-              <div class="col-md-5">
-                <form class="form-horizontal">
-                  <legend>completa tus datos</legend>
-                  <div class="row">
-                    <!-- Text input-->
-                    <div class="form-group">
-                      <div class="col-md-6">
-                        <input id="textinput" name="textinput" type="text" placeholder="Nombre" class="form-control input-md"> 
+              <div class="col-md-10 center-block">
+                <div class="row">
+                  <div class="col-xs-10 col-xs-offset-1 col-sm-5 col-md-5">
+                    <form class="form-horizontal registro" method="post" action="/?/content/registro">
+                      <div class="row"><h2 class="white uppercase alt-bold pb-35">completa tus datos</h2></div>
+                      <div class="row">
+                        <!-- Text input-->
+                        <div class="col-sm-6 col-md-6">
+                          <div class="form-group pr-7">
+                            <input id="textinput" name="name" type="text" placeholder="Nombre" class="form-control input-md" data-bv-notempty="true" data-bv-notempty-message="Este campo no puede estar vacío"> 
+                          </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6">
+                          <div class="form-group pl-7">
+                            <input id="textinput" name="last_name" type="text" placeholder="Apellido" class="form-control input-md" data-bv-notempty="true" data-bv-notempty-message="Este campo no puede estar vacío">
+                          </div>
+                        </div>
                       </div>
-                      <div class="col-md-6">
-                        <input id="textinput" name="textinput" type="text" placeholder="Apellido" class="form-control input-md">
+
+
+                      <!-- Text input-->
+                      <div class="form-group">
+                        <input id="textinput" name="email" type="text" placeholder="Correo electrínico" class="form-control input-md" data-bv-notempty="true" data-bv-notempty-message="Este campo no puede estar vacío" data-bv-emailaddress="true" data-bv-emailaddress-message="El email no es valido">
                       </div>
-                    </div>
-                  </div>  
 
-                  <!-- Text input-->
-                  <div class="form-group">
-                    <input id="textinput" name="textinput" type="text" placeholder="Correo electrínico" class="form-control input-md">
-                  </div>
-
-                  <!-- Text input-->
-                  <div class="form-group">
-                    <input id="textinput" name="textinput" type="text" placeholder="DNI" class="form-control input-md">
-                  </div>
-
-                  <!-- Text input-->
-                  <div class="form-group">
-                    <input id="textinput" name="textinput" type="text" placeholder="Telefono" class="form-control input-md">
-                  </div>
-
-                  <!-- Button -->
-                  <div class="row">
-                    <div class="form-group">
-                      <div class="col-md-6 col-md-offset-6">
-                        <input type="submit" value="ENVIAR  " id="singlebutton" name="singlebutton" class="btn btn-primary col-md-12">
+                      <!-- Text input-->
+                      <div class="form-group">
+                        <input id="textinput" name="dni" type="text" placeholder="DNI" class="form-control input-md" data-bv-notempty="true" data-bv-notempty-message="Este campo no puede estar vacío">
                       </div>
-                    </div>  
+
+                      <!-- Text input-->
+                      <div class="form-group">
+                        <input id="textinput" name="phone" type="text" placeholder="Telefono" class="form-control input-md" data-bv-notempty="true" data-bv-notempty-message="Este campo no puede estar vacío">
+                      </div>
+
+                      <!-- Button -->
+                      <div class="row">
+                        <div class="form-group">
+                          <div class="col-sm-offset-6 col-md-6 col-md-offset-6">
+                            <input type="submit" value="ENVIAR  " id="singlebutton" name="singlebutton" class="btn btn-primary col-xs-12 col-sm-12 col-md-12">
+                          </div>
+                        </div>  
+                      </div>
+                      <input type="hidden" name="id_seguro" id="id_seguro" value="">
+                      <input type="hidden" name="housing_value" value="{post_valor_vivienda}">
+                      <input type="hidden" name="housing_type" value="{post_tipo_vivienda}">
+                      <input type="hidden" name="province" value="{post_provincia}">  
+                      <input type="hidden" name="city" value="{post_ciudad}">                       
+                    </form>
                   </div>
-                </form>
+                  <div class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-1 col-md-5 col-md-offset-1">
+                    <form class="form-horizontal buscar">
+                      <div class="row"><h2 class="white uppercase alt-bold">busca el punto de venta más cercano</h2></div>
+                      <div class="row">
+                        <!-- Text input-->
+                        <div class="col-sm-6 col-md-6">
+                          <div class="form-group pr-7">
+                            <!-- <input id="textinput" name="textinput" type="text" placeholder="Departamento" class="form-control input-md"> --> 
+                            <span class="selector">
+                                   {exp:get_puntos_de_venta:region}
+                            </span> 
+                          </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6">
+                          <div class="form-group pl-7">
+                            <!-- <input id="textinput" name="textinput" type="text" placeholder="Ciudad/Distrito" class="form-control input-md"> -->
+                            <span class="selector">
+                              <select name="distrito" id="distrito" class="form-control">
+                                 {exp:get_puntos_de_venta:district region="@@@"}
+                              </select>
+                            </span>
+
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-md-12 result">
+                          </div>
+                      </div>                      
+
+                      <!-- Button -->
+                      <!-- <div class="row">
+                        <div class="form-group">
+                          <div class="col-sm-offset-6 col-md-6 col-md-offset-6">
+                            <input type="submit" value="BUSCAR  " id="singlebutton" name="singlebutton" class="btn btn-primary col-xs-12 col-sm-12 col-md-12">
+                          </div>
+                        </div>  
+                      </div> -->
+                    </form>
+                  </div>   
+                </div>
               </div>
-              <div class="col-md-5 col-md-offset-1">
-                <form class="form-horizontal">
-                  <legend>completa tus datos</legend>
-                  <div class="row">
-                    <!-- Text input-->
-                    <div class="form-group">
-                      <div class="col-md-6">
-                        <input id="textinput" name="textinput" type="text" placeholder="Departamento" class="form-control input-md"> 
-                      </div>
-                      <div class="col-md-6">
-                        <input id="textinput" name="textinput" type="text" placeholder="Ciudad/Distrito" class="form-control input-md">
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Button -->
-                  <div class="row">
-                    <div class="form-group">
-                      <div class="col-md-6 col-md-offset-6">
-                        <input type="submit" value="BUSCAR  " id="singlebutton" name="singlebutton" class="btn btn-primary col-md-12">
-                      </div>
-                    </div>  
-                  </div>
-                </form>
-              </div>   
+            </div>      
+          </div>
+          <div class="container-fluid">
+            <div class="row social-networks">
+              <div class="col-md-12">
+                <ul class="nav nav-pills">
+                  <li><a href="http://www.facebook.com/LaPositivaSeguros" target="_blank" class="icon-facebook"></a></li>
+                  <li><a href="http://twitter.com/LaPositiva_Peru" target="_blank" class="icon-twitter"></a></li>
+                  <li><a data-toggle="modal" href="#terms">Términos y condiciones</a></li>
+                  <li><a data-toggle="modal" href="#contact">Contáctanos</a></li>
+                  <li class="pull-right" style="display:inline-block"><a href="#" display:inline-block><img class="right" src="{site_url}/images/img/logo_blanco.png"></a></li>
+                </ul>
+              </div>
             </div>
           </div>
-        </div>      
-      </div>
-    </footer>
+        </footer>
   </body>
 
 {embed="includes/footer"}   
