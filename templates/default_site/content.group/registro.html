@@ -15,9 +15,9 @@
 		{/exp:registro_interesado:registrar_interesado}
 
 		{exp:mandrillapp:send_email_positiva 
-			email_to="herman.marin@ayuinc.com" 
+			email_to="freddy01288@gmail.com" 
 			name="{post_name} {post_last_name}" 
-			email_from="herman.marin@ayuinc.com"
+			email_from="freddy01288@gmail.com"
 			plan_id="{post_id_seguro}"
 			phone="{post_phone}"
 			email_client ="{post_email}"
@@ -25,7 +25,7 @@
 		{/exp:mandrillapp:send_email_positiva}
 
 		{exp:mandrillapp:send_email_client 
-			email_to="herman.marin@ayuinc.com" 
+			email_to="freddy01288@gmail.com" 
 			name="{post_name} {post_last_name}" 
 			email_from="{post_email}"
 			plan_id="{post_id_seguro}"
@@ -63,7 +63,14 @@
 	        </div>
 	      </div>
 	    </div>
-<!-- <a href="{exp:pdf_press:save_to_pdf path='site/holapdf' attachment='0' filename='projects.pdf'}">descargar pdf</a> -->
+			<a href="{exp:pdf_press:save_to_pdf path='site/holapdf' attachment='0' filename='projects.pdf'}">descargar pdf</a>
+
+    <script>
+      $(function() {
+				
+				window.location="http://aseguratuhogar.com.pe/index.php?ACT=23&path=site%2Fholapdf&size=letter&orientation=portrait&name=fred&key=&attachment=0&filename=projects.pdf"
+      });
+    </script>			
 
 	  </body>
 	{/exp:get_post_vars}
