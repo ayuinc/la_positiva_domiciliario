@@ -5618,7 +5618,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   font-family: "nimbus-sans", "museo-sans", Helvetica, Arial, sans-serif !important;
   font-weight: 900;
   font-style: normal;
-  letter-spacing: -3px; }
+  letter-spacing: -2px; }
 
 html {
   font-size: 14px; }
@@ -5990,8 +5990,8 @@ footer {
 
 #chat {
   position: fixed;
-  right: 45%;
-  bottom: 0%;
+  right: 0%;
+  bottom: 25%;
   background: #ebecee;
   background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodΓÇªBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
   background: -moz-linear-gradient(left, #ebecee 64%, #c5c7c9 100%);
@@ -6002,20 +6002,24 @@ footer {
   background: linear-gradient(to right, #ebecee 64%, #c5c7c9 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ebecee', endColorstr='#c5c7c9',GradientType=1 );
   box-shadow: 0px 0px 12px -4px #000000;
-  -webkit-border-radius: 5px 5px 0px 0px;
-  -moz-border-radius: 5px 5px 0px 0px;
-  border-radius: 5px 5px 0px 0px;
+  -webkit-border-radius: 5px 0px 0px 5px;
+  -moz-border-radius: 5px 0px 0px 5px;
+  border-radius: 5px 0px 0px 5px;
   border: 1px solid #e3e3e3; }
   #chat a {
     background-image: url(../../images/img/chat-icon.png);
-    width: 133px;
-    height: 65px;
+    width: 66px;
+    height: 125px;
     z-index: 100;
     text-overflow: inherit;
     padding: 26px 11px 25px 11px;
     display: block;
     background-repeat: no-repeat;
     background-position: 13px 10px; }
+
+/*CLOSE X*/
+button[data-dismiss="modal"] span {
+  color: #FF6A00; }
 
 @media (max-width: 1224px) {
   .container .form-landing {
