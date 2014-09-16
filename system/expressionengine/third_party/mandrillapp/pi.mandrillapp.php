@@ -81,9 +81,9 @@ class Mandrillapp {
 	      $text .= '</ul>';
 	  }
   }else{
-  	$text .= '<ul>'
-  	$text .= '<li> valor de vivienda: S/. 600,000 a más</li>'
-  	$text .= '<ul>'
+  	$text .= '<ul>';
+  	$text .= '<li> valor de vivienda: S/. 600,000 a más</li>';
+  	$text .= '<ul>';
   }
 
 	$text .='<br>En caso no puedan contactarlo por teléfono, por favor escribirle al correo <b>'.$email_client.'</b>';
