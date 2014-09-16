@@ -57,26 +57,35 @@ class Mandrillapp {
 
 
   $plan_id = ee()->TMPL->fetch_param('plan_id');
-  ee()->db->where('id',$plan_id);
-  $query = ee()->db->get('exp_planes_domiciliario');
-  foreach($query->result() as $row){
-      $robo = '';
-      if ($row->theft == 1) {
-          $robo = 'Sí';
-      }else{
-          $robo = 'No';
-      };
-      $text .= '<ul>';
-      // $text .= '<li>Plan : '.$row->name.'</li>';
-      $text .= '<li>'.$row->coverage_1_description.' : hasta S/.'.$row->coverage_1.'</li>';
-      $text .= '<li>'.$row->coverage_2_description.' : hasta S/.'.$row->coverage_2.'</li>';
-      $text .= '<li>'.$row->coverage_3_description.' : hasta S/.'.$row->coverage_3.'</li>';
-      $text .= '<li>'.$row->coverage_4_description.' : hasta S/.'.$row->coverage_4.'</li>';
-      $text .= '<li>'.$row->coverage_5_description.' : hasta S/.'.$row->coverage_5.'</li>';
-      $text .= '<li>Con robo : '.$robo.'</li>';
-      $text .= '<li>Prima : '.$row->price.' mensuales</li>';
-      $text .= '</ul>';
+
+  if ($plan_id != '13') {
+	  ee()->db->where('id',$plan_id);
+	  $query = ee()->db->get('exp_planes_domiciliario');
+
+	  foreach($query->result() as $row){
+	      $robo = '';
+	      if ($row->theft == 1) {
+	          $robo = 'Sí';
+	      }else{
+	          $robo = 'No';
+	      };
+	      $text .= '<ul>';
+	      // $text .= '<li>Plan : '.$row->name.'</li>';
+	      $text .= '<li>'.$row->coverage_1_description.' : hasta S/.'.$row->coverage_1.'</li>';
+	      $text .= '<li>'.$row->coverage_2_description.' : hasta S/.'.$row->coverage_2.'</li>';
+	      $text .= '<li>'.$row->coverage_3_description.' : hasta S/.'.$row->coverage_3.'</li>';
+	      $text .= '<li>'.$row->coverage_4_description.' : hasta S/.'.$row->coverage_4.'</li>';
+	      $text .= '<li>'.$row->coverage_5_description.' : hasta S/.'.$row->coverage_5.'</li>';
+	      $text .= '<li>Con robo : '.$robo.'</li>';
+	      $text .= '<li>Prima : '.$row->price.' mensuales</li>';
+	      $text .= '</ul>';
+	  }
+  }else{
+  	$text .= '<ul>';
+  	$text .= '<li> valor de vivienda: S/. 600,000 a más</li>';
+  	$text .= '<ul>';
   }
+
 	$text .='<br>En caso no puedan contactarlo por teléfono, por favor escribirle al correo <b>'.$email_client.'</b>';
 	
 	/*'html' => '<p>FELICIDADES!!!</p><p>Ganaste el tema'.$topic.' ve a nuestro menú de temas y sigue participando</p>',*/
