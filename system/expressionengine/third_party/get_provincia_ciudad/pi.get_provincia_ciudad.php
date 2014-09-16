@@ -78,7 +78,7 @@ class Get_provincia_ciudad
     }
 
     public function ciudad(){
-        $form = '<option value="CIUDAD" selected>CIUDAD</option>';
+        $form = '<option value="CIUDAD" selected>DISTRITO</option>';
         $provincia_id = ee()->TMPL->fetch_param('provincia');
         ee()->db->where('provincia_id',$provincia_id);
         ee()->db->order_by('name');
