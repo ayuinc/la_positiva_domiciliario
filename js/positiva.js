@@ -14,10 +14,12 @@ $(function(){
   });
 
   $('#phone').click(function(){
-    $('.buscar').hide();
+    $('.buscar').parent().hide();
+    $('.registro').parent().addClass('center-block');
   });
   $('#download').click(function(){
-    $('.buscar').show();
+    $('.buscar').parent().show();
+    $('.registro').parent().removeClass('center-block');
   });
 
 });
