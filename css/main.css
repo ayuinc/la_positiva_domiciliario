@@ -6002,9 +6002,9 @@ footer {
   background: linear-gradient(to right, #ebecee 64%, #c5c7c9 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ebecee', endColorstr='#c5c7c9',GradientType=1 );
   box-shadow: 0px 0px 12px -4px #000000;
-  -webkit-border-radius: 5px 5px 0px 0px;
-  -moz-border-radius: 5px 5px 0px 0px;
-  border-radius: 5px 5px 0px 0px;
+  -webkit-border-radius: 5px 0px 0px 5px;
+  -moz-border-radius: 5px 0px 0px 5px;
+  border-radius: 5px 0px 0px 5px;
   border: 1px solid #e3e3e3; }
   #chat a {
     background-image: url(../../images/img/chat-icon.png);
