@@ -5617,7 +5617,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 .alt-bold {
   font-family: "nimbus-sans", "museo-sans", Helvetica, Arial, sans-serif !important;
   font-weight: 900;
-  font-style: normal; }
+  font-style: normal;
+  letter-spacing: -3px; }
 
 html {
   font-size: 14px; }
