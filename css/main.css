@@ -6017,6 +6017,10 @@ footer {
     background-repeat: no-repeat;
     background-position: 13px 10px; }
 
+/*CLOSE X*/
+button[data-dismiss="modal"] span {
+  color: #FF6A00; }
+
 @media (max-width: 1224px) {
   .container .form-landing {
     top: 0%; }
