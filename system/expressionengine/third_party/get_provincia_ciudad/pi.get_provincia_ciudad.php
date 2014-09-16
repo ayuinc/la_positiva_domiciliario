@@ -66,6 +66,7 @@ class Get_provincia_ciudad
 
     public function provincia(){
         $form = '<select name="provincia" id="provincia" class="form-control"> <option value="0">PROVINCIA</option>';
+        ee()->db->order_by('name');
         $query = ee()->db->get('exp_provincia');
         foreach($query->result() as $row){
             $provincia_id=$row->id;
@@ -80,6 +81,7 @@ class Get_provincia_ciudad
         $form = '<option value="CIUDAD" selected>CIUDAD</option>';
         $provincia_id = ee()->TMPL->fetch_param('provincia');
         ee()->db->where('provincia_id',$provincia_id);
+        ee()->db->order_by('name');
         $query = ee()->db->get('exp_ciudad');
         foreach($query->result() as $row){
             $ciudad_id=$row->id;
