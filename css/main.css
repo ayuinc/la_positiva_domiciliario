@@ -5990,8 +5990,8 @@ footer {
 
 #chat {
   position: fixed;
-  right: 45%;
-  bottom: 0%;
+  right: 0%;
+  bottom: 25%;
   background: #ebecee;
   background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodΓÇªBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
   background: -moz-linear-gradient(left, #ebecee 64%, #c5c7c9 100%);
@@ -6008,8 +6008,8 @@ footer {
   border: 1px solid #e3e3e3; }
   #chat a {
     background-image: url(../../images/img/chat-icon.png);
-    width: 133px;
-    height: 65px;
+    width: 66px;
+    height: 125px;
     z-index: 100;
     text-overflow: inherit;
     padding: 26px 11px 25px 11px;
