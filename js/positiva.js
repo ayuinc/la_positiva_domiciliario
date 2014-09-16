@@ -16,10 +16,13 @@ $(function(){
   $('#phone').click(function(){
     $('.buscar').parent().hide();
     $('.registro').parent().addClass('center-block');
+    $('.registro h2').text('CONTACTO');
+
   });
   $('#download').click(function(){
     $('.buscar').parent().show();
     $('.registro').parent().removeClass('center-block');
+    $('.registro h2').text('COMPLETA TUS DATOS');
   });
 
 });
