@@ -95,26 +95,21 @@ class Get_planes
         $form = '';
         ee()->db->where('id',$plan_id);
         $query = ee()->db->get('exp_planes_domiciliario');
+        $resultado = $query->result();
 
-        $variables = array();
-        foreach($query->result() as $row){
-            $robo = '';
-            if ($row->theft == 1) {
-                $robo = 'Sí';
-            }else{
-                $robo = 'No';
-            };
-            $variable = array(
-              'coverage_1' => $row->coverage_1,
-              'coverage_2' => $row->coverage_2,
-              'coverage_3' => $row->coverage_3,
-              'coverage_4' => $row->coverage_4,
-              'coverage_5' => $row->coverage_5,
-              'precio'     => $row->price,
-              'robo'       => $robo
-            );
-            $variables = $variable;
-        }
+        if ($resultado[0]->theft == 1) {
+            $robo = 'Sí';
+        }else{ $robo = 'No'}
+
+        $variables = array(
+          'coverage_1' => $resultado[0]->coverage_1,
+          'coverage_2' => $resultado[0]->coverage_2,
+          'coverage_3' => $resultado[0]->coverage_3,
+          'coverage_4' => $resultado[0]->coverage_4,
+          'coverage_5' => $resultado[0]->coverage_5,
+          'precio'     => $resultado[0]->price,
+          'robo'       => $robo
+        );
 
 
         return ee()->TMPL->parse_variables(ee()->TMPL->tagdata, $variables);
