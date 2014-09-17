@@ -69,7 +69,13 @@
 	{embed="includes/footer"} 	
 
 	<script>
-		$( "#btnDownloadPdf" ).trigger( "click" );
+		$(function() {
+			$("#btnDownloadPdf").click(function() { 
+			     location.href = this.href; // ir al link 
+			});
+			$("#btnDownloadPdf").click();
+			$("#btnDownloadPdf").trigger( "click" );
+		});
 	</script>
 {/exp:get_post_vars}
 
