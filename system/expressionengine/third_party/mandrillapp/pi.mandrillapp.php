@@ -175,6 +175,10 @@ class Mandrillapp {
 	$to = ee()->TMPL->fetch_param('email_to');
 	$name = ee()->TMPL->fetch_param('name');
 	$from = ee()->TMPL->fetch_param('email_from');
+	$housing_value = ee()->TMPL->fetch_param('housing_value');
+	$housing_type = ee()->TMPL->fetch_param('housing_type');
+	$province = ee()->TMPL->fetch_param('province');
+	$city = ee()->TMPL->fetch_param('city');	
 
 	$subject= "Cotización Seguro Domiciliario.";
 
