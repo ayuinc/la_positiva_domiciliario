@@ -97,17 +97,17 @@ class Get_planes
         $query = ee()->db->get('exp_planes_domiciliario');
         $resultado = $query->result();
 
-        if ($resultado[0]->theft == 1) {
+        if ($resultado->theft == 1) {
             $robo = 'Sí';
         }else{ $robo = 'No';}
 
         $variables = array(
-          'coverage_1' => $resultado[0]->coverage_1,
-          'coverage_2' => $resultado[0]->coverage_2,
-          'coverage_3' => $resultado[0]->coverage_3,
-          'coverage_4' => $resultado[0]->coverage_4,
-          'coverage_5' => $resultado[0]->coverage_5,
-          'precio'     => $resultado[0]->price,
+          'coverage_1' => $resultado->coverage_1,
+          'coverage_2' => $resultado->coverage_2,
+          'coverage_3' => $resultado->coverage_3,
+          'coverage_4' => $resultado->coverage_4,
+          'coverage_5' => $resultado->coverage_5,
+          'precio'     => $resultado->price,
           'robo'       => $robo
         );
 
