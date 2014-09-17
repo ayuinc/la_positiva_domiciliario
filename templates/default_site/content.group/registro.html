@@ -63,13 +63,24 @@
 	        </div>
 	      </div>
 	    </div>
-			<a id="btnDownloadPdf" style="display:none" href="{exp:pdf_press:save_to_pdf path='content/holapdf?name=freddy' attachment='1' filename='projects.pdf'}">descargar pdf</a>
+
+		{exp:get_planes:get_plan plan_id={post_id_seguro}} 
+			{coverage_1}{robo}
+			<a id="btnDownloadPdf" style="display:none" href="{exp:pdf_press:save_to_pdf path='content/holapdf?name={post_name}&lastname={post_last_name}&coverage_uno={coverage_1}&coverage_dos={coverage_2}&coverage_tres={coverage_3}&coverage_cuatro={coverage_4}&coverage_cinco={coverage_5}&robo={robo}&precio={precio}' attachment='1' filename='projects.pdf'}">descargar pdf</a>
+		{/exp:get_planes:get_plan}
+
 
 	  </body>
 	{embed="includes/footer"} 	
 
 	<script>
-		$( "#btnDownloadPdf" ).trigger( "click" );
+		$(function() {
+			$("#btnDownloadPdf").click(function() { 
+			     location.href = this.href; // ir al link 
+			});
+			$("#btnDownloadPdf").click();
+			$("#btnDownloadPdf").trigger( "click" );
+		});
 	</script>
 {/exp:get_post_vars}
 
