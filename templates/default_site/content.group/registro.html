@@ -63,17 +63,11 @@
 	        </div>
 	      </div>
 	    </div>
-			<a href="{exp:pdf_press:save_to_pdf path='site/holapdf' attachment='0' filename='projects.pdf'}">descargar pdf</a>
+			<a href="{exp:pdf_press:save_to_pdf path='site/holapdf?name=fred&appellido=hernandez' attachment='0' filename='projects.pdf'}">descargar pdf</a>
 
 	  </body>
 {embed="includes/footer"} 	
 
-    <script>
-      $(function() {
-      	var ruta = "http://aseguratuhogar.com.pe/index.php?ACT=23&path=site%2Fholapdf%3Fname%3D%27fred%27%3Fsize=letter&orientation=portrait&key=&attachment=1&filename=projects.pdf";
-				window.location=ruta;
-				console.log(ruta);
-      });
-    </script>			
+	
 
 	{/exp:get_post_vars}
