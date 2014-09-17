@@ -56,13 +56,13 @@ class Mandrillapp {
 
 
   ee()->db->where('id',$province);
-  $query = ee()->db->get('exp_provincia');
-  $resultado_provincia = $query->result();	
+  $query_prov = ee()->db->get('exp_provincia');
+  $resultado_provincia = $query_prov->result();	
   $provincia = $resultado_provincia[0]->name;
 
   ee()->db->where('id',$city);
-  $query = ee()->db->get('exp_ciudad');
-  $resultado_ciudad = $query->result();	
+  $query_ciud = ee()->db->get('exp_ciudad');
+  $resultado_ciudad = $query_ciud->result();	
   $ciudad = $resultado_ciudad[0]->name;
 
   switch ($housing_value) {
@@ -175,17 +175,21 @@ class Mandrillapp {
 	$to = ee()->TMPL->fetch_param('email_to');
 	$name = ee()->TMPL->fetch_param('name');
 	$from = ee()->TMPL->fetch_param('email_from');
+	$housing_value = ee()->TMPL->fetch_param('housing_value');
+	$housing_type = ee()->TMPL->fetch_param('housing_type');
+	$province = ee()->TMPL->fetch_param('province');
+	$city = ee()->TMPL->fetch_param('city');	
 
 	$subject= "Cotización Seguro Domiciliario.";
 
   ee()->db->where('id',$province);
-  $query = ee()->db->get('exp_provincia');
-  $resultado_provincia = $query->result();	
+  $query_prov = ee()->db->get('exp_provincia');
+  $resultado_provincia = $query_prov->result();	
   $provincia = $resultado_provincia[0]->name;
 
   ee()->db->where('id',$city);
   $query = ee()->db->get('exp_ciudad');
-  $resultado_ciudad = $query->result();	
+  $resultado_ciudad = $query_ciud->result();	
   $ciudad = $resultado_ciudad[0]->name;
 
   switch ($housing_value) {
