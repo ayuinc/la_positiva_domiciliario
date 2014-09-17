@@ -44,18 +44,61 @@ class Mandrillapp {
 	$name = ee()->TMPL->fetch_param('name');
 	$from = ee()->TMPL->fetch_param('email_from');
 	$email_client = ee()->TMPL->fetch_param('email_client');
-
 	$phone = ee()->TMPL->fetch_param('phone');
+	$housing_value = ee()->TMPL->fetch_param('housing_value');
+	$housing_type = ee()->TMPL->fetch_param('housing_type');
+	$province = ee()->TMPL->fetch_param('province');
+	$city = ee()->TMPL->fetch_param('city');
 
 	$subject= "Cotización Seguro Domiciliario.";
 
 	// $text = ee()->TMPL->tagdata;
 
+
+  ee()->db->where('id',$province);
+  $query = ee()->db->get('exp_provincia');
+  $resultado_provincia = $query->result();	
+  $provincia = $resultado_provincia[0]->name;
+
+  ee()->db->where('id',$city);
+  $query = ee()->db->get('exp_ciudad');
+  $resultado_ciudad = $query->result();	
+  $ciudad = $resultado_ciudad[0]->name;
+
+  switch ($housing_value) {
+      case 1:
+          $rango = 'S/.10,000 - S/.55,000';
+          break;            
+      case 2:
+          $rango = 'S/.55,000 - S/.115,000';
+          break;
+      case 3:
+          $rango = 'S/.115,000 - S/.150,000';
+          break;
+      case 4:
+          $rango = 'S/.150,000 - S/.300,000';
+          break;
+      case 5:
+          $rango = 'S/.300,000 - S/.450,000';
+          break;
+      case 6:
+          $rango = 'S/.450,000 - S/.600,000';
+          break;
+  }
+
 	$text = 'Por favor contactar al usuario '.$name.' al teléfono '.$phone.'. 
 	El usuario ha realizado la siguiente cotización del seguro Domiciliario:<br>
-	<b>Datos del plan cotizado:</b><br>';
+	<b>Datos de la vivienda:</b><br>';
 
+  $text .= '<ul>';
+  // $text .= '<li>Plan : '.$row->name.'</li>';
+  $text .= '<li>Rango de precio de vivienda : '.$rango.'</li>';
+  $text .= '<li>Tipo de vivienda : '.$housing_type.'</li>';
+  $text .= '<li>Provincia : '.$provincia.'</li>';
+  $text .= '<li>Distrito : '.$ciudad.'</li>';
+  $text .= '</ul>';
 
+	$text. = '<br><b>Datos del plan cotizado:</b><br>';
   $plan_id = ee()->TMPL->fetch_param('plan_id');
 
   if ($plan_id != '13') {
@@ -135,14 +178,56 @@ class Mandrillapp {
 
 	$subject= "Cotización Seguro Domiciliario.";
 
-	// $text = ee()->TMPL->tagdata;
+  ee()->db->where('id',$province);
+  $query = ee()->db->get('exp_provincia');
+  $resultado_provincia = $query->result();	
+  $provincia = $resultado_provincia[0]->name;
+
+  ee()->db->where('id',$city);
+  $query = ee()->db->get('exp_ciudad');
+  $resultado_ciudad = $query->result();	
+  $ciudad = $resultado_ciudad[0]->name;
+
+  switch ($housing_value) {
+      case 1:
+          $rango = 'S/.10,000 - S/.55,000';
+          break;            
+      case 2:
+          $rango = 'S/.55,000 - S/.115,000';
+          break;
+      case 3:
+          $rango = 'S/.115,000 - S/.150,000';
+          break;
+      case 4:
+          $rango = 'S/.150,000 - S/.300,000';
+          break;
+      case 5:
+          $rango = 'S/.300,000 - S/.450,000';
+          break;
+      case 6:
+          $rango = 'S/.450,000 - S/.600,000';
+          break;
+  }
+
 	$text = 'Hola '.$name.',<br>
 	Muchas gracias por cotizar tu Pack Vehicular de La Positiva.<br>
     <br>
     Lleva tu cotización a cualquier punto de venta de La Positiva y adquiere tu seguro en un instante.<br>
     <br>
     Los detalles de tu cotización son los siguientes:<br>
-    <br><b>Datos del plan cotizado:</b><br>';
+    <br><b>Datos de la vivienda:</b><br>';
+	
+
+  $text .= '<ul>';
+  // $text .= '<li>Plan : '.$row->name.'</li>';
+  $text .= '<li>Rango de precio de vivienda : '.$rango.'</li>';
+  $text .= '<li>Tipo de vivienda : '.$housing_type.'</li>';
+  $text .= '<li>Provincia : '.$provincia.'</li>';
+  $text .= '<li>Distrito : '.$ciudad.'</li>';
+  $text .= '</ul>';
+	// $text = ee()->TMPL->tagdata;
+	$text. = '<br><b>Datos del plan cotizado:</b><br>';
+
 
   $plan_id = ee()->TMPL->fetch_param('plan_id');
   ee()->db->where('id',$plan_id);
