@@ -95,6 +95,8 @@ class Get_planes
         $form = '';
         ee()->db->where('id',$plan_id);
         $query = ee()->db->get('exp_planes_domiciliario');
+
+        $variables = array();
         foreach($query->result() as $row){
             $robo = '';
             if ($row->theft == 1) {
@@ -102,7 +104,7 @@ class Get_planes
             }else{
                 $robo = 'No';
             };
-            $variables[] = array(
+            $variables = array(
               'coverage_1' => $row->coverage_1,
               'coverage_2' => $row->coverage_2,
               'coverage_3' => $row->coverage_3,
