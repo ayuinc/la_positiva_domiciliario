@@ -65,6 +65,7 @@
 	    </div>
 
 		{exp:get_planes:get_plan plan_id="{post_id_seguro}"} 
+			{coverageuno}, {coveragedos}
 			<a id="btnDownloadPdf" style="display:none" href="{exp:pdf_press:save_to_pdf path='content/holapdf?name={post_name}&lastname={post_last_name}&coverage_uno={coverageuno}&coverage_dos={coveragedos}&coverage_tres={coveragetres}&coverage_cuatro={coveragecuatro}&coverage_cinco={coveragecinco}&robo={robo}&precio={precio}' attachment='1' filename='projects.pdf'}">descargar pdf</a>
 		{/exp:get_planes:get_plan}
 
