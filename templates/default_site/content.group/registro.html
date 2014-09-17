@@ -65,13 +65,15 @@
 	    </div>
 			<a href="{exp:pdf_press:save_to_pdf path='site/holapdf' attachment='0' filename='projects.pdf'}">descargar pdf</a>
 
+	  </body>
+{embed="includes/footer"} 	
+
     <script>
       $(function() {
-				
-				window.location="http://aseguratuhogar.com.pe/index.php?ACT=23&path=site%2Fholapdf&size=letter&orientation=portrait&name=fred&key=&attachment=1&filename=projects.pdf"
+      	var ruta = "http://aseguratuhogar.com.pe/index.php?ACT=23&path=site%2Fholapdf%3Fname%3D%27fred%27%3Fsize=letter&orientation=portrait&key=&attachment=1&filename=projects.pdf";
+				window.location=ruta;
+				console.log(ruta);
       });
     </script>			
 
-	  </body>
 	{/exp:get_post_vars}
-{embed="includes/footer"} 	
