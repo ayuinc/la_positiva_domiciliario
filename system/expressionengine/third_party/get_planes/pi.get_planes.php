@@ -105,34 +105,32 @@ class Get_planes
         $query = ee()->db->get('exp_planes_domiciliario');
         $resultado = $query->result();
 
-        $precio = var_dump($resultado);
-        // $theft = $resultado[0]->theft;
+        $theft = $resultado[0]->theft;
 
-        // if ($theft == 1) {
-        //     $robo = 'Sí';
-        // }else{ $robo = 'No';}
+        if ($theft == 1) {
+            $robo = 'Sí';
+        }else{ $robo = 'No';}
 
-        // $coverage_1 = $resultado[0]->coverage_1;
-        // $coverage_2 = $resultado[0]->coverage_2;
-        // $coverage_3 = $resultado[0]->coverage_3;
-        // $coverage_4 = $resultado[0]->coverage_4;
-        // $coverage_5 = $resultado[0]->coverage_5;
-        // $precio = $resultado[0]->price;
+        $coverage_1 = $resultado[0]->coverage_1;
+        $coverage_2 = $resultado[0]->coverage_2;
+        $coverage_3 = $resultado[0]->coverage_3;
+        $coverage_4 = $resultado[0]->coverage_4;
+        $coverage_5 = $resultado[0]->coverage_5;
+        $precio = $resultado[0]->price;
 
-        // $variables[] = array(
-        //   'coverage_1' => $coverage_1,
-        //   'coverage_2' => $coverage_2,
-        //   'coverage_3' => $coverage_3,
-        //   'coverage_4' => $coverage_4,
-        //   'coverage_5' => $coverage_5,
-        //   'precio'     => $price,
-        //   'robo'       => $robo
-        // );
+        $variables[] = array(
+          'coverage_1' => $coverage_1,
+          'coverage_2' => $coverage_2,
+          'coverage_3' => $coverage_3,
+          'coverage_4' => $coverage_4,
+          'coverage_5' => $coverage_5,
+          'precio'     => $price,
+          'robo'       => $robo
+        );
 
 
-        // return ee()->TMPL->parse_variables(ee()->TMPL->tagdata, $variables);
+        return ee()->TMPL->parse_variables(ee()->TMPL->tagdata, $variables);
 
-        return $precio;
     }    
 
     public function get_planes_por_monto(){
