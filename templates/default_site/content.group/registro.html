@@ -63,15 +63,11 @@
 	        </div>
 	      </div>
 	    </div>
-		<input type="hidden" name="XID" value="{XID_HASH}">  
+			<a href="{exp:pdf_press:save_to_pdf path='content/holapdf?name=freddy' attachment='1' filename='projects.pdf'}">descargar pdf</a>
+
 	  </body>
-{embed="includes/footer"} 	
+	{embed="includes/footer"} 	
 
-    <script>
-      $(function() {
-      	var name= 'freddy';
-      	window.location= "http://aseguratuhogar.com.pe/index.php?ACT=23&path=content%2Fholapdf%3Fname%3D"+name+"%3Fsize=letter&orientation=portrait&key=&attachment=1&filename=projects.pdf";
-      });
-    </script>			
 
-	{/exp:get_post_vars}
+{/exp:get_post_vars}
+
