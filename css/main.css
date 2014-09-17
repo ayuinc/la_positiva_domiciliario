@@ -5815,7 +5815,9 @@ label {
   border-radius: 0;
   border-color: #fff;
   text-transform: uppercase;
-  font-size: 1.5rem; }
+  font-size: 1.1rem;
+  padding: 0.5rem 1.3rem;
+  font-weight: 300; }
 
 .icon-checkmark:before {
   content: "\e600";
