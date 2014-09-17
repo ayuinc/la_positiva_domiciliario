@@ -104,7 +104,7 @@ class Get_planes
             }else{
                 $robo = 'No';
             };
-            $variables = array(
+            $variable = array(
               'coverage_1' => $row->coverage_1,
               'coverage_2' => $row->coverage_2,
               'coverage_3' => $row->coverage_3,
@@ -113,6 +113,7 @@ class Get_planes
               'precio'     => $row->price,
               'robo'       => $robo
             );
+            $variables = $variable;
         }
 
 
