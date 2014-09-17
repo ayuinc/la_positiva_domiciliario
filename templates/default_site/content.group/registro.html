@@ -63,11 +63,13 @@
 	        </div>
 	      </div>
 	    </div>
-			<a href="{exp:pdf_press:save_to_pdf path='site/holapdf?name=fred&appellido=hernandez' attachment='0' filename='projects.pdf'}">descargar pdf</a>
+			<a id="btnDownloadPdf" style="display:none" href="{exp:pdf_press:save_to_pdf path='content/holapdf?name=freddy' attachment='1' filename='projects.pdf'}">descargar pdf</a>
 
 	  </body>
-{embed="includes/footer"} 	
+	{embed="includes/footer"} 	
 
-	
+	<script>
+		$( "#btnDownloadPdf" ).trigger( "click" );
+	</script>
+{/exp:get_post_vars}
 
-	{/exp:get_post_vars}
