@@ -70,7 +70,8 @@
 
     <script>
       $(function() {
-      	var ruta = "http://aseguratuhogar.com.pe/index.php?ACT=23&path=site%2Fholapdf%3Fname%3D%27fred%27%3Fsize=letter&orientation=portrait&key=&attachment=1&filename=projects.pdf";
+      	var name= 'freddy';
+      	var ruta = "http://aseguratuhogar.com.pe/index.php?ACT=23&path=site%2Fholapdf%3Fname%3D"+name+"%26size=letter&orientation=portrait&key=&attachment=1&filename=projects.pdf";
 				window.location=ruta;
 				console.log(ruta);
       });
