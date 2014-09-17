@@ -90,34 +90,52 @@ class Get_planes
         return $form;
     }
 
-    public function get_plan(){
+    public function get_btn_print_pdf(){
+        $coverage_1 = '';
+        $coverage_2 = '';
+        $coverage_3 = '';
+        $coverage_4 = '';
+        $coverage_5 = '';
+        $precio = '';
+        $robo = '';
+        $theft = '';
+
         $plan_id = ee()->TMPL->fetch_param('plan_id');
-        $form = '';
+        $nombre = ee()->TMPL->fetch_param('nombre');
+        $apellido = ee()->TMPL->fetch_param('apellido');
+        $telefono = ee()->TMPL->fetch_param('telefono');
         ee()->db->where('id',$plan_id);
         $query = ee()->db->get('exp_planes_domiciliario');
+        $resultado = $query->result();
 
-        $variables = array();
-        foreach($query->result() as $row){
-            $robo = '';
-            if ($row->theft == 1) {
-                $robo = 'Sí';
-            }else{
-                $robo = 'No';
-            };
-            $variable = array(
-              'coverage_1' => $row->coverage_1,
-              'coverage_2' => $row->coverage_2,
-              'coverage_3' => $row->coverage_3,
-              'coverage_4' => $row->coverage_4,
-              'coverage_5' => $row->coverage_5,
-              'precio'     => $row->price,
-              'robo'       => $robo
-            );
-            $variables = $variable;
-        }
+        $theft = $resultado[0]->theft;
 
+        if ($theft == 1) {
+            $robo = 'Sí';
+        }else{ $robo = 'No';}
 
-        return ee()->TMPL->parse_variables(ee()->TMPL->tagdata, $variables);
+        $coverage_1 = $resultado[0]->coverage_1;
+        $coverage_2 = $resultado[0]->coverage_2;
+        $coverage_3 = $resultado[0]->coverage_3;
+        $coverage_4 = $resultado[0]->coverage_4;
+        $coverage_5 = $resultado[0]->coverage_5;
+        $precio = $resultado[0]->price;
+
+        $btn = '<a id="btnDownloadPdf" style="display:none" href="{exp:pdf_press:save_to_pdf path=\'content/holapdf?name='.$nombre.'&lastname='.$apellido.'&coverage_uno='.$coverage_1.'&coverage_dos='.$coverage_2.'&coverage_tres='.$coverage_3.'&coverage_cuatro='.$coverage_4.'&coverage_cinco='.$coverage_5.'&robo='.$robo.'&precio='.$precio.'&telefono='.$telefono.'\' attachment=\'1\' filename=\'projects.pdf\'}">descargar pdf</a>';
+
+        // $variables[] = array(
+        //   'coverageuno' => $coverage_1,
+        //   'coveragedos' => $coverage_2,
+        //   'coveragetres' => $coverage_3,
+        //   'coveragecuatro' => $coverage_4,
+        //   'coveragecinco' => $coverage_5,
+        //   'precio'     => $precio,
+        //   'robo'       => $robo
+        // );
+
+        // return ee()->TMPL->parse_variables(ee()->TMPL->tagdata, $variables);
+        return $btn;
+
     }    
 
     public function get_planes_por_monto(){
