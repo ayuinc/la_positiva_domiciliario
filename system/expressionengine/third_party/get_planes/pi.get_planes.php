@@ -99,7 +99,7 @@ class Get_planes
 
         if ($resultado[0]->theft == 1) {
             $robo = 'Sí';
-        }else{ $robo = 'No'}
+        }else{ $robo = 'No';}
 
         $variables = array(
           'coverage_1' => $resultado[0]->coverage_1,
