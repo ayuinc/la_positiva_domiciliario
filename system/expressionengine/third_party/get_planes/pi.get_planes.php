@@ -119,12 +119,12 @@ class Get_planes
         $precio = $resultado[0]->price;
 
         $variables[] = array(
-          'coverage_1' => $coverage_1,
-          'coverage_2' => $coverage_2,
-          'coverage_3' => $coverage_3,
-          'coverage_4' => $coverage_4,
-          'coverage_5' => $coverage_5,
-          'precio'     => $price,
+          'coverageuno' => $coverage_1,
+          'coveragedos' => $coverage_2,
+          'coveragetres' => $coverage_3,
+          'coveragecuatro' => $coverage_4,
+          'coveragecinco' => $coverage_5,
+          'precio'     => $precio,
           'robo'       => $robo
         );
 
