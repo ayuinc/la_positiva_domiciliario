@@ -53,8 +53,6 @@ class Mandrillapp {
 
 	$subject= "Cotización Seguro Domiciliario.";
 
-	// $text = ee()->TMPL->tagdata;
-
 	$query_provincia = ee()->db->select('*')->from('exp_provincia')->where('id',$province)->get();
 	$resultado_provincia = $query_provincia->result();	
   $provincia = $resultado_provincia[0]->name;
@@ -62,16 +60,6 @@ class Mandrillapp {
   $query_ciudad = ee()->db->select('*')->from('exp_ciudad')->where('id',$city)->get();
 	$resultado_ciudad = $query_ciudad->result();	
   $ciudad = $resultado_ciudad[0]->name;
-
-  // ee()->db->where('id',$province);
-  // $query_prov = ee()->db->get('exp_provincia');
-  // $resultado_provincia = $query_prov->result();	
-  // $provincia = $resultado_provincia[0]->name;
-
-  // ee()->db->where('id',$city);
-  // $query_ciud = ee()->db->get('exp_ciudad');
-  // $resultado_ciudad = $query_ciud->result();	
-  // $ciudad = $resultado_ciudad[0]->name;
 
   switch ($housing_value) {
       case 1:
@@ -91,6 +79,8 @@ class Mandrillapp {
           break;
       case 6:
           $rango = 'S/.450,000 - S/.600,000';
+      case 7:
+          $rango = 'S/.600,000 - a más';          
           break;
   }
 
@@ -111,9 +101,6 @@ class Mandrillapp {
   if ($plan_id != '13') {
 
 	$query_planes = ee()->db->select('*')->from('exp_planes_domiciliario')->where('id',$plan_id)->get();
-
-	  // ee()->db->where('id',$plan_id);
-	  // $query = ee()->db->get('exp_planes_domiciliario');
 
 	  foreach($query_planes->result() as $row){
 	      $robo = '';
@@ -201,15 +188,6 @@ class Mandrillapp {
 	$resultado_ciudad = $query_ciudad->result();	
   $ciudad = $resultado_ciudad[0]->name;
 
-  // ee()->db->where('id',$province);
-  // $query_prov = ee()->db->get('exp_provincia');
-  // $resultado_provincia = $query_prov->result();	
-  // $provincia = $resultado_provincia[0]->name;
-
-  // ee()->db->where('id',$city);
-  // $query = ee()->db->get('exp_ciudad');
-  // $resultado_ciudad = $query_ciud->result();	
-  // $ciudad = $resultado_ciudad[0]->name;
 
   switch ($housing_value) {
       case 1:
@@ -230,6 +208,8 @@ class Mandrillapp {
       case 6:
           $rango = 'S/.450,000 - S/.600,000';
           break;
+      case 7:
+          $rango = 'S/.600,000 - a más';               
   }
 
 	$text = 'Hola '.$name.',<br>
@@ -248,15 +228,12 @@ class Mandrillapp {
   $text .= '<li>Provincia : '.$provincia.'</li>';
   $text .= '<li>Distrito : '.$ciudad.'</li>';
   $text .= '</ul>';
-	// $text = ee()->TMPL->tagdata;
 	$text .= '<b>Datos del plan cotizado:</b><br>';
 
 
 	$query_planes = ee()->db->select('*')->from('exp_planes_domiciliario')->where('id',$plan_id)->get();
 
-  // $plan_id = ee()->TMPL->fetch_param('plan_id');
-  // ee()->db->where('id',$plan_id);
-  // $query = ee()->db->get('exp_planes_domiciliario');
+
   foreach($query_planes->result() as $row){
       $robo = '';
       if ($row->theft == 1) {

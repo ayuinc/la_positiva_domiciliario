@@ -1,271 +1,135 @@
-<!-- <form id="contact-form" method="POST" action="/?/content/gracias" data-abide>
-    <input type="hidden" name="XID" value="{XID_HASH}" /> 
-    <div class="row">
-        <div class="large-6 columns">
-            <input type="text" name="name" placeholder="Nombre" required pattern="[a-zA-Z]+">
-            <small class="error">Debe ingresar su nombre.</small>
-        </div>
-        <div class="large-6 columns">
-            <input type="text" name="surname" placeholder="Apellido" required pattern="[a-zA-Z]+">
-            <small class="error">Debe ingresar su apellido.</small>
-        </div>
-    </div>
-    <div class="row">
-        <div class="large-12 columns">
-            <input type="email" name="email" placeholder="Correo Electrónico" required>
-            <small class="error">Debe ingresar su correo electrónico.</small>
-        </div>
-    </div>
-    <div class="row">
-        <div class="large-12 columns">
-            <input type="text" name="dni" placeholder="DNI" pattern="dni" required min="8" max="8" >
-            <small class="error">Debe ingresar su DNI (numérico).</small>
-        </div>
-    </div>
-    <div class="row">
-        <div class="large-12 columns">
-            <input type="text" name="phone" placeholder="Teléfono" pattern="telef" required min="7" max="9">
-            <small class="error">Debe ingresar su teléfono (numérico).</small>
-        </div>
-        {exp:get_post_vars parse="inward"}
-            <input type="hidden" name="brand" value="{post_marca}">
-            <input type="hidden" name="model" value="{post_modelo}">
-            <input type="hidden" name="ano" value="{post_ano}">
-            <input type="hidden" name="version" value="{post_version}">
-            <input type="hidden" name="precio" value="{post_precio}">
-            <input id="tipo_respci" type="hidden" name="tipo_respci">
-            <input id="respci" type="hidden" name="respci">
-            <input id="ptr" type="hidden" name="ptr">
-            <input id="c3_form" type="hidden" name="ptch">
-            <input id="c4_form" type="hidden" name="dpch">
-            <input id="suma_form" type="hidden" name="total_prima">
-        {/exp:get_post_vars}
-    </div>
-    <div class="row">
-        <div class="large-8 medium-8 small-12 small-centered columns">
-            <button id="form_button" class="button-orange" type="submit">DESCARGAR COTIZACIÓN EN PDF</button>
-        </div>
-    </div>
-</form> -->
-
-<!-- <form id="registro-form" method="POST" action="/?/content/registro">
-  Valor de la vivienda: <input type="text" name="housing_value"><br>
-  Tipo de la vivienda: <input type="text" name="housing_type"><br>
-  Provincia: <input type="text" name="province"><br>
-  Ciudad: <input type="text" name="city"><br>
-  Nombre: <input type="text" name="name"><br>
-  Apellido: <input type="text" name="last_name"><br>
-  email: <input type="text" name="email"><br>
-  dni: <input type="text" name="dni"><br>
-  Telefono: <input type="text" name="phone"><br>
-  id seguro: <input type="text" name="id_seguro"><br>
-  <input type="submit" value="enviar">
-</form> -->
-
 {embed="includes/header"}   
-
-  <body>
-    <header class="pb-7-100 pt-7-100">
-      <div class="container text-center">
-        <div class="row">
-          <div class="col-md-8 center-block">
-            <div class="header-text">
-              <p class="text-medium">Tu inmueble esta avaluado por más de</p>
-              <p class="text-xlarge alt-bold">S/. 600,000</p>
-              <p class="text-small">Aplicas para</p>
-              <p class="text-xlarge uppercase">TAZA</p>
+  {exp:get_post_vars parse="inward"}
+    <body>
+      <header class="pb-7-100 pt-7-100">
+        <div class="container text-center">
+          <div class="row">
+            <div class="col-md-8 center-block">
+              <div class="header-text">
+                <p class="text-medium">Tu inmueble esta avaluado por más de</p>
+                <p class="text-xlarge alt-bold">S/. 600,000</p>
+                <p class="text-small">Aplicas para</p>
+                <p class="text-xlarge uppercase">TAZA</p>
+              </div>
             </div>
-          </div>
-        </div>  
-      </div>
-    </header>
-    <section class='content pb-7-100 pt-49'>
-      <div class='container text-center'>
-        <div class="row">
-          <div class="col-md-8 center-block">
-            <h2 class="text-large uppercase alt-bold pb-21">qué te cubre</h2>
-            <p class='text-small gray-color' style="font-size:1.5rem">Todo riesgo de incendio y explosión, terremoto y riesgos de la naturaleza, terrorismo y riesgos políticos.</p>
-            <p class='text-medium uppercase alt-bold pb-21'>Lo quieres comprar?</p>
-            <p class='text-small gray-color' style="font-size:1.5rem">Para adquirir este seguro agenda una inspección completando el formulario a continuación.</p>
-            <!-- <p class='text-small gray-color'>Hasta S/. 15,000</p> -->
+          </div>  
+        </div>
+      </header>
+      <section class='content pb-7-100 pt-49'>
+        <div class='container text-center'>
+          <div class="row">
+            <div class="col-md-8 center-block">
+              <h2 class="text-large uppercase alt-bold pb-21">qué te cubre</h2>
+              <p class='text-small gray-color' style="font-size:1.5rem">Todo riesgo de incendio y explosión, terremoto y riesgos de la naturaleza, terrorismo y riesgos políticos.</p>
+              <p class='text-medium uppercase alt-bold pb-21'>Lo quieres comprar?</p>
+              <p class='text-small gray-color' style="font-size:1.5rem">Para adquirir este seguro agenda una inspección completando el formulario a continuación.</p>
+            </div>
           </div>
         </div>
-<!--         <div class="row">
-          <div class="col-md-6 center-block">
-            <div class="row">
-              <div class="col-md-5">
-                <div class="price-block">
+      </section>
+          <footer class="pb-49 pt-7-100">
+            <div class="container pb-49">
+              <div class="row">
+                <div class="col-md-10 center-block">
                   <div class="row">
-                    <div class="col-md-10">
-                      <p class='text-small uppercase'>sin robo</p>
+                    <div class="col-xs-10 col-xs-offset-1 col-sm-5 col-md-5">
+                      <form class="form-horizontal registro" method="post" action="/?/content/registro">
+                        <div class="row"><h2 class="white uppercase alt-bold pb-35">completa tus datos</h2></div>
+                        <div class="row">
+                          <!-- Text input-->
+                          <div class="col-sm-6 col-md-6">
+                            <div class="form-group pr-7">
+                              <input id="textinput" name="name" type="text" placeholder="Nombre" class="form-control input-md" data-bv-notempty="true" data-bv-notempty-message="Este campo no puede estar vacío"> 
+                            </div>
+                          </div>
+                          <div class="col-sm-6 col-md-6">
+                            <div class="form-group pl-7">
+                              <input id="textinput" name="last_name" type="text" placeholder="Apellido" class="form-control input-md" data-bv-notempty="true" data-bv-notempty-message="Este campo no puede estar vacío">
+                            </div>
+                          </div>
+                        </div>
+
+
+                        <!-- Text input-->
+                        <div class="form-group">
+                          <input id="textinput" name="email" type="text" placeholder="Correo electrínico" class="form-control input-md" data-bv-notempty="true" data-bv-notempty-message="Este campo no puede estar vacío" data-bv-emailaddress="true" data-bv-emailaddress-message="El email no es valido">
+                        </div>
+
+                        <!-- Text input-->
+                        <div class="form-group">
+                          <input id="textinput" name="dni" type="text" placeholder="DNI" class="form-control input-md" data-bv-notempty="true" data-bv-notempty-message="Este campo no puede estar vacío">
+                        </div>
+
+                        <!-- Text input-->
+                        <div class="form-group">
+                          <input id="textinput" name="phone" type="text" placeholder="Telefono" class="form-control input-md" data-bv-notempty="true" data-bv-notempty-message="Este campo no puede estar vacío">
+                        </div>
+
+                        <!-- Button -->
+                        <div class="row">
+                          <div class="form-group">
+                            <div class="col-sm-offset-6 col-md-6 col-md-offset-6">
+                              <input type="submit" value="ENVIAR  " id="singlebutton" name="singlebutton" class="btn btn-primary col-xs-12 col-sm-12 col-md-12">
+                            </div>
+                          </div>  
+                        </div>
+                        <input type="hidden" name="id_seguro" id="id_seguro" value="13">
+                        <input type="hidden" name="housing_value" value="{post_valor_vivienda}">
+                        <input type="hidden" name="housing_type" value="{post_tipo_vivienda}">
+                        <input type="hidden" name="province" value="{post_provincia}">  
+                        <input type="hidden" name="city" value="{post_ciudad}">                       
+                      </form>
                     </div>
-                    <div class="col-md-2">
-                      <img src="" alt="">
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-12">
-                      <p class='text-large uppercase'>s/. 35</p>
-                      <p class='text-small uppercase'>prima mensual</p>
-                    </div>
+                    <div class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-1 col-md-5 col-md-offset-1">
+                      <form class="form-horizontal buscar">
+                        <div class="row"><h2 class="white uppercase alt-bold">busca el punto de venta más cercano</h2></div>
+                        <div class="row">
+                          <!-- Text input-->
+                          <div class="col-sm-6 col-md-6">
+                            <div class="form-group pr-7">
+                              <!-- <input id="textinput" name="textinput" type="text" placeholder="Departamento" class="form-control input-md"> --> 
+                              <span class="selector">
+                                     {exp:get_puntos_de_venta:region}
+                              </span> 
+                            </div>
+                          </div>
+                          <div class="col-sm-6 col-md-6">
+                            <div class="form-group pl-7">
+                              <!-- <input id="textinput" name="textinput" type="text" placeholder="Ciudad/Distrito" class="form-control input-md"> -->
+                              <span class="selector">
+                                <select name="distrito" id="distrito" class="form-control">
+                                   {exp:get_puntos_de_venta:district region="@@@"}
+                                </select>
+                              </span>
+
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 result">
+                            </div>
+                        </div>                      
+                      </form>
+                    </div>   
                   </div>
                 </div>
-              </div>
-              <div class="col-md-5 col-md-offset-2">
-                <div class="price-block">
-                  <div class="row">
-                    <div class="col-md-10">
-                      <p class='text-small uppercase'>sin robo</p>
-                    </div>
-                    <div class="col-md-2">
-                      <img src="" alt="">
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-12">
-                      <p class='text-large uppercase'>s/. 35</p>
-                      <p class='text-small uppercase'>prima mensual</p>
-                    </div>
-                  </div>
-                </div>
-              </div>  
+              </div>      
             </div>
-          </div>
-        </div> 
-        <div class="row">
-          <div class="col-md-8 center-block">
-            <div class="row">
-              <div class="form-group">
-                <div class="col-md-6"> 
-                  <label class="radio-inline" for="radios-0">
-                    <input type="radio" name="radios" id="radios-0" value="1" checked="checked">
-                    descarga tu cotizacion
-                  </label> 
+            <div class="container-fluid">
+              <div class="row social-networks">
+                <div class="col-md-12">
+                  <ul class="nav nav-pills">
+                    <li><a href="http://www.facebook.com/LaPositivaSeguros" target="_blank" class="icon-facebook"></a></li>
+                    <li><a href="http://twitter.com/LaPositiva_Peru" target="_blank" class="icon-twitter"></a></li>
+                    <li><a data-toggle="modal" href="#terms">Términos y condiciones</a></li>
+                    <li><a data-toggle="modal" href="#contact">Contáctanos</a></li>
+                    <li class="pull-right" style="display:inline-block"><a href="#" display:inline-block><img class="right" src="{site_url}/images/img/logo_blanco.png"></a></li>
+                  </ul>
                 </div>
-                <div class="col-md-6"> 
-                  <label class="radio-inline" for="radios-1">
-                    <input type="radio" name="radios" id="radios-1" value="2">
-                    contactanos por telefono
-                  </label>
-                </div>
-              </div>
-            </div>  
-          </div>
-        </div>-->
-      </div>
-    </section>
-        <footer class="pb-49 pt-7-100">
-          <div class="container pb-49">
-            <div class="row">
-              <div class="col-md-10 center-block">
-                <div class="row">
-                  <div class="col-xs-10 col-xs-offset-1 col-sm-5 col-md-5">
-                    <form class="form-horizontal registro" method="post" action="/?/content/registro">
-                      <div class="row"><h2 class="white uppercase alt-bold pb-35">completa tus datos</h2></div>
-                      <div class="row">
-                        <!-- Text input-->
-                        <div class="col-sm-6 col-md-6">
-                          <div class="form-group pr-7">
-                            <input id="textinput" name="name" type="text" placeholder="Nombre" class="form-control input-md" data-bv-notempty="true" data-bv-notempty-message="Este campo no puede estar vacío"> 
-                          </div>
-                        </div>
-                        <div class="col-sm-6 col-md-6">
-                          <div class="form-group pl-7">
-                            <input id="textinput" name="last_name" type="text" placeholder="Apellido" class="form-control input-md" data-bv-notempty="true" data-bv-notempty-message="Este campo no puede estar vacío">
-                          </div>
-                        </div>
-                      </div>
-
-
-                      <!-- Text input-->
-                      <div class="form-group">
-                        <input id="textinput" name="email" type="text" placeholder="Correo electrínico" class="form-control input-md" data-bv-notempty="true" data-bv-notempty-message="Este campo no puede estar vacío" data-bv-emailaddress="true" data-bv-emailaddress-message="El email no es valido">
-                      </div>
-
-                      <!-- Text input-->
-                      <div class="form-group">
-                        <input id="textinput" name="dni" type="text" placeholder="DNI" class="form-control input-md" data-bv-notempty="true" data-bv-notempty-message="Este campo no puede estar vacío">
-                      </div>
-
-                      <!-- Text input-->
-                      <div class="form-group">
-                        <input id="textinput" name="phone" type="text" placeholder="Telefono" class="form-control input-md" data-bv-notempty="true" data-bv-notempty-message="Este campo no puede estar vacío">
-                      </div>
-
-                      <!-- Button -->
-                      <div class="row">
-                        <div class="form-group">
-                          <div class="col-sm-offset-6 col-md-6 col-md-offset-6">
-                            <input type="submit" value="ENVIAR  " id="singlebutton" name="singlebutton" class="btn btn-primary col-xs-12 col-sm-12 col-md-12">
-                          </div>
-                        </div>  
-                      </div>
-                      <input type="hidden" name="id_seguro" id="id_seguro" value="13">
-                      <input type="hidden" name="housing_value" value="{post_valor_vivienda}">
-                      <input type="hidden" name="housing_type" value="{post_tipo_vivienda}">
-                      <input type="hidden" name="province" value="{post_provincia}">  
-                      <input type="hidden" name="city" value="{post_ciudad}">                       
-                    </form>
-                  </div>
-                  <div class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-1 col-md-5 col-md-offset-1">
-                    <form class="form-horizontal buscar">
-                      <div class="row"><h2 class="white uppercase alt-bold">busca el punto de venta más cercano</h2></div>
-                      <div class="row">
-                        <!-- Text input-->
-                        <div class="col-sm-6 col-md-6">
-                          <div class="form-group pr-7">
-                            <!-- <input id="textinput" name="textinput" type="text" placeholder="Departamento" class="form-control input-md"> --> 
-                            <span class="selector">
-                                   {exp:get_puntos_de_venta:region}
-                            </span> 
-                          </div>
-                        </div>
-                        <div class="col-sm-6 col-md-6">
-                          <div class="form-group pl-7">
-                            <!-- <input id="textinput" name="textinput" type="text" placeholder="Ciudad/Distrito" class="form-control input-md"> -->
-                            <span class="selector">
-                              <select name="distrito" id="distrito" class="form-control">
-                                 {exp:get_puntos_de_venta:district region="@@@"}
-                              </select>
-                            </span>
-
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row">
-                          <div class="col-md-12 result">
-                          </div>
-                      </div>                      
-
-                      <!-- Button -->
-                      <!-- <div class="row">
-                        <div class="form-group">
-                          <div class="col-sm-offset-6 col-md-6 col-md-offset-6">
-                            <input type="submit" value="BUSCAR  " id="singlebutton" name="singlebutton" class="btn btn-primary col-xs-12 col-sm-12 col-md-12">
-                          </div>
-                        </div>  
-                      </div> -->
-                    </form>
-                  </div>   
-                </div>
-              </div>
-            </div>      
-          </div>
-          <div class="container-fluid">
-            <div class="row social-networks">
-              <div class="col-md-12">
-                <ul class="nav nav-pills">
-                  <li><a href="http://www.facebook.com/LaPositivaSeguros" target="_blank" class="icon-facebook"></a></li>
-                  <li><a href="http://twitter.com/LaPositiva_Peru" target="_blank" class="icon-twitter"></a></li>
-                  <li><a data-toggle="modal" href="#terms">Términos y condiciones</a></li>
-                  <li><a data-toggle="modal" href="#contact">Contáctanos</a></li>
-                  <li class="pull-right" style="display:inline-block"><a href="#" display:inline-block><img class="right" src="{site_url}/images/img/logo_blanco.png"></a></li>
-                </ul>
               </div>
             </div>
-          </div>
-        </footer>
-        <script src="{site_url}js/rem.min.js" type="text/javascript"></script>
-  </body>
-
+          </footer>
+          <script src="{site_url}js/rem.min.js" type="text/javascript"></script>
+    </body>
+  {/exp:get_post_vars}
 {embed="includes/footer"}   
