@@ -5828,14 +5828,17 @@ label {
 
 .icon-facebook:before {
   content: "\e601";
-  font-size: 2rem; }
+  font-size: 2rem;
+  font-size: 28px\9; }
 
 .icon-twitter:before {
   content: "\e602";
-  font-size: 2rem; }
+  font-size: 2rem;
+  font-size: 28px\9; }
 
 .icon-facebook, .icon-twitter {
-  padding: 0.5rem !important; }
+  padding: 0.5rem !important;
+  padding: 7px\9; }
 
 .container {
   position: relative;
@@ -5845,13 +5848,16 @@ label {
 
 .landing .main-title {
   font-size: 3.5rem;
+  font-size: 49px\9;
   text-transform: uppercase;
   text-shadow: 1px 1px 3px rgba(58, 30, 12, 0.71);
   font-family: "nimbus-sans", "museo-sans", Helvetica, Arial, sans-serif; }
 
 .social-networks {
   padding-left: 3rem;
+  padding-left: 42px\9;
   padding-right: 2rem;
+  padding-right: 14px\9;
   bottom: 0; }
   .social-networks a {
     color: #fff; }
@@ -5859,7 +5865,8 @@ label {
     color: white; }
   .social-networks img {
     position: relative;
-    top: -3rem; }
+    top: -3rem;
+    top: -42px\9; }
   .social-networks .nav > li > a:hover, .social-networks .nav > li > a:focus {
     background: none; }
 
@@ -5890,19 +5897,24 @@ label {
   background: #4A4C4D; }
 
 .text-xsmall {
-  font-size: 1.5rem; }
+  font-size: 1.5rem;
+  font-size: 21px\9; }
 
 .text-small {
-  font-size: 2rem; }
+  font-size: 2rem;
+  font-size: 28px\9; }
 
 .text-medium {
-  font-size: 3rem; }
+  font-size: 3rem;
+  font-size: 42px\9; }
 
 .text-large {
-  font-size: 3.5rem; }
+  font-size: 3.5rem;
+  font-size: 49px\9; }
 
 .text-xlarge {
-  font-size: 5rem; }
+  font-size: 5rem;
+  font-size: 70px\9; }
 
 header {
   background: url(../../images/img/main-bg.png) no-repeat;
@@ -5931,7 +5943,8 @@ header {
   display: inline-block;
   cursor: pointer;
   position: relative;
-  font-size: 1.6rem; }
+  font-size: 1.6rem;
+  font-size: 22.4px\9; }
 .download-phone input[type=radio], .price-block input[type=radio] {
   display: none; }
 .download-phone label:before, .price-block label:before {
@@ -5942,6 +5955,7 @@ header {
   margin-right: 10px;
   position: absolute;
   left: 2rem;
+  left: 28px\9;
   bottom: 1px;
   top: 37%;
   border-radius: 50%;
@@ -5955,6 +5969,7 @@ header {
 
 .price-block .price {
   font-size: 4.2rem;
+  font-size: 58.8px\9;
   margin-bottom: 0; }
 .price-block label {
   border: none;
@@ -6102,15 +6117,19 @@ body.confirmacion {
 
 .confirmacion h1 {
   color: #f04935;
-  font-size: 4rem; }
+  font-size: 4rem;
+  font-size: 56px\9; }
 .confirmacion p {
   color: #8e8e8e;
-  font-size: 1.5rem; }
+  font-size: 1.5rem;
+  font-size: 21px\9; }
 .confirmacion .correo {
   color: #ff6b00;
-  font-size: 3rem; }
+  font-size: 3rem;
+  font-size: 42px\9; }
 .confirmacion .social-networks {
   padding-left: 3rem;
+  padding-left: 42px\9;
   padding-right: 2rem;
   bottom: 0; }
   .confirmacion .social-networks a {
@@ -6119,4 +6138,5 @@ body.confirmacion {
     color: #fca05e; }
   .confirmacion .social-networks img {
     position: relative;
-    top: -3rem; }
+    top: -3rem;
+    top: -42px\9; }
