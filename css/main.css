@@ -5916,12 +5916,14 @@ label {
   font-size: 5rem;
   font-size: 70px\9; }
 
+.pb-7-100 {
+  padding-bottom: 10% \9  !important; }
+
 header {
   background: url(../../images/img/main-bg.png) no-repeat 50%;
   background-size: 100% 100%;
   color: #fff;
-  position: relative;
-  padding-bottom: 18% \9; }
+  position: relative; }
   header:after {
     content: '';
     position: absolute;
