@@ -5917,10 +5917,11 @@ label {
   font-size: 70px\9; }
 
 header {
-  background: url(../../images/img/main-bg.png) no-repeat;
+  background: url(../../images/img/main-bg.png) no-repeat 50%;
   background-size: 100% 100%;
   color: #fff;
-  position: relative; }
+  position: relative;
+  padding-bottom: 10% \9; }
   header:after {
     content: '';
     position: absolute;
