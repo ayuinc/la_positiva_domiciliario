@@ -3318,7 +3318,7 @@ input[type="button"].btn-block {
   display: inline-block; }
 
 .center-block {
-  float: none; }
+  float: none !important; }
 
 .container.gbo > .row,
 .container.gbo > .clearfix,
