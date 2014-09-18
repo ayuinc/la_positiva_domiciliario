@@ -5963,7 +5963,7 @@ header {
   top: 37%;
   border-radius: 50%;
   border: 1px solid; }
-.download-phone input[type=radio]:checked + label:before, .price-block input[type=radio]:checked + label:before {
+.download-phone label.checked:before, .price-block label.checked:before {
   content: "\2022";
   color: #ff6a00;
   font-size: 42px;

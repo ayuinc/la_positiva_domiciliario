@@ -13,6 +13,11 @@ $(function(){
     $(this).addClass('checked');
   });
 
+  $('.download-phone label').click(function(){
+    $('.download-phone label').removeClass('checked');
+    $(this).addClass('checked');
+  });
+
   $('#phone').click(function(){
     $('.buscar').parent().hide();
     $('.registro').parent().addClass('center-block');
