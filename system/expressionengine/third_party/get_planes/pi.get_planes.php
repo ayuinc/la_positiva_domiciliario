@@ -125,18 +125,6 @@ class Get_planes
         $btn = '<a id="btnDownloadPdf" style="display:none" href="{exp:pdf_press:save_to_pdf path=\'content/holapdf?name='.$nombre.'&lastname='.$apellido.'&coverage_uno='.$coverage_1.'&coverage_dos='.$coverage_2.'&coverage_tres='.$coverage_3.'&coverage_cuatro='.$coverage_4.'&coverage_cinco='.$coverage_5.'&robo='.$robo.'&precio='.$precio.'&telefono='.$telefono.'\' attachment=\'1\' filename=\'projects.pdf\'}">descargar pdf</a>';
         }else {$btn = '<a id="btnDownloadPdf" style="display:none" href="#">descargar pdf</a>';}
 
-
-        // $variables[] = array(
-        //   'coverageuno' => $coverage_1,
-        //   'coveragedos' => $coverage_2,
-        //   'coveragetres' => $coverage_3,
-        //   'coveragecuatro' => $coverage_4,
-        //   'coveragecinco' => $coverage_5,
-        //   'precio'     => $precio,
-        //   'robo'       => $robo
-        // );
-
-        // return ee()->TMPL->parse_variables(ee()->TMPL->tagdata, $variables);
         return $btn;
 
     }    
