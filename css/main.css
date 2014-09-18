@@ -5981,7 +5981,8 @@ header {
   .price-block label.checked:before {
     background: url(../../images/img/check-icon.png) no-repeat;
     -webkit-background-size: 100%;
-    background-size: 100%; }
+    background-size: 100%;
+    content: ""; }
   .price-block label:before {
     left: 118%;
     top: 30%;
