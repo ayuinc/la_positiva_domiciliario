@@ -1,4 +1,10 @@
 {exp:get_post_vars parse="inward"}
+<?php  
+	$name = $_GET['name'];
+	$lastname = $_GET['lastname'];
+	$name = str_replace("_", " ",$name);
+	$lastname = str_replace("_", " ",$lastname);
+?>
 	<div style="font-family:Arial, sans-serif;">
 		<div style="text-align:left">
 			 <img src="{site_url}/images/img/lapositiva.png" width="150"alt="la-postiva">
@@ -6,7 +12,7 @@
 		<div style="text-align:center;">
 		    <h1>Cotización Seguro Domiciliario La Positiva</h1>
 		</div>
-		Hola <b>{get_name} {get_lastname}</b><br>
+		Hola <b><?php echo $name." ".$lastname; ?></b><br>
 		<br>
 		Muchas gracias por cotizar tu Seguro Domiciliario de La Positiva. Lleva tu cotización a cualquier punto de venta de La Positiva y adquiere tu seguro en un instante.<br>
 		<br>

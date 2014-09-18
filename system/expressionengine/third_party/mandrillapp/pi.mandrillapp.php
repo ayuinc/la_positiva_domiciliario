@@ -228,29 +228,32 @@ class Mandrillapp {
   $text .= '<li>Provincia : '.$provincia.'</li>';
   $text .= '<li>Distrito : '.$ciudad.'</li>';
   $text .= '</ul>';
-	$text .= '<b>Datos del plan cotizado:</b><br>';
 
+  if ($plan_id != '13') {
 
-	$query_planes = ee()->db->select('*')->from('exp_planes_domiciliario')->where('id',$plan_id)->get();
+		$text .= '<b>Datos del plan cotizado:</b><br>';
 
+		$query_planes = ee()->db->select('*')->from('exp_planes_domiciliario')->where('id',$plan_id)->get();
 
-  foreach($query_planes->result() as $row){
-      $robo = '';
-      if ($row->theft == 1) {
-          $robo = 'Sí';
-      }else{
-          $robo = 'No';
-      };
-      $text .= '<ul>';
-      // $text .= '<li>Plan : '.$row->name.'</li>';
-      $text .= '<li>'.$row->coverage_1_description.' : hasta S/.'.$row->coverage_1.'</li>';
-      $text .= '<li>'.$row->coverage_2_description.' : hasta S/.'.$row->coverage_2.'</li>';
-      $text .= '<li>'.$row->coverage_3_description.' : hasta S/.'.$row->coverage_3.'</li>';
-      $text .= '<li>'.$row->coverage_4_description.' : hasta S/.'.$row->coverage_4.'</li>';
-      $text .= '<li>'.$row->coverage_5_description.' : hasta S/.'.$row->coverage_5.'</li>';
-      $text .= '<li>Con robo : '.$robo.'</li>';
-      $text .= '<li>Precio : '.$row->price.'</li>';
-      $text .= '</ul>';
+	  foreach($query_planes->result() as $row){
+	      $robo = '';
+	      if ($row->theft == 1) {
+	          $robo = 'Sí';
+	      }else{
+	          $robo = 'No';
+	      };
+	      $text .= '<ul>';
+	      // $text .= '<li>Plan : '.$row->name.'</li>';
+	      $text .= '<li>'.$row->coverage_1_description.' : hasta S/.'.$row->coverage_1.'</li>';
+	      $text .= '<li>'.$row->coverage_2_description.' : hasta S/.'.$row->coverage_2.'</li>';
+	      $text .= '<li>'.$row->coverage_3_description.' : hasta S/.'.$row->coverage_3.'</li>';
+	      $text .= '<li>'.$row->coverage_4_description.' : hasta S/.'.$row->coverage_4.'</li>';
+	      $text .= '<li>'.$row->coverage_5_description.' : hasta S/.'.$row->coverage_5.'</li>';
+	      $text .= '<li>Con robo : '.$robo.'</li>';
+	      $text .= '<li>Precio : '.$row->price.'</li>';
+	      $text .= '</ul>';
+	  }
+
   }
 	$text .='<br>Si tienes alguna duda o si este correo te ha llegado sin haber realizado una cotización en línea, por favor escríbenos al siguiente correo: lineapositiva@lapositiva.com o llámanos al 211-0212 desde Lima o al 749001 desde provincias.<br>';
 	$text .='<br>Muchas gracias,</br>';
