@@ -49,6 +49,7 @@ class Mandrillapp {
 	$housing_type = ee()->TMPL->fetch_param('housing_type');
 	$province = ee()->TMPL->fetch_param('province');
 	$city = ee()->TMPL->fetch_param('city');
+  $plan_id = ee()->TMPL->fetch_param('plan_id');
 
 	$subject= "Cotización Seguro Domiciliario.";
 
@@ -106,7 +107,6 @@ class Mandrillapp {
   $text .= '</ul>';
 
 	$text .= '<br><b>Datos del plan cotizado:</b><br>';
-  $plan_id = ee()->TMPL->fetch_param('plan_id');
 
   if ($plan_id != '13') {
 
@@ -189,6 +189,7 @@ class Mandrillapp {
 	$housing_type = ee()->TMPL->fetch_param('housing_type');
 	$province = ee()->TMPL->fetch_param('province');
 	$city = ee()->TMPL->fetch_param('city');	
+	$plan_id = ee()->TMPL->fetch_param('plan_id');
 
 	$subject= "Cotización Seguro Domiciliario.";
 
