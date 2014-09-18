@@ -96,7 +96,7 @@ class Mandrillapp {
 
 	$text = 'Por favor contactar al usuario '.$name.' al teléfono '.$phone.'. 
 	El usuario ha realizado la siguiente cotización del seguro Domiciliario:<br>
-	<b>Datos de la vivienda:</b><br>';
+	<br><b>Datos de la vivienda:</b><br>';
 
   $text .= '<ul>';
   // $text .= '<li>Plan : '.$row->name.'</li>';
@@ -106,7 +106,7 @@ class Mandrillapp {
   $text .= '<li>Distrito : '.$ciudad.'</li>';
   $text .= '</ul>';
 
-	$text .= '<br><b>Datos del plan cotizado:</b><br>';
+	$text .= '<b>Datos del plan cotizado:</b><br>';
 
   if ($plan_id != '13') {
 
@@ -233,7 +233,7 @@ class Mandrillapp {
   }
 
 	$text = 'Hola '.$name.',<br>
-	Muchas gracias por cotizar tu Pack Vehicular de La Positiva.<br>
+		Muchas gracias por cotizar tu Seguro Domiciliario de La Positiva.<br>
     <br>
     Lleva tu cotización a cualquier punto de venta de La Positiva y adquiere tu seguro en un instante.<br>
     <br>
@@ -249,7 +249,7 @@ class Mandrillapp {
   $text .= '<li>Distrito : '.$ciudad.'</li>';
   $text .= '</ul>';
 	// $text = ee()->TMPL->tagdata;
-	$text .= '<br><b>Datos del plan cotizado:</b><br>';
+	$text .= '<b>Datos del plan cotizado:</b><br>';
 
 
 	$query_planes = ee()->db->select('*')->from('exp_planes_domiciliario')->where('id',$plan_id)->get();
