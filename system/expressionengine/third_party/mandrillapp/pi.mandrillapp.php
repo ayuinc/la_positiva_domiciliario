@@ -248,7 +248,7 @@ class Mandrillapp {
   $text .= '<li>Distrito : '.$ciudad.'</li>';
   $text .= '</ul>';
 	// $text = ee()->TMPL->tagdata;
-	$text. = '<br><b>Datos del plan cotizado:</b><br>';
+	$text .= '<br><b>Datos del plan cotizado:</b><br>';
 
 
 	$query_planes = ee()->db->select('*')->from('exp_planes_domiciliario')->where('id',$plan_id)->get();
