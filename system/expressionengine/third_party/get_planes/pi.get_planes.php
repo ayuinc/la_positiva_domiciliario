@@ -105,8 +105,8 @@ class Get_planes
         $nombre = ee()->TMPL->fetch_param('nombre');
         $apellido = ee()->TMPL->fetch_param('apellido');
 
-        $nombre_se=str_replace(" ", "_", $nombre)
-        $apellido_se=str_replace(" ", "_", $apellido)
+        $nombre_se=str_replace(" ", "_", $nombre);
+        $apellido_se=str_replace(" ", "_", $apellido);
 
 
         if ($plan_id != '13') {
