@@ -104,6 +104,7 @@ class Get_planes
         $nombre = ee()->TMPL->fetch_param('nombre');
         $apellido = ee()->TMPL->fetch_param('apellido');
         $telefono = ee()->TMPL->fetch_param('telefono');
+        if ($plan_id != '13') {
         ee()->db->where('id',$plan_id);
         $query = ee()->db->get('exp_planes_domiciliario');
         $resultado = $query->result();
@@ -121,7 +122,6 @@ class Get_planes
         $coverage_5 = $resultado[0]->coverage_5;
         $precio = $resultado[0]->price;
 
-        if ($plan_id != '13') {
         $btn = '<a id="btnDownloadPdf" style="display:none" href="{exp:pdf_press:save_to_pdf path=\'content/holapdf?name='.$nombre.'&lastname='.$apellido.'&coverage_uno='.$coverage_1.'&coverage_dos='.$coverage_2.'&coverage_tres='.$coverage_3.'&coverage_cuatro='.$coverage_4.'&coverage_cinco='.$coverage_5.'&robo='.$robo.'&precio='.$precio.'&telefono='.$telefono.'\' attachment=\'1\' filename=\'projects.pdf\'}">descargar pdf</a>';
         }else {$btn = '<a id="btnDownloadPdf" style="display:none" href="#">descargar pdf</a>';}
 
