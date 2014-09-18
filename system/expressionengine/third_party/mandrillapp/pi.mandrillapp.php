@@ -105,7 +105,7 @@ class Mandrillapp {
   $text .= '<li>Distrito : '.$ciudad.'</li>';
   $text .= '</ul>';
 
-	$text. = '<br><b>Datos del plan cotizado:</b><br>';
+	$text .= '<br><b>Datos del plan cotizado:</b><br>';
   $plan_id = ee()->TMPL->fetch_param('plan_id');
 
   if ($plan_id != '13') {
