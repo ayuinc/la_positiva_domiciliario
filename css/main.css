@@ -5992,17 +5992,16 @@ header {
   -webkit-background-size: 100%;
   background-size: 100%;
   content: ""; }
-
-.row {
+.price-block .row {
   border: 1px solid #ff6a00;
   margin-top: 7px;
   background: #ffe1cc; }
-  .row .col-md-2 {
+  .price-block .row .col-md-2 {
     background: #ffe1cc; }
-  .row .col-md-9 {
+  .price-block .row .col-md-9 {
     color: #fff;
     background: #ff6a00; }
-  .row .check-icon:before {
+  .price-block .row .check-icon:before {
     content: "\e600"; }
 
 footer {
