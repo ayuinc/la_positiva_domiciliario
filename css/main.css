@@ -5950,7 +5950,7 @@ header {
   font-size: 22.4px\9; }
 .download-phone input[type=radio], .price-block input[type=radio] {
   display: none; }
-.download-phone label:before, .price-block label:before {
+.download-phone input[type=radio]:checked + label:before, .price-block input[type=radio]:checked + label:before {
   content: "";
   display: inline-block;
   width: 20px;
