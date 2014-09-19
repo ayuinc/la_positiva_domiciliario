@@ -76,7 +76,6 @@ $( "#ciudad" ).change(function (evt) {
     // option = $( this ).val();
     // option = option.replace(/,/gi,"");
     option = $('#valor_vivienda').val();
-    console.log(option);
     if(option == 7){
       url = "/?/content/taza";
     }else{
