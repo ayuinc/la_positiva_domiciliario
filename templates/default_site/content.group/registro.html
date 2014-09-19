@@ -15,9 +15,9 @@
 		{/exp:registro_interesado:registrar_interesado}
 
 		{exp:mandrillapp:send_email_positiva 
-			email_to="freddy01288@gmail.com" 
+			email_to="lineapositiva@lapositiva.com.pe" 
 			name="{post_name} {post_last_name}" 
-			email_from="freddy01288@gmail.com"
+			email_from="coloradomarin@gmail.com"
 			email_client="{post_email}"
 			plan_id="{post_id_seguro}"
 			phone="{post_phone}"
@@ -29,9 +29,9 @@
 		{/exp:mandrillapp:send_email_positiva}
 
 		{exp:mandrillapp:send_email_client 
-			email_to="freddy01288@gmail.com" 
+			email_to="{post_email}" 
 			name="{post_name} {post_last_name}" 
-			email_from="{post_email}"
+			email_from="lineapositiva@lapositiva.com.pe"
 			plan_id="{post_id_seguro}"
 			housing_value="{post_housing_value}"
 			housing_type="{post_housing_type}"
