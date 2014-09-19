@@ -13,6 +13,11 @@ $(function(){
     $(this).addClass('checked');
   });
 
+  $('.download-phone label').click(function(){
+    $('.download-phone label').removeClass('checked');
+    $(this).addClass('checked');
+  });
+
   $('#phone').click(function(){
     $('.buscar').parent().hide();
     $('.registro').parent().addClass('center-block');
@@ -33,7 +38,6 @@ $( "#provincia" ).change(function (evt) {
   // $('#ciudad').prop('disabled', true);
   $( "#provincia option:selected" ).each(function() {
     str = $( this ).val();
-    console.log(str);
     if(str== 0){
       // $('#ciudad option:eq(0)').prop('selected', true);
       $('#ciudad').prop('disabled', true);
@@ -72,7 +76,6 @@ $( "#ciudad" ).change(function (evt) {
     // option = $( this ).val();
     // option = option.replace(/,/gi,"");
     option = $('#valor_vivienda').val();
-    console.log(option);
     if(option == 7){
       url = "/?/content/taza";
     }else{
