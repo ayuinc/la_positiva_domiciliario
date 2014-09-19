@@ -38,7 +38,6 @@ $( "#provincia" ).change(function (evt) {
   // $('#ciudad').prop('disabled', true);
   $( "#provincia option:selected" ).each(function() {
     str = $( this ).val();
-    console.log(str);
     if(str== 0){
       // $('#ciudad option:eq(0)').prop('selected', true);
       $('#ciudad').prop('disabled', true);
