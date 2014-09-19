@@ -5950,7 +5950,7 @@ header {
   font-size: 22.4px\9; }
 .download-phone input[type=radio], .price-block input[type=radio] {
   display: none; }
-.download-phone input[type=radio]:checked + label:before, .price-block input[type=radio]:checked + label:before {
+.download-phone label:before, .price-block label:before {
   content: "";
   display: inline-block;
   width: 20px;
@@ -5978,11 +5978,6 @@ header {
   border: none;
   width: 100%;
   font-weight: 900; }
-  .price-block label.checked:before {
-    background: url(../../images/img/check-icon.png) no-repeat;
-    -webkit-background-size: 100%;
-    background-size: 100%;
-    content: ""; }
   .price-block label:before {
     left: 118%;
     top: 30%;
@@ -5992,6 +5987,11 @@ header {
     border-radius: 0;
     height: 35px;
     width: 35px; }
+  .price-block label.checked:before {
+    background: url(../../images/img/check-icon.png) no-repeat;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+    content: ""; }
 .price-block .row {
   border: 1px solid #ff6a00;
   margin-top: 7px;
