@@ -24,8 +24,82 @@
               <div class="col-md-8 center-block">
                 <h2 class="text-large uppercase alt-bold pb-21">que te cubre</h2>
                 <p class='text-small gray-color' style="font-size:1.5rem">Todo riesgo de incendio y explosión, terremoto y riesgos de la naturaleza, terrorismo y riesgos políticos.</p>
-                <!-- <a href="#" class='link text-small blue'>Más información</a> -->
-                <!-- <p class='text-small uppercase text-gray-lighter alt-bold pb-21 pt-21'>Es opcional para robo o intento de robo</p> -->
+                
+                <h4 class="text-large uppercase">Gastos Extraordinario</h4>
+	                {if S/.10,000 - S/.55,000}
+		                <p class='text-small gray-color'>Hasta S/. 11,000</p>
+	                {/if}
+	                
+	                {if rango=='S/.55,000 - S/.115,000'}
+		                <p class='text-small gray-color'>Hasta S/. 23,000</p>
+	                {/if}
+	                
+	                {if S/.115,000 - S/.150,000}
+		                <p class='text-small gray-color'>Hasta S/. 30,000</p>
+	                {/if}
+	                
+	                {if S/.150,000 - S/.300,000}
+		                <p class='text-small gray-color'>Hasta S/. 60,000</p>
+	                {/if}
+	                
+	                {if S/.300,000 - S/.450,000}
+		                <p class='text-small gray-color'>Hasta S/. 90,000</p>
+	                {/if}
+	                
+	                {if S/.450,000 - S/.600,000}
+		                <p class='text-small gray-color'>Hasta S/. 120,000</p>
+	                {/if}               
+                
+                <h4 class="text-large uppercase">Rotura Accidental de Vidrios</h4>
+	                {if S/.10,000 - S/.55,000}
+		                <p class='text-small gray-color'>Hasta S/. 5,500</p>
+	                {/if}
+	                
+	                {if rango=='S/.55,000 - S/.115,000'}
+		                <p class='text-small gray-color'>Hasta S/. 11,500</p>
+	                {/if}
+	                
+	                {if S/.115,000 - S/.150,000}
+		                <p class='text-small gray-color'>Hasta S/. 15,000</p>
+	                {/if}
+	                
+	                {if S/.150,000 - S/.300,000}
+		                <p class='text-small gray-color'>Hasta S/. 30,000</p>
+	                {/if}
+	                
+	                {if S/.300,000 - S/.450,000}
+		                <p class='text-small gray-color'>Hasta S/. 45,000</p>
+	                {/if}
+	                
+	                {if S/.450,000 - S/.600,000}
+		                <p class='text-small gray-color'>Hasta S/. 60,000</p>
+	                {/if}
+                
+                <h4 class="text-large uppercase">Responsabilidad Civil Extracontractual</h4>
+	                {if S/.10,000 - S/.55,000}
+		                <p class='text-small gray-color'>Hasta S/. 55,000</p>
+	                {/if}
+	                
+	                {if rango=='S/.55,000 - S/.115,000'}
+		                <p class='text-small gray-color'>Hasta S/. 23,000</p>
+	                {/if}
+	                
+	                {if S/.115,000 - S/.150,000}
+		                <p class='text-small gray-color'>Hasta S/. 115,000</p>
+	                {/if}
+	                
+	                {if S/.150,000 - S/.300,000}
+		                <p class='text-small gray-color'>Hasta S/. 150,000</p>
+	                {/if}
+	                
+	                {if S/.300,000 - S/.450,000}
+		                <p class='text-small gray-color'>Hasta S/. 150,000</p>
+	                {/if}
+	                
+	                {if S/.450,000 - S/.600,000}
+		                <p class='text-small gray-color'>Hasta S/. 150,000</p>
+	                {/if}
+                
                 <p class='text-small gray-color' style="font-size:1.4rem"><em><span class="text-primary">*</span>Es opcional para robo o intento de robo</em></p>
                 <p class='text-small gray-color'>Hasta S/. {hasta}</p>
               </div>
