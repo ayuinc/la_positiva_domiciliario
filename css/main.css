@@ -5885,6 +5885,9 @@ label {
     .container .form-landing {
       top: 0%; }
 
+  .social-networks a {
+    padding: 1rem; }
+
   #logo-landing img {
     top: 6px; } }
 .link {
