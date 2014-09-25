@@ -5878,7 +5878,10 @@ label {
   .container {
     min-height: 0 !important; }
     .container .form-landing {
-      top: 0%; } }
+      top: 0%; }
+
+  #logo-landing img {
+    top: 6px; } }
 .link {
   text-decoration: underline; }
 
