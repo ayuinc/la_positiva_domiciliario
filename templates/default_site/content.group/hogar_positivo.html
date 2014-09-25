@@ -6,7 +6,7 @@
             <div class="row">
               <div class="col-md-9 center-block">
                 <div class="header-text">
-                  <p class="text-medium" style="margin-bottom: -1rem;">Tu inmueble esta avaluado</p>
+                  <p class="text-medium" style="margin-bottom: -1rem;">Tu hogar esta avaluado</p>
                 {exp:get_planes:get_rango_planes rango_id="{post_valor_vivienda}"}
                   <p class="text-xlarge alt-bold rango">{rango}</p>
                 {/exp:get_planes:get_rango_planes}
@@ -21,13 +21,87 @@
         <section class='content pb-7-100 pt-35'>
           <div class='container text-center'>
             <div class="row">
-              <div class="col-md-8 center-block">
+              <div class="col-md-8 center-block mb-70">
                 <h2 class="text-large uppercase alt-bold pb-21">que te cubre</h2>
                 <p class='text-small gray-color' style="font-size:1.5rem">Todo riesgo de incendio y explosión, terremoto y riesgos de la naturaleza, terrorismo y riesgos políticos.</p>
-                <!-- <a href="#" class='link text-small blue'>Más información</a> -->
-                <!-- <p class='text-small uppercase text-gray-lighter alt-bold pb-21 pt-21'>Es opcional para robo o intento de robo</p> -->
-                <p class='text-small gray-color' style="font-size:1.4rem"><em><span class="text-primary">*</span>Es opcional para robo o intento de robo</em></p>
-                <p class='text-small gray-color'>Hasta S/. {hasta}</p>
+                
+                <h4 class="uppercase mt-35">Gastos Extraordinarios</h4>
+	                {if post_valor_vivienda=='1'}
+		                <p class='gray-color'>Hasta S/. 11,000</p>
+	                {/if}
+	                
+	                {if post_valor_vivienda=='2'}
+		                <p class='gray-color'>Hasta S/. 23,000</p>
+	                {/if}
+	                
+	                {if post_valor_vivienda=='3'}
+		                <p class='gray-color'>Hasta S/. 30,000</p>
+	                {/if}
+	                
+	                {if post_valor_vivienda=='4'}
+		                <p class='gray-color'>Hasta S/. 60,000</p>
+	                {/if}
+	                
+	                {if post_valor_vivienda=='5'}
+		                <p class='gray-color'>Hasta S/. 90,000</p>
+	                {/if}
+	                
+	                {if post_valor_vivienda=='6'}
+		                <p class='gray-color'>Hasta S/. 120,000</p>
+	                {/if}               
+                
+                <h4 class="uppercase mt-35">Rotura Accidental de Vidrios</h4>
+	                {if post_valor_vivienda=='1'}
+		                <p class='gray-color'>Hasta S/. 5,500</p>
+	                {/if}
+	                
+	                {if post_valor_vivienda=='2'}
+		                <p class='gray-color'>Hasta S/. 11,500</p>
+	                {/if}
+	                
+	                {if post_valor_vivienda=='3'}
+		                <p class='gray-color'>Hasta S/. 15,000</p>
+	                {/if}
+	                
+	                {if post_valor_vivienda=='4'}
+		                <p class='gray-color'>Hasta S/. 30,000</p>
+	                {/if}
+	                
+	                {if post_valor_vivienda=='5'}
+		                <p class='gray-color'>Hasta S/. 45,000</p>
+	                {/if}
+	                
+	                {if post_valor_vivienda=='6'}
+		                <p class='gray-color'>Hasta S/. 60,000</p>
+	                {/if}
+                
+                <h4 class="uppercase mt-35">Responsabilidad Civil Extracontractual</h4>
+	                {if post_valor_vivienda=='1'}
+		                <p class='gray-color'>Hasta S/. 55,000</p>
+	                {/if}
+	                
+	                {if post_valor_vivienda=='2'}
+		                <p class='gray-color'>Hasta S/. 115,000</p>
+	                {/if}
+	                
+	                {if post_valor_vivienda=='3'}
+		                <p class='gray-color'>Hasta S/. 150,000</p>
+	                {/if}
+	                
+	                {if post_valor_vivienda=='4'}
+		                <p class='gray-color'>Hasta S/. 150,000</p>
+	                {/if}
+	                
+	                {if post_valor_vivienda=='5'}
+		                <p class='gray-color'>Hasta S/. 150,000</p>
+	                {/if}
+	                
+	                {if post_valor_vivienda=='6'}
+		                <p class='gray-color'>Hasta S/. 150,000</p>
+	                {/if}
+                
+                <h4 class="uppercase mt-35">Robo o Intento de Robo</h4>
+                	<p class='gray-color'>Hasta S/. {hasta}</p>
               </div>
             </div>
             <div class="row">
@@ -112,7 +186,9 @@
                 <div class="row">
                   <div class="col-xs-10 col-xs-offset-1 col-sm-5 col-md-5">
                     <form class="form-horizontal registro" method="post" action="/?/content/registro">
-                      <div class="row"><h2 class="white uppercase alt-bold pb-35">completa tus datos</h2></div>
+                      <div class="row">
+                      <h2 class="white uppercase alt-bold pb-35">completa tus datos</h2>
+                      </div>
                       <div class="row">
                         <!-- Text input-->
                         <div class="col-sm-6 col-md-6">
@@ -160,7 +236,7 @@
                   </div>
                   <div class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-1 col-md-5 col-md-offset-1">
                     <form class="form-horizontal buscar">
-                      <div class="row"><h2 class="white uppercase alt-bold">busca el punto de venta más cercano</h2></div>
+                      <div class="row"><h2 class="white uppercase alt-bold">Ubica el punto de venta más cercano</h2></div>
                       <div class="row">
                         <!-- Text input-->
                         <div class="col-sm-6 col-md-6">

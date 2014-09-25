@@ -21,7 +21,7 @@ $(function(){
   $('#phone').click(function(){
     $('.buscar').parent().hide();
     $('.registro').parent().addClass('center-block');
-    $('.registro h2').text('CONTACTO');
+    $('.registro h2').text('LLENA EL FORMULARIO');
 
   });
   $('#download').click(function(){
