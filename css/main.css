@@ -5772,6 +5772,9 @@ body {
   height: 100%;
   min-height: 100%; }
 
+.invisible-large {
+  display: none !important; }
+
 .gray-base {
   color: #313233; }
 
@@ -5871,6 +5874,12 @@ label {
     background: none; }
 
 @media (max-width: 480px) {
+  .visible-small {
+    display: block !important; }
+
+  .invisible-small {
+    display: none !important; }
+
   body.landing {
     background: url(../../images/img/pattern.png) repeat;
     height: initial; }
