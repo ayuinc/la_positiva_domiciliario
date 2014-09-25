@@ -5874,6 +5874,11 @@ label {
   body.landing {
     background: url(../../images/img/pattern.png) repeat;
     height: initial; }
+    body.landing button {
+      width: 100%;
+      height: 32px;
+      margin-bottom: 20px;
+      margin-top: 15px; }
 
   .container {
     min-height: 0 !important; }
