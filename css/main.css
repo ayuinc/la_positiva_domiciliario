@@ -5872,7 +5872,8 @@ label {
 
 @media (max-width: 480px) {
   body.landing {
-    background: url(../../images/img/pattern.png) repeat; }
+    background: url(../../images/img/pattern.png) repeat;
+    height: initial; }
 
   .container {
     min-height: 0 !important; }
