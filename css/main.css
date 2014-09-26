@@ -5873,6 +5873,11 @@ label {
   .social-networks .nav > li > a:hover, .social-networks .nav > li > a:focus {
     background: none; }
 
+@media (max-width: 991px) {
+  #landing-btn {
+    width: 100%; }
+    #landing-btn button {
+      width: 100%; } }
 @media (max-width: 480px) {
   .visible-small {
     display: block !important; }
