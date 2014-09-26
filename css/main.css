@@ -5889,13 +5889,17 @@ label {
       margin-bottom: 20px;
       margin-top: 15px; }
 
+  body.confirmacion {
+    height: 80%;
+    min-height: 80%; }
+
   .container {
     min-height: 0 !important; }
     .container .form-landing {
       top: 0%; }
 
   .social-networks a {
-    padding: 1rem !important; }
+    padding: 0.5rem !important; }
 
   .logo-landing {
     text-align: center;
