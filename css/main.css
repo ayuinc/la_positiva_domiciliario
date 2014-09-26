@@ -6072,7 +6072,7 @@ button[data-dismiss="modal"] span {
 
 @media (max-width: 1224px) {
   .container .form-landing {
-    top: 0%; }
+    top: 10%; }
 
   .download-phone label, .price-block label {
     font-size: 1.2rem; } }
