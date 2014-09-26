@@ -6089,6 +6089,9 @@ button[data-dismiss="modal"] span {
   .container .form-landing {
     top: 10%; }
 
+  .confimacion .container {
+    height: 75%; }
+
   .content {
     border-right: 10px solid rgba(255, 106, 0, 0.45);
     border-left: 10px solid rgba(255, 106, 0, 0.45); }
