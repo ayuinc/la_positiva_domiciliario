@@ -5897,8 +5897,11 @@ label {
   .social-networks a {
     padding: 1rem !important; }
 
-  #logo-landing img {
-    top: 6px; } }
+  #logo-landing-blanco, #logo-landing-blancob {
+    text-align: center;
+    width: 100%; }
+    #logo-landing-blanco img, #logo-landing-blancob img {
+      top: 6px; } }
 .link {
   text-decoration: underline; }
 
