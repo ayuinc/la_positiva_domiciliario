@@ -5897,10 +5897,10 @@ label {
   .social-networks a {
     padding: 1rem !important; }
 
-  #logo-landing-blanco, #logo-landing-blancob {
+  .logo-landing {
     text-align: center;
     width: 100%; }
-    #logo-landing-blanco img, #logo-landing-blancob img {
+    .logo-landing img {
       top: 6px; } }
 .link {
   text-decoration: underline; }
